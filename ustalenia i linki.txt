@@ -17,7 +17,7 @@ Mail z zaliczeniem:
 
 tytuł: Zaliczenie - Imię, nazwisko, nr albumu
 
-body:
+body (tresc):
 
 link do github
 nr grupy
