@@ -20,4 +20,4 @@ tytuł: Zaliczenie - Imię, nazwisko, nr albumu
 body:
 
 link do github
-nr gtupy
+nr grupy
