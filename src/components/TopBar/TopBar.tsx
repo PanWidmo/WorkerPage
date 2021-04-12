@@ -20,13 +20,27 @@ const RightIcons = styled.div`
     text-align: right;
 `;
 
-
-
-const CustomImg = styled.img`
-
+const InputWrapper=styled.div`
+    border:1px solid red;
+    display:flex;
+    align-items:center;
+    padding:8px;
 `;
 
 const CustomInput = styled.input`
+    border:none;
+    width:100%;
+    padding:8px;
+    margin: 0 20px 0 0;
+    &:outline{
+        outline:none;
+    }
+    &:focus{
+        outline:none;
+    }
+`;
+
+const CustomImg = styled.img`
 
 `;
 
@@ -70,10 +84,11 @@ export const TopBar: FC = ()  => {
 
                 </div>
 
-                <InnerWrapper>
-                    <CustomInput type="text"/>
-                    <CustomImg src="./media/icons/search.png" alt="" title=""/>
-                </InnerWrapper>
+                <InputWrapper>
+                    <CustomInput type="text" placeholder="Search"/>
+                    <CustomImg src="./media/icons/search.png" alt=""/>
+                </InputWrapper>
+
                 <RightIcons>
                     <CustomImg src="./media/icons/house.png"/>
                     <CustomImg src="./media/icons/comments.png"/>
