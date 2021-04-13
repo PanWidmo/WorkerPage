@@ -14,17 +14,39 @@ const Wrapper2 = styled(Wrapper)`
 const InnerWrapper = styled.div`
     width: 1200px;
     background: ${Colors.white};
+    display:flex;
+    align-items: center;
+    min-height:10vh;
 `;
 
-const RightIcons = styled.div`
-    text-align: right;
+const LogoImg = styled.img`
+    margin:14px;
+    width: 30px;
+`;
+
+const Menuwrapper = styled.div`
+    cursor:pointer;
+    align-items:center;
+    width:250px;
+    justify-content:space-between;
+    padding:8px;
+`;
+
+const LeftSide = styled.div`
+    margin:8px;
+    span{
+        font-size:20px;
+        margin-right:80px;
+    }
 `;
 
 const InputWrapper=styled.div`
-    border:1px solid red;
     display:flex;
     align-items:center;
     padding:8px;
+    width:600px;
+    border:1px solid lightgray;
+    border-radius:11px;
 `;
 
 const CustomInput = styled.input`
@@ -32,6 +54,7 @@ const CustomInput = styled.input`
     width:100%;
     padding:8px;
     margin: 0 20px 0 0;
+    font-size:20px;
     &:outline{
         outline:none;
     }
@@ -40,21 +63,15 @@ const CustomInput = styled.input`
     }
 `;
 
+const RightIcons = styled.div`
+    margin-left: auto;
+    margin-right:14px;
+`;
+
 const CustomImg = styled.img`
-
+    margin: 0 16px 0 16px;
 `;
 
-const Menuwrapper = styled.div`
-    position:relative;
-    cursor:pointer;
-    align-items:center;
-    width:250px;
-    justify-content:space-between;
-`;
-
-const LeftSide = styled.div`
-
-`;
 
 export const TopBar: FC = ()  => {
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
@@ -66,23 +83,18 @@ export const TopBar: FC = ()  => {
     return (
         <Wrapper2>
             <InnerWrapper>
-                <CustomImg src="./media/logo.png" alt=""/>
+                <LogoImg src="./media/logo.png" alt=""/>
                 <Menuwrapper ref={wrapperRef}>
-                    <LeftSide>
-                        <img src="./media/icons/house.png"/>
+                    <LeftSide onClick={menuHandler}>
+                        <CustomImg src="./media/icons/house2.png"/>
                         <span>Home</span>
-                        <img src="./media/icons/arrow-down.png" alt="" onClick={menuHandler}/>
+                        <CustomImg src="./media/icons/arrow-down.png" alt=""/>
                     </LeftSide>
 
                     {dropdownOpen &&
                         <ExpandedMenu/>
                     }
                     </Menuwrapper>
-
-
-                <div>
-
-                </div>
 
                 <InputWrapper>
                     <CustomInput type="text" placeholder="Search"/>
