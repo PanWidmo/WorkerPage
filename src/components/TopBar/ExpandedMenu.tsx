@@ -2,7 +2,6 @@ import { FC } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    position: absolute;
     top:24px;
     left: 0;
     background:white;

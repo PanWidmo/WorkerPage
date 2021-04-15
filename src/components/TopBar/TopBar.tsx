@@ -8,7 +8,8 @@ import {ExpandedMenu} from './ExpandedMenu';
 
 const Wrapper2 = styled(Wrapper)`
     padding: 10px;
-    background-color:red;
+    background-color: #fff;
+    box-shadow: 1px 2px 10px lightgray;
 `;
 
 const InnerWrapper = styled.div`
@@ -17,6 +18,7 @@ const InnerWrapper = styled.div`
     display:flex;
     align-items: center;
     min-height:10vh;
+    padding-bottom:10px;
 `;
 
 const LogoImg = styled.img`

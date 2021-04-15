@@ -20,7 +20,6 @@ const MainPage: FC = () => {
             <TopBar/>
             <Content>
                 <LeftMenu/>
-                <div>content</div>
             </Content>
         </Wrapper>
     );
