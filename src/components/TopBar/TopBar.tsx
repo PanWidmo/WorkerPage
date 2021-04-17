@@ -15,7 +15,8 @@ const Wrapper2 = styled(Wrapper)`
 const InnerWrapper = styled.div`
     width: 1200px;
     background: ${Colors.white};
-    display:flex;
+    display:grid;
+    grid-template-columns:80px 1fr 3fr 1fr;
     align-items: center;
     min-height:10vh;
     padding-bottom:10px;
@@ -39,6 +40,9 @@ const LeftSide = styled.div`
     span{
         font-size:20px;
         margin-right:80px;
+    }
+    #arrowDown{
+       margin-bottom:2px;
     }
 `;
 
@@ -90,7 +94,7 @@ export const TopBar: FC = ()  => {
                     <LeftSide onClick={menuHandler}>
                         <CustomImg src="./media/icons/house2.png"/>
                         <span>Home</span>
-                        <CustomImg src="./media/icons/arrow-down.png" alt=""/>
+                        <CustomImg id="arrowDown" src="./media/icons/arrow-down.png" alt=""/>
                     </LeftSide>
 
                     {dropdownOpen &&

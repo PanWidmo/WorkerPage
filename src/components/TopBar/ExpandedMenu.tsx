@@ -2,12 +2,13 @@ import { FC } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    top:24px;
-    left: 0;
+    position: absolute;
+    /* margin-top:50px;
+    margin-left:420px; */
     background:white;
     padding:16px;
     border: 1px solid;
-    width:250px;
+    width:200px;
     ul{
         border: 1px solid red;
     }

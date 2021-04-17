@@ -11,11 +11,9 @@ const InnerWrapper = styled.div`
     width: 250px;
     height: 300px;
     text-align: center;
-
 `;
 
 const Box1=styled.div`
-
     img{
         margin-top:20px;
         width:100px;
