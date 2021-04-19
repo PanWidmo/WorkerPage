@@ -10,7 +10,7 @@ const Wrapper = styled.section`
 const Content = styled.div`
     /* align-items: center;
     display: flex; */
-    margin-top:10px;
+    margin-top:4px;
 `;
 
 const MainPage: FC = () => {

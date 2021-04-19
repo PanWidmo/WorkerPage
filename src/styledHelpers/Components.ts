@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    background: #fff;
+    background: #F5F7F9;
     /* display: flex; */
     /* justify-content: center; */
     padding: 5px;

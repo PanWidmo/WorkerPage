@@ -7,7 +7,6 @@ import {Colors} from '../../styledHelpers/Colors';
 import {ExpandedMenu} from './ExpandedMenu';
 
 const Wrapper2 = styled(Wrapper)`
-    padding: 10px;
     background-color: #fff;
     box-shadow: 1px 2px 10px lightgray;
 `;
@@ -24,7 +23,7 @@ const InnerWrapper = styled.div`
 
 const LogoImg = styled.img`
     margin:14px;
-    width: 30px;
+    width: 46px;
 `;
 
 const Menuwrapper = styled.div`
@@ -57,8 +56,9 @@ const InputWrapper=styled.div`
 
 const CustomInput = styled.input`
     border:none;
+    text-align:center;
     width:100%;
-    padding:8px;
+    padding:4px;
     margin: 0 20px 0 0;
     font-size:20px;
     &:outline{
