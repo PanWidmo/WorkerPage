@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import styled from 'styled-components';
+import {Colors} from '../../styledHelpers/Colors';
 
 const Wrapper = styled.div`
     position: absolute;
-    background:white;
+    background: ${Colors.white};
     padding-top:10px;
     margin-left:24px;
     border: 1px solid lightgray;
