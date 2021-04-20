@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import {TopBar} from '../TopBar/TopBar';
 import {LeftMenu} from '../LeftMenu/LeftMenu';
+import {Publications} from '../Publications/Publications';
+import {Workspaces} from '../Workspaces/Workspaces';
 
 const Wrapper = styled.section`
 `;
@@ -17,6 +19,8 @@ const MainPage: FC = () => {
             <TopBar/>
             <Content>
                 <LeftMenu/>
+                <Publications/>
+                <Workspaces/>
             </Content>
         </Wrapper>
     );

@@ -55,6 +55,7 @@ const Account = styled.div`
         grid-column: 2;
         grid-row: 1;
         margin-bottom:30px;
+        color:blue;
     }
     #see{
         grid-column: 2;

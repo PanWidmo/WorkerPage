@@ -7,7 +7,7 @@ import {Wrapper} from '../../styledHelpers/Components';
 const InnerWrapper = styled.div`
     width: 250px;
     display:grid;
-    grid-template-columns:30% 70%;
+    grid-template-columns:26% 70%;
     align-items:center;
     margin-top:10px;
     margin-bottom:10px;
