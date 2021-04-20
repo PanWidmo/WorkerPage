@@ -47,7 +47,7 @@ export const LeftMenu: FC = () => {
 
                 <Box1>
                     <img src="./icons/portrair1.jpg" />
-                    <Name>Humberta Swift</Name>
+                    <Name>Jan Ser</Name>
                     <JobInfo>Job title - Company</JobInfo>
                 </Box1>
                 <Box2>

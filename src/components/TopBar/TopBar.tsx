@@ -17,7 +17,7 @@ const InnerWrapper = styled.div`
     display:grid;
     grid-template-columns:80px 1fr 3fr 1fr;
     align-items: center;
-    min-height:10vh;
+    min-height:8vh;
     padding-bottom:10px;
 `;
 
