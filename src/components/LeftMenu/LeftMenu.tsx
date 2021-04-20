@@ -1,16 +1,17 @@
-import { FC } from 'react';
+import {FC} from 'react';
 import styled from 'styled-components';
+import {Colors} from '../../styledHelpers/Colors';
 
-import { Wrapper } from '../../styledHelpers/Components';
-import { Colors } from '../../styledHelpers/Colors';
+import {Wrapper} from '../../styledHelpers/Components';
+import {LeftNav} from '../LeftNav/LeftNav';
 
 
 const InnerWrapper = styled.div`
-    border:2px solid black;
     border-radius: 10px;
     width: 250px;
     min-height: 240px;
     text-align: center;
+    background: ${Colors.white};
 `;
 
 const PersonInfo=styled.div`
@@ -22,7 +23,7 @@ const PersonInfo=styled.div`
     padding-top:14px;
     padding-bottom:14px;
     width:100px;
-    border-radius:90px;
+    border-radius: 90px;
     margin:0 auto;
     }
 
@@ -88,6 +89,9 @@ export const LeftMenu: FC = () => {
                     <img className="rightImgs" src="./media/icons/plus.png" />
                 </PersonDetails>
             </InnerWrapper>
+            <LeftNav>
+
+            </LeftNav>
         </Wrapper>
     );
 };

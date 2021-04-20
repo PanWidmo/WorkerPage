@@ -1,9 +1,10 @@
 import {FC} from 'react';
 import styled from 'styled-components';
+import {Colors} from '../../styledHelpers/Colors';
+
 import useDropdown from 'react-dropdown-hook';
 
 import {Wrapper} from '../../styledHelpers/Components';
-import {Colors} from '../../styledHelpers/Colors';
 import {ExpandedMenu} from './ExpandedMenu';
 
 const Wrapper2 = styled(Wrapper)`

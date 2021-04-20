@@ -8,8 +8,6 @@ const Wrapper = styled.section`
 `;
 
 const Content = styled.div`
-    /* align-items: center;
-    display: flex; */
     margin-top:4px;
 `;
 
