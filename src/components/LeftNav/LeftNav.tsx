@@ -26,6 +26,7 @@ const InnerWrapper = styled.div`
     }
 `;
 
+
 export const LeftNav: FC = () => {
     return (
         <Wrapper>
