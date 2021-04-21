@@ -5,7 +5,6 @@ import {Colors} from '../../styledHelpers/Colors';
 import {Wrapper} from '../../styledHelpers/Components';
 import {LeftNav} from '../LeftNav/LeftNav';
 
-
 const InnerWrapper = styled.div`
     border-radius: 10px;
     width: 250px;
