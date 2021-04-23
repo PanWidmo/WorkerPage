@@ -11,6 +11,8 @@ const Wrapper = styled.section`
 
 const Content = styled.div`
     margin-top:4px;
+    margin:0 auto;
+    border:2px solid red;
 `;
 
 const MainPage: FC = () => {

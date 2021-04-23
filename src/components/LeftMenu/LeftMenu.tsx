@@ -5,12 +5,18 @@ import {Colors} from '../../styledHelpers/Colors';
 import {Wrapper} from '../../styledHelpers/Components';
 import {LeftNav} from '../LeftNav/LeftNav';
 
+const Wrapper3 = styled.div`
+border:2px solid red;
+
+`;
+
 const InnerWrapper = styled.div`
     border-radius: 10px;
     width: 250px;
     min-height: 240px;
     text-align: center;
     background: ${Colors.white};
+
 `;
 
 const PersonInfo=styled.div`
