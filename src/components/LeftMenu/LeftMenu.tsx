@@ -79,7 +79,7 @@ export const LeftMenu: FC = () => {
         <Wrapper3>
             <InnerWrapper>
                 <PersonInfo>
-                    <img id="foto" src="./icons/portrair1.jpg" />
+                    <img id="foto" src="./imgs/portrair1.jpg" />
                     <span id="name">Jan Ser</span>
                     <span id="job">Job title - Company</span>
                 </PersonInfo>

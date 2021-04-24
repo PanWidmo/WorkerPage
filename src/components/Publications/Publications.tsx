@@ -19,7 +19,7 @@ export const Publications: FC = () => {
     return (
         <Wrapper5>
             <InnerWrapper>
-            Publications
+            <img id="foto" src="./imgs/city.jpeg" />
             </InnerWrapper>
 
         </Wrapper5>
