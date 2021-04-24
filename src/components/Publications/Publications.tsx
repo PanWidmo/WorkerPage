@@ -4,20 +4,24 @@ import {Colors} from '../../styledHelpers/Colors';
 
 import {Wrapper} from '../../styledHelpers/Components';
 
+const Wrapper5 = styled.div`
+    max-width:980px;
+`;
+
 const InnerWrapper = styled.div`
-    border: 2px solid red;
-    min-height:20px;
-    max-width:200px;
+    min-height:200px;
+    border:orange solid 1px;
+    min-width:40px;
 
 `;
 
 export const Publications: FC = () => {
     return (
-        <Wrapper>
+        <Wrapper5>
             <InnerWrapper>
             Publications
             </InnerWrapper>
 
-        </Wrapper>
+        </Wrapper5>
     );
 };

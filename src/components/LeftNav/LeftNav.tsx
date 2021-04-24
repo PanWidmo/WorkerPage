@@ -5,12 +5,10 @@ import {Colors} from '../../styledHelpers/Colors';
 import {Wrapper} from '../../styledHelpers/Components';
 
 const InnerWrapper = styled.div`
-    width: 250px;
     display:grid;
     grid-template-columns:26% 70%;
     align-items:center;
     margin-top:10px;
-    margin-bottom:10px;
 
     .imgs{
         grid-column:1;
@@ -29,7 +27,6 @@ const InnerWrapper = styled.div`
 
 export const LeftNav: FC = () => {
     return (
-        <Wrapper>
             <InnerWrapper>
                 <img className="imgs" src="./media/icons/publications.png"/>
                 <span className="titles">Publications</span>
@@ -39,8 +36,6 @@ export const LeftNav: FC = () => {
 
                 <img className="imgs" src="./media/icons/entities.png"/>
                 <span className="titles">Entities</span>
-
             </InnerWrapper>
-        </Wrapper>
     );
 };

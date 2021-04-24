@@ -4,10 +4,11 @@ import {Colors} from '../../styledHelpers/Colors';
 
 import {Wrapper} from '../../styledHelpers/Components';
 
+
 export const Workspaces: FC = () => {
     return (
         <Wrapper>
-
+            Workspace
         </Wrapper>
     );
 };

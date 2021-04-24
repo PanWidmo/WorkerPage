@@ -6,14 +6,13 @@ import {Wrapper} from '../../styledHelpers/Components';
 import {LeftNav} from '../LeftNav/LeftNav';
 
 const Wrapper3 = styled.div`
-border:2px solid red;
-
+    max-width:220px;
+    margin:10px;
 `;
 
 const InnerWrapper = styled.div`
     border-radius: 10px;
-    width: 250px;
-    min-height: 240px;
+    width: 220px;
     text-align: center;
     background: ${Colors.white};
 
@@ -77,7 +76,7 @@ const PersonDetails=styled.div`
 
 export const LeftMenu: FC = () => {
     return (
-        <Wrapper>
+        <Wrapper3>
             <InnerWrapper>
                 <PersonInfo>
                     <img id="foto" src="./icons/portrair1.jpg" />
@@ -97,6 +96,6 @@ export const LeftMenu: FC = () => {
             <LeftNav>
 
             </LeftNav>
-        </Wrapper>
+        </Wrapper3>
     );
 };

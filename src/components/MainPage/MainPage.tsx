@@ -10,19 +10,26 @@ const Wrapper = styled.section`
 `;
 
 const Content = styled.div`
-    margin-top:4px;
+    width:1200px;
+    background: #F5F7F9;
+    display:flex;
     margin:0 auto;
-    border:2px solid red;
 `;
 
+const RightSide = styled.div`
+    border:1px dotted red;
+    margin-top:10px;
+`;
 const MainPage: FC = () => {
     return (
         <Wrapper>
             <TopBar/>
             <Content>
                 <LeftMenu/>
-                <Publications/>
-                <Workspaces/>
+                    <RightSide>
+                        <Publications/>
+                        <Workspaces/>
+                    </RightSide>
             </Content>
         </Wrapper>
     );

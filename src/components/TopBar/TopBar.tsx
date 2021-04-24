@@ -8,18 +8,18 @@ import {Wrapper} from '../../styledHelpers/Components';
 import {ExpandedMenu} from './ExpandedMenu';
 
 const Wrapper2 = styled(Wrapper)`
-    background-color: #fff;
+    background: ${Colors.white};
     box-shadow: 1px 2px 10px lightgray;
+    justify-content: center;
+    margin-bottom:10px;
 `;
 
 const InnerWrapper = styled.div`
     width: 1200px;
-    background: ${Colors.white};
     display:grid;
-    grid-template-columns:80px 1fr 3fr 1fr;
+    grid-template-columns:80px 1fr 1fr 1fr;
     align-items: center;
     min-height:8vh;
-    padding-bottom:10px;
 `;
 
 const LogoImg = styled.img`
