@@ -97,7 +97,7 @@ export const ExpandedMenu: FC = () => {
 
                 <li className="category">Account</li>
                 <Account>
-                    <img id="portrair" src="./icons/portrair1.jpg"></img>
+                    <img id="portrair" src="./imgs/portrair1.jpg"/>
                     <li id="name">Jan Ser</li>
                     <li id="see">See profile</li>
                 </Account>

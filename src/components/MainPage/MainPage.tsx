@@ -17,7 +17,6 @@ const Content = styled.div`
 `;
 
 const RightSide = styled.div`
-    border:1px dotted red;
     margin-top:10px;
 `;
 const MainPage: FC = () => {
