@@ -7,8 +7,7 @@ import {LatestPublications} from './LatestPublications';
 
 const InnerWrapper = styled.div`
     max-width:980px;
-    height:300px;
-    border:3px purple solid;
+    border:2px purple solid;
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
@@ -41,10 +40,10 @@ const LeftSide = styled.div`
 `;
 
 const RightSide = styled.div`
-    height:100%;
     grid-column:2;
-    margin-top:20px;
+    margin-top:5px;
     margin-left:20px;
+
 `;
 
 export const Publications: FC = () => {
@@ -59,7 +58,7 @@ export const Publications: FC = () => {
                     </span>
 
                     <div id="personInfo">
-                        <span>7 jan 2020</span>
+                        <span>7 jan. 2020</span>
                         <img src="./imgs/portrair1.jpg"/>
                         <span>Jan Ser</span>
                     </div>
@@ -67,7 +66,7 @@ export const Publications: FC = () => {
                 </div>
             </LeftSide>
             <RightSide>
-                Latest publications
+                <span>Latest publications</span>
 
                 <LatestPublications></LatestPublications>
                 <LatestPublications></LatestPublications>

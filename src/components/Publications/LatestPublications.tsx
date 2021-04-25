@@ -41,8 +41,7 @@ export const LatestPublications: FC = () => {
                 </LeftSide>
                 <RightSide>
                 <h1>
-                    Lorem ipsum dolor sit amet, consecteur adipisiscing elit... and one <br/>
-                    more line for the demo
+                    Lorem ipsum dolor sit amet, consecteur adipisiscing elit... and one more line for the demo
                 </h1>
                 <span>7 jan. 2020</span>
                 <img src="./imgs/portrair1.jpg"/>
