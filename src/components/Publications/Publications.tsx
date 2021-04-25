@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 
 import {Wrapper} from '../../styledHelpers/Components';
-
+import {LatestPublications} from './LatestPublications';
 
 const InnerWrapper = styled.div`
     max-width:980px;
@@ -12,6 +12,7 @@ const InnerWrapper = styled.div`
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
+
 `;
 
 const LeftSide = styled.div`
@@ -28,7 +29,7 @@ const LeftSide = styled.div`
 
         #personInfo{
             margin-top:20px;
-            font-size:14px;
+            font-size:16px;
             img{
                 border-radius:90px;
                 width:20px;
@@ -40,9 +41,10 @@ const LeftSide = styled.div`
 `;
 
 const RightSide = styled.div`
-    border:2px solid black;
     height:100%;
     grid-column:2;
+    margin-top:20px;
+    margin-left:20px;
 `;
 
 export const Publications: FC = () => {
@@ -60,14 +62,19 @@ export const Publications: FC = () => {
                         <span>7 jan 2020</span>
                         <img src="./imgs/portrair1.jpg"/>
                         <span>Jan Ser</span>
-
                     </div>
 
                 </div>
             </LeftSide>
-
             <RightSide>
                 Latest publications
+
+                <LatestPublications></LatestPublications>
+                <LatestPublications></LatestPublications>
+                <LatestPublications></LatestPublications>
+
+                <span>See more publications</span>
+
             </RightSide>
         </InnerWrapper>
     );

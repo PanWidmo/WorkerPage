@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 
 import {Wrapper} from '../../styledHelpers/Components';
-import {LeftNav} from '../LeftNav/LeftNav';
+import {LeftNav} from './LeftNav';
 
 const Wrapper3 = styled.div`
     max-width:220px;
