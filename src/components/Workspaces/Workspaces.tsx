@@ -4,20 +4,35 @@ import {Colors} from '../../styledHelpers/Colors';
 
 import {Wrapper} from '../../styledHelpers/Components';
 import {Window} from './Window';
+
 const InnerWrapper = styled.div`
     border:2px solid red;
     margin-top:20px;
+    max-width:984px;
+`;
+
+const Name = styled.p`
+    margin-top:10px;
+    margin-left:10px;
+
+`;
+
+const Slider = styled.div`
+    overflow-x:scroll;
+    display: flex;
 `;
 
 export const Workspaces: FC = () => {
     return (
         <InnerWrapper>
-            Workspaces
-            <br/>
-            <Window></Window>
-            <Window></Window>
-            <Window></Window>
-            <Window></Window>
+            <Name>Workspaces</Name>
+            <Slider>
+                <Window></Window>
+                <Window></Window>
+                <Window></Window>
+                <Window></Window>
+                <Window></Window>
+            </Slider>
 
         </InnerWrapper>
     );
