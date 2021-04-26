@@ -27,8 +27,7 @@ const LogoImg = styled.img`
 `;
 
 const Menuwrapper = styled.div`
-    cursor:pointer;
-    align-items:;
+    align-items:center;
     width:250px;
     justify-content:space-between;
     padding:8px;

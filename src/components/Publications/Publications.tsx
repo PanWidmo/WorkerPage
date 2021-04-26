@@ -24,7 +24,7 @@ const LeftSide = styled.div`
 
     #divBottom{
         font-size:19px;
-        margin:180px 20px 0px 20px;
+        margin:210px 20px 0px 20px;
 
         #personInfo{
             margin-top:20px;
@@ -52,8 +52,8 @@ export const Publications: FC = () => {
             <LeftSide>
                 <div id="divBottom">
                     <span>
-                    Lorem ipsum dolor sit amet, <br/>
-                    consecteur adipisiscing elit... and <br/>
+                    Lorem ipsum dolor sit amet,
+                    consecteur adipisiscing elit... and
                     one more line for the demo
                     </span>
 
