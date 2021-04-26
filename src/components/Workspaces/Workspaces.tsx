@@ -8,7 +8,7 @@ import {Window} from './Window';
 const InnerWrapper = styled.div`
     border:2px solid red;
     margin-top:20px;
-    max-width:984px;
+    max-width:960px;
 `;
 
 const Name = styled.p`

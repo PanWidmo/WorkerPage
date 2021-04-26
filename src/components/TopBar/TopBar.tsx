@@ -11,7 +11,6 @@ const Wrapper2 = styled(Wrapper)`
     background: ${Colors.white};
     box-shadow: 1px 2px 10px lightgray;
     justify-content: center;
-    margin-bottom:10px;
 `;
 
 const InnerWrapper = styled.div`
@@ -23,13 +22,13 @@ const InnerWrapper = styled.div`
 `;
 
 const LogoImg = styled.img`
-    margin:14px;
+    margin:4px;
     width: 46px;
 `;
 
 const Menuwrapper = styled.div`
     cursor:pointer;
-    align-items:center;
+    align-items:;
     width:250px;
     justify-content:space-between;
     padding:8px;
@@ -38,7 +37,7 @@ const Menuwrapper = styled.div`
 const LeftSide = styled.div`
     margin:8px;
     span{
-        font-size:20px;
+        font-size:22px;
         margin-right:80px;
     }
     #arrowDown{
@@ -49,7 +48,7 @@ const LeftSide = styled.div`
 const InputWrapper=styled.div`
     display:flex;
     align-items:center;
-    padding:8px;
+    padding:2px;
     width:600px;
     border:1px solid lightgray;
     border-radius:11px;
@@ -61,7 +60,7 @@ const CustomInput = styled.input`
     width:100%;
     padding:4px;
     margin: 0 20px 0 0;
-    font-size:20px;
+    font-size:22px;
     &:outline{
         outline:none;
     }
@@ -77,6 +76,7 @@ const RightIcons = styled.div`
 
 const CustomImg = styled.img`
     margin: 0 16px 0 16px;
+
 `;
 
 
@@ -109,7 +109,7 @@ export const TopBar: FC = ()  => {
                 </InputWrapper>
 
                 <RightIcons>
-                    <CustomImg src="./media/icons/house.png"/>
+                    <CustomImg className="rightIcons" src="./media/icons/house.png"/>
                     <CustomImg src="./media/icons/comments.png"/>
                     <CustomImg src="./media/icons/bell.png"/>
                 </RightIcons>

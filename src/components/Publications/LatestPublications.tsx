@@ -7,7 +7,7 @@ import {Wrapper} from '../../styledHelpers/Components';
 const InnerWrapper = styled.div`
     display:flex;
     align-items:center;
-    margin-top:15px;
+    margin-top:25px;
     margin-bottom:15px;
 
 `;
@@ -21,6 +21,7 @@ const LeftSide = styled.div`
 
 const RightSide = styled.div`
     margin-left:10px;
+    margin-right:30px;
     span{
         font-size:12px;
     }

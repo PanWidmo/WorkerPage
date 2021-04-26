@@ -8,13 +8,14 @@ import {Workspaces} from '../Workspaces/Workspaces';
 
 const Router = styled.div``;
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+    background: #F5F7F9;
+`;
 
 const Content = styled.div`
     max-width:1200px;
-    background: #F5F7F9;
     display:flex;
-    margin:0 auto;
+    margin: 10px auto;
 `;
 
 const RightSide = styled.div`
