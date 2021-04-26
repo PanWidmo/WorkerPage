@@ -10,7 +10,6 @@ const InnerWrapper = styled.div`
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
-
 `;
 
 const LeftSide = styled.div`
@@ -18,6 +17,7 @@ const LeftSide = styled.div`
     height:340px;
     grid-column:1;
     background-image: url("./imgs/city2.png");
+    background-position: center;
     background-size: cover;
     color: #fff;
 

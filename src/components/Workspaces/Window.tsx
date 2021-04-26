@@ -16,6 +16,7 @@ const Box = styled.div`
 
 const CustomImage = styled.img`
     width:200px;
+    height:100%;
 `;
 
 const Icon = styled.img`

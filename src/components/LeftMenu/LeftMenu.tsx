@@ -71,6 +71,7 @@ const PersonDetails=styled.div`
         border-radius:6px;
         margin-top:5px;
         margin-bottom:5px;
+        cursor:pointer;
     }
 
 `;

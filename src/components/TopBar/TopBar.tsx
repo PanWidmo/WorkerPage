@@ -27,6 +27,7 @@ const LogoImg = styled.img`
 `;
 
 const Menuwrapper = styled.div`
+    cursor:pointer;
     align-items:center;
     width:250px;
     justify-content:space-between;
@@ -74,7 +75,7 @@ const RightIcons = styled.div`
 
 const CustomImg = styled.img`
     margin: 0 16px 0 16px;
-
+    cursor:pointer;
 `;
 
 
@@ -103,7 +104,7 @@ export const TopBar: FC = ()  => {
 
                 <InputWrapper>
                     <CustomInput type="text" placeholder="Search"/>
-                    <CustomImg src="./media/icons/search.png" alt=""/>
+                    <CustomImg src="./media/icons/search.png" id="search" alt=""/>
                 </InputWrapper>
 
                 <RightIcons>
