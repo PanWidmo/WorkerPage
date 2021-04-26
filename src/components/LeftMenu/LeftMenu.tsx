@@ -8,7 +8,7 @@ import {LeftNav} from './LeftNav';
 
 const Wrapper3 = styled.div`
     max-width:220px;
-    margin:10px;
+    margin:10px 0 0 0;
 `;
 
 const InnerWrapper = styled.div`
@@ -47,6 +47,8 @@ const PersonInfo=styled.div`
 `;
 
 const PersonDetails=styled.div`
+    margin-top:10px;
+    padding-bottom:10px;
     display:grid;
     grid-template-columns:20% 60% 20%;
     align-items:center;

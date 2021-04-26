@@ -7,7 +7,6 @@ import {LatestPublications} from './LatestPublications';
 
 const InnerWrapper = styled.div`
     max-width:980px;
-    border:2px purple solid;
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
@@ -44,6 +43,17 @@ const RightSide = styled.div`
     margin-top:5px;
     margin-left:20px;
 
+    span#title{
+        font-size:17px;
+    }
+
+    .btn{
+        background:none;
+        border:none;
+        font-size:16px;
+        cursor:pointer;
+    }
+
 `;
 
 export const Publications: FC = () => {
@@ -66,13 +76,13 @@ export const Publications: FC = () => {
                 </div>
             </LeftSide>
             <RightSide>
-                <span>Latest publications</span>
+                <span id="title">Latest publications</span>
 
                 <LatestPublications></LatestPublications>
                 <LatestPublications></LatestPublications>
                 <LatestPublications></LatestPublications>
 
-                <span>See more publications</span>
+                <button type="button" className="btn">See more publications</button>
 
             </RightSide>
         </InnerWrapper>

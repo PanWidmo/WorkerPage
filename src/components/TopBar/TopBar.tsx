@@ -70,7 +70,6 @@ const CustomInput = styled.input`
 
 const RightIcons = styled.div`
     margin-left: auto;
-    margin-right:14px;
 `;
 
 const CustomImg = styled.img`
