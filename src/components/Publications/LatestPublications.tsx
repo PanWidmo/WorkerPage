@@ -5,8 +5,7 @@ import {Colors} from '../../styledHelpers/Colors';
 import {Wrapper} from '../../styledHelpers/Components';
 
 const InnerWrapper = styled.div`
-    display:grid;
-    grid-template-columns:20% 70%;
+    display:flex;
     align-items:center;
     margin-top:15px;
     margin-bottom:15px;
@@ -14,7 +13,6 @@ const InnerWrapper = styled.div`
 `;
 
 const LeftSide = styled.div`
-    grid-column:1;
 
     img{
         width:90px;
@@ -22,8 +20,7 @@ const LeftSide = styled.div`
 `;
 
 const RightSide = styled.div`
-    grid-column:2;
-
+    margin-left:10px;
     span{
         font-size:12px;
     }
@@ -37,7 +34,7 @@ export const LatestPublications: FC = () => {
     return (
             <InnerWrapper>
                 <LeftSide>
-                    <img src="./imgs/write.jpg" />
+                    <img src="./imgs/write1.jpg" />
                 </LeftSide>
                 <RightSide>
                 <h1>

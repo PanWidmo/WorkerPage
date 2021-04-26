@@ -16,7 +16,7 @@ const InnerWrapper = styled.div`
 
 const LeftSide = styled.div`
     width:300px;
-    height:300px;
+    height:340px;
     grid-column:1;
     background-image: url("./imgs/city2.png");
     background-size: cover;

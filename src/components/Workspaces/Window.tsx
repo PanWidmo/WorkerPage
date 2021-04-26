@@ -5,26 +5,33 @@ import {Colors} from '../../styledHelpers/Colors';
 import {Wrapper} from '../../styledHelpers/Components';
 
 const InnerWrapper = styled.div`
-    display:inline;
+
 `;
 
 const Box = styled.div`
-    display:inline;
+    border:2px solid red;
     display:grid;
-    width:200px;
-    margin:20px;
-    img{
-        width:200px;
-    }
-    display:inline;
+    margin:20px 20px 20px 0;
 `;
 
+const CustomImage = styled.img`
+    width:200px;
+`;
 
+const Icon = styled.img`
+    width:100px;
+`;
+
+const Title = styled.p`
+
+`;
 export const Window: FC = () => {
     return (
         <InnerWrapper>
                 <Box>
-                    <img src="./imgs/write2.jpg"/>
+                    <CustomImage src="./imgs/write2.jpg"/>
+                    <Icon src="./imgs/write1.jpg"/>
+                    <Title>Client contract</Title>
                 </Box>
         </InnerWrapper>
     );

@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 
@@ -27,7 +28,7 @@ const PersonInfo=styled.div`
     padding-top:14px;
     padding-bottom:14px;
     width:100px;
-    border-radius: 90px;
+    border-radius: 50%;
     margin:0 auto;
     }
 
