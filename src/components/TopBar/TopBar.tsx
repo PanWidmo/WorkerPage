@@ -1,6 +1,7 @@
 import {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
+import {fontSize} from '../../styledHelpers/FontSizes';
 
 import useDropdown from 'react-dropdown-hook';
 
@@ -9,7 +10,7 @@ import {ExpandedMenu} from './ExpandedMenu';
 
 const Wrapper2 = styled(Wrapper)`
     background: ${Colors.white};
-    box-shadow: 1px 2px 10px lightgray;
+    box-shadow: 1px 2px 10px ${Colors.boxShadowTop};
     justify-content: center;
 `;
 
@@ -37,7 +38,7 @@ const Menuwrapper = styled.div`
 const LeftSide = styled.div`
     margin:8px;
     span{
-        font-size:22px;
+        font-size: ${fontSize[20]};
         margin-right:80px;
     }
     #arrowDown{
@@ -50,7 +51,7 @@ const InputWrapper=styled.div`
     align-items:center;
     padding:2px;
     width:600px;
-    border:1px solid lightgray;
+    border:1px solid ${Colors.lightgray};
     border-radius:11px;
 `;
 
@@ -60,7 +61,8 @@ const CustomInput = styled.input`
     width:100%;
     padding:4px;
     margin: 0 20px 0 0;
-    font-size:22px;
+    font-size: ${fontSize[20]};
+
     &:outline{
         outline:none;
     }
@@ -71,6 +73,12 @@ const CustomInput = styled.input`
 
 const RightIcons = styled.div`
     margin-left: auto;
+
+    .rightIcons{
+        :hover{
+        background: ${Colors.notificationBackground};
+        }
+    }
 `;
 
 const CustomImg = styled.img`
@@ -109,8 +117,8 @@ export const TopBar: FC = ()  => {
 
                 <RightIcons>
                     <CustomImg className="rightIcons" src="./media/icons/house.png"/>
-                    <CustomImg src="./media/icons/comments.png"/>
-                    <CustomImg src="./media/icons/bell.png"/>
+                    <CustomImg className="rightIcons" src="./media/icons/comments.png"/>
+                    <CustomImg className="rightIcons" src="./media/icons/bell.png"/>
                 </RightIcons>
             </InnerWrapper>
         </Wrapper2>

@@ -1,17 +1,18 @@
 import { FC, useState, ChangeEvent } from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
+import {fontSize} from '../../styledHelpers/FontSizes';
 import {Accounts} from '../../data/Accounts';
 
 const Wrapper = styled.div`
     position: absolute;
     background: ${Colors.white};
     padding-top:10px;
-    padding-left:24px;
-    border: 1px solid lightgray;
+    margin-left:24px;
+    box-shadow: 1px 2px 10px ${Colors.lightgrayOriginal};
     width:200px;
     ul{
-        font-size:15px;
+        font-size:${fontSize[16]};
     }
     li{
         margin-top:10px;
@@ -22,14 +23,16 @@ const Wrapper = styled.div`
         margin-right:20px;
     }
     .category{
-            font-size:12px;
+            font-size:${fontSize[14]};
+            color:${Colors.lightgrayOriginal}
 
         }
 `;
 
 const CustomInput = styled.input`
-    border:1px solid lightgray;
+    border:1px solid ${Colors.lightgray};
     padding:4px;
+    width:90%;
     text-align:left;
     &:outline{
         outline:none;
@@ -43,8 +46,8 @@ const Account = styled.div`
     display:grid;
     grid-template-columns:60px 1fr;
     grid-template-rows: 1fr;
-    border-top:1px solid lightgray;
-    border-bottom:1px solid lightgray;
+    border-top:1px solid ${Colors.lightgray};
+    border-bottom:1px solid ${Colors.lightgray};
     align-items: center;
     #portrair{
         width:28px;
@@ -56,13 +59,13 @@ const Account = styled.div`
         grid-column: 2;
         grid-row: 1;
         margin-bottom:30px;
-        color:blue;
     }
     #see{
         grid-column: 2;
         grid-row: 1;
         margin-top:30px;
-        font-size:12px;
+        font-size:${fontSize[12]};
+        color:${Colors.blue};
     }
 
 `;
@@ -70,7 +73,7 @@ const Account = styled.div`
 const Logout = styled.div`
     text-align:center;
     padding:10px;
-    border-top:1px solid lightgray;
+    border-top:1px solid ${Colors.lightgray};
     img{
         padding-right:16px;
     }

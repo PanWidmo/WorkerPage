@@ -9,7 +9,7 @@ import {Accounts} from '../../data/Accounts';
 
 const Wrapper3 = styled.div`
     max-width:220px;
-    margin:10px 0 0 0;
+    margin:10px 40px 0 0;
 `;
 
 const InnerWrapper = styled.div`
@@ -36,12 +36,12 @@ const PersonInfo=styled.div`
     #name{
     margin-top:10px;
     margin-bottom:10px;
-    color:blue;
+    color:${Colors.blue};
     font-weight:bold;
     }
 
     #job{
-    color:grey;
+    color:${Colors.notificationBackground};
     padding-bottom:20px;
     border-bottom:1px solid lightgray;
     }
