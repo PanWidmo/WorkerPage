@@ -42,6 +42,7 @@ const RightSide = styled.div`
     grid-column:2;
     margin-top:5px;
     margin-left:20px;
+    align-items:Center;
 
     span#title{
         font-size:17px;

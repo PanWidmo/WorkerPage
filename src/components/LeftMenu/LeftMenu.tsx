@@ -5,6 +5,7 @@ import {Colors} from '../../styledHelpers/Colors';
 
 import {Wrapper} from '../../styledHelpers/Components';
 import {LeftNav} from './LeftNav';
+import {Accounts} from '../../data/Accounts';
 
 const Wrapper3 = styled.div`
     max-width:220px;
@@ -78,13 +79,13 @@ const PersonDetails=styled.div`
 
 
 
-export const LeftMenu: FC = () => {
+export const LeftMenu: FC = (props) => {
     return (
         <Wrapper3>
             <InnerWrapper>
                 <PersonInfo>
-                    <img id="foto" src="./imgs/portrair1.jpg"/>
-                    <span id="name">Jan Ser</span>
+                    <img id="foto" src={Accounts[0].image}/>
+                    <span id="name">{Accounts[0].name}</span>
                     <span id="job">Job title - Company</span>
                 </PersonInfo>
                 <PersonDetails>

@@ -22,6 +22,8 @@ const LeftSide = styled.div`
 const RightSide = styled.div`
     margin-left:10px;
     margin-right:30px;
+    display:grid;
+    grid-template-rows:30px 20px;
     span{
         font-size:12px;
     }
@@ -29,6 +31,10 @@ const RightSide = styled.div`
     img{
         width:20px;
     }
+`;
+
+const BottomSide = styled.div`
+    align-items:center;
 `;
 
 export const LatestPublications: FC = () => {
@@ -41,9 +47,11 @@ export const LatestPublications: FC = () => {
                 <h1>
                     Lorem ipsum dolor sit amet, consecteur adipisiscing elit... and one more line for the demo
                 </h1>
-                <span>7 jan. 2020</span>
-                <img src="./imgs/portrair1.jpg"/>
-                <span>Jan Ser</span>
+                    <BottomSide>
+                        <span>7 jan. 2020</span>
+                        <img src="./imgs/portrair1.jpg"/>
+                        <span>Jan Ser</span>
+                    </BottomSide>
                 </RightSide>
 
             </InnerWrapper>

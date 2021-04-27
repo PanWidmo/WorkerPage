@@ -1,6 +1,7 @@
 import { FC, useState, ChangeEvent } from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
+import {Accounts} from '../../data/Accounts';
 
 const Wrapper = styled.div`
     position: absolute;
@@ -126,7 +127,7 @@ export const ExpandedMenu: FC = () => {
                 <li className="category">Account</li>
                 <Account>
                     <img id="portrair" src="./imgs/portrair1.jpg"/>
-                    <li id="name">Jan Ser</li>
+                    <li id="name">{Accounts[0].name}</li>
                     <li id="see">See profile</li>
                 </Account>
                 <li><img src="./media/icons/privacy.png" className="icons"/>Privacy</li>
