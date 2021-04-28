@@ -43,7 +43,7 @@ const PersonInfo=styled.div`
     #job{
     color:${Colors.notificationBackground};
     padding-bottom:20px;
-    border-bottom:1px solid lightgray;
+    border-bottom:1px solid ${Colors.lightgray};
     }
 `;
 
@@ -67,7 +67,7 @@ const PersonDetails=styled.div`
     }
     .rightImgs{
         grid-column:3;
-        border:1px solid black;
+        border:1px solid ${Colors.black};
         padding:4px;
         border-radius:6px;
         margin-top:5px;

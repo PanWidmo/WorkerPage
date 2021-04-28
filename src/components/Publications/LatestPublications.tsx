@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
-
+import {fontSize} from '../../styledHelpers/FontSizes';
 import {Wrapper} from '../../styledHelpers/Components';
 
 const InnerWrapper = styled.div`
@@ -25,7 +25,7 @@ const RightSide = styled.div`
     display:grid;
     grid-template-rows:30px 20px;
     span{
-        font-size:12px;
+        font-size:${fontSize[14]};
     }
 
     img{

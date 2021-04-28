@@ -1,7 +1,7 @@
 import {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
-
+import {fontSize} from '../../styledHelpers/FontSizes';
 import {Wrapper} from '../../styledHelpers/Components';
 import {LatestPublications} from './LatestPublications';
 
@@ -19,7 +19,7 @@ const LeftSide = styled.div`
     background-image: url("./imgs/city2.png");
     background-position: center;
     background-size: cover;
-    color: #fff;
+    color: ${Colors.white};
 
     #divBottom{
         font-size:19px;
@@ -27,7 +27,7 @@ const LeftSide = styled.div`
 
         #personInfo{
             margin-top:20px;
-            font-size:16px;
+            font-size:${fontSize[14]};
             img{
                 border-radius:90px;
                 width:20px;
@@ -45,13 +45,13 @@ const RightSide = styled.div`
     align-items:Center;
 
     span#title{
-        font-size:17px;
+        font-size:${fontSize[18]};
     }
 
     .btn{
         background:none;
         border:none;
-        font-size:16px;
+        font-size:${fontSize[18]};
         cursor:pointer;
     }
 
