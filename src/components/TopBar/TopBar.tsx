@@ -10,7 +10,7 @@ import {ExpandedMenu} from './ExpandedMenu';
 
 const Wrapper2 = styled(Wrapper)`
     background: ${Colors.white};
-    box-shadow: 1px 2px 10px ${Colors.boxShadowTop};
+    box-shadow: 1px 2px 10px ${Colors.boxShadow};
     justify-content: center;
 `;
 

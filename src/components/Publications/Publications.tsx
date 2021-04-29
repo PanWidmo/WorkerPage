@@ -45,7 +45,7 @@ const RightSide = styled.div`
     align-items:Center;
 
     span#title{
-        font-size:${fontSize[18]};
+        font-size:${fontSize[24]};
     }
 
     .btn{
