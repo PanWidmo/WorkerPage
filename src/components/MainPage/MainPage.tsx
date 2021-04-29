@@ -5,6 +5,7 @@ import {TopBar} from '../TopBar/TopBar';
 import {LeftMenu} from '../LeftMenu/LeftMenu';
 import {Publications} from '../Publications/Publications';
 import {Workspaces} from '../Workspaces/Workspaces';
+import {ResumeYourWork} from '../ResumeYourWork/ResumeYourWork';
 
 const Router = styled.div``;
 
@@ -21,6 +22,7 @@ const Content = styled.div`
 const RightSide = styled.div`
     margin-top:10px;
 `;
+
 const MainPage: FC = () => {
     return (
         <Router>
@@ -31,6 +33,7 @@ const MainPage: FC = () => {
                         <RightSide>
                             <Publications/>
                             <Workspaces/>
+                            <ResumeYourWork/>
                         </RightSide>
                 </Content>
             </Wrapper>

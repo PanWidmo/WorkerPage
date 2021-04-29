@@ -10,6 +10,7 @@ const InnerWrapper = styled.div`
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
+    box-shadow: 1px 2px 10px ${Colors.boxShadow};
 `;
 
 const LeftSide = styled.div`

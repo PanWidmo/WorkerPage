@@ -52,7 +52,7 @@ const AndUsers = styled.div`
     }
 
 `;
-export const Window: FC = () => {
+export const SingleWorkspaceWindow: FC = () => {
     return (
         <InnerWrapper>
                 <Box>
