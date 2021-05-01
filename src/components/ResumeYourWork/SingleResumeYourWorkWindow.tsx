@@ -26,6 +26,9 @@ const Bottom = styled.div`
     img{
         width:20px;
     }
+    span{
+        margin:0 10px;
+    }
 `;
 
 
@@ -36,7 +39,12 @@ export const SingleResumeYourWorkWindow: FC = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et hendrit orci. Donec vehicula justo ut nulla aliquet, ac tincidunt metus tristique.</p>
             <Bottom>
                 <img src="./media/logo.png"/>
-                Subsid. corp.
+                <span>Subsid. corp. </span>
+                &#9679;
+                <img src="./imgs/write.png"/>
+                <span>Corporate</span>
+                &#9679;
+                Updated 3 days ago by John Doe
 
             </Bottom>
         </InnerWrapper>
