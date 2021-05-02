@@ -17,6 +17,7 @@ import {ResumeYourWork} from '../ResumeYourWork/ResumeYourWork';
 import {Entities} from '../Entities/Entities';
 import {Profile} from '../Profile/Profile';
 import {WorkspacesMain} from '../Workspaces/WorkspacesMain';
+import {Mock} from '../Mock/Mock';
 
 const Wrapper = styled.section`
     background: #F5F7F9;
@@ -49,6 +50,9 @@ const MainPage: FC = () => {
                                 </Route>
                                 <Route path="/workspaces">
                                     <WorkspacesMain/>
+                                </Route>
+                                <Route path="/mock">
+                                    <Mock/>
                                 </Route>
                                 <Route path="/">
                                     <Publications/>

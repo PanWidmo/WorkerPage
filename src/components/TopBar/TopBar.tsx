@@ -121,8 +121,8 @@ export const TopBar: FC = ()  => {
 
                 <RightIcons>
                     <Link to="/"> <CustomImg className="rightIcons" src="./media/icons/house.png"/> </Link>
-                    <CustomImg className="rightIcons" src="./media/icons/comments.png"/>
-                    <CustomImg className="rightIcons" src="./media/icons/bell.png"/>
+                    <Link to="/mock"> <CustomImg className="rightIcons" src="./media/icons/comments.png"/> </Link>
+                    <Link to="/mock"><CustomImg className="rightIcons" src="./media/icons/bell.png"/> </Link>
                 </RightIcons>
             </InnerWrapper>
         </Wrapper2>
