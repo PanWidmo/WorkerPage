@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {Accounts} from '../../data/Accounts';
+import {Link} from "react-router-dom";
 
 const Wrapper = styled.div`
     position: absolute;
@@ -11,6 +12,10 @@ const Wrapper = styled.div`
     margin-left:24px;
     box-shadow: 1px 2px 10px ${Colors.lightgrayOriginal};
     width:200px;
+    a{
+        text-decoration:none;
+        color:${Colors.black};
+    }
     ul{
         font-size:${fontSize[16]};
     }
@@ -95,7 +100,9 @@ export const ExpandedMenu: FC = () => {
 
                 <li className="category">Platform</li>
                 {'Home'.toLowerCase().includes(inputText.toLowerCase()) &&
+                <Link to="/">
                 <li><img src="./media/icons/house2.png" className="icons"/>Home</li>
+                </Link>
                 }
                 {'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <li><img src="./media/icons/publications.png" className="icons"/>Publications</li>
@@ -104,12 +111,15 @@ export const ExpandedMenu: FC = () => {
                 <li><img src="./media/icons/people.png" className="icons"/>People</li>
                 }
                 {'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
+                <Link to="/entities">
                 <li><img src="./media/icons/entities2.png" className="icons"/>Entities</li>
+                </Link>
                 }
                 {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <li><img src="./media/icons/administration.png" className="icons"/>Administration</li>
                 }
 
+                <Link to="/workspaces">
                 <li className="category">Workspaces</li>
                 {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <li><img src="./media/icons/ecosystem.png" className="icons"/>Client contract</li>
@@ -126,12 +136,14 @@ export const ExpandedMenu: FC = () => {
                 {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <li><img src="./media/icons/ecosystem.png" className="icons"/>Real estate contracts</li>
                 }
+                </Link>
 
                 <li className="category">Account</li>
                 <Account>
                     <img id="portrair" src="./imgs/portrair1.jpg"/>
                     <li id="name">{Accounts[0].name}</li>
-                    <li id="see">See profile</li>
+                    <li id="see"><Link to="/profile">See profile</Link></li>
+
                 </Account>
                 <li><img src="./media/icons/privacy.png" className="icons"/>Privacy</li>
                 <li><img src="./media/icons/settings.png" className="icons"/>Settings</li>

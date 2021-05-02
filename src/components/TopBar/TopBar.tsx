@@ -7,6 +7,7 @@ import useDropdown from 'react-dropdown-hook';
 
 import {Wrapper} from '../../styledHelpers/Components';
 import {ExpandedMenu} from './ExpandedMenu';
+import {Link} from "react-router-dom";
 
 const Wrapper2 = styled(Wrapper)`
     background: ${Colors.white};
@@ -73,6 +74,9 @@ const CustomInput = styled.input`
 
 const RightIcons = styled.div`
     margin-left: auto;
+    a{
+        text-decoration:none;
+    }
 
     .rightIcons{
         :hover{
@@ -116,7 +120,7 @@ export const TopBar: FC = ()  => {
                 </InputWrapper>
 
                 <RightIcons>
-                    <CustomImg className="rightIcons" src="./media/icons/house.png"/>
+                    <Link to="/"> <CustomImg className="rightIcons" src="./media/icons/house.png"/> </Link>
                     <CustomImg className="rightIcons" src="./media/icons/comments.png"/>
                     <CustomImg className="rightIcons" src="./media/icons/bell.png"/>
                 </RightIcons>

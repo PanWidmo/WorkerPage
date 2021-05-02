@@ -23,6 +23,7 @@ const InnerWrapper = styled.div`
 
 const Bottom = styled.div`
     margin:10px 0px;
+    padding-bottom:10px;
     img{
         width:20px;
     }

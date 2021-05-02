@@ -3,12 +3,17 @@ import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 
 import {Wrapper} from '../../styledHelpers/Components';
-
+import {Link} from "react-router-dom";
 const InnerWrapper = styled.div`
     display:grid;
     grid-template-columns:26% 70%;
     align-items:center;
     margin-top:10px;
+
+    a{
+        text-decoration:none;
+        color:${Colors.black};
+    }
 
     .imgs{
         grid-column:1;
@@ -35,7 +40,7 @@ export const LeftNav: FC = () => {
                 <span className="titles">Ecosystem</span>
 
                 <img className="imgs" src="./media/icons/entities.png"/>
-                <span className="titles">Entities</span>
+                <span className="titles"><Link to="/entities">Entities</Link></span>
             </InnerWrapper>
     );
 };

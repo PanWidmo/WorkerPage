@@ -25,6 +25,10 @@ const PersonInfo=styled.div`
     grid-template-columns: 1fr;
     align-items:center;
 
+    a{
+        text-decoration:none;
+    }
+
     #foto{
     padding-top:14px;
     padding-bottom:14px;
@@ -85,7 +89,7 @@ export const LeftMenu: FC = (props) => {
             <InnerWrapper>
                 <PersonInfo>
                     <img id="foto" src={Accounts[0].image}/>
-                    <span id="name">{Accounts[0].name}</span>
+                    <span id="name"><Link to="/profile">{Accounts[0].name}</Link></span>
                     <span id="job">Job title - Company</span>
                 </PersonInfo>
                 <PersonDetails>

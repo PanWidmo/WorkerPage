@@ -1,13 +1,22 @@
 import React,{FC} from 'react';
 import styled from 'styled-components';
 
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+}   from "react-router-dom";
+
 import {TopBar} from '../TopBar/TopBar';
 import {LeftMenu} from '../LeftMenu/LeftMenu';
 import {Publications} from '../Publications/Publications';
 import {Workspaces} from '../Workspaces/Workspaces';
 import {ResumeYourWork} from '../ResumeYourWork/ResumeYourWork';
 
-const Router = styled.div``;
+import {Entities} from '../Entities/Entities';
+import {Profile} from '../Profile/Profile';
+import {WorkspacesMain} from '../Workspaces/WorkspacesMain';
 
 const Wrapper = styled.section`
     background: #F5F7F9;
@@ -31,9 +40,22 @@ const MainPage: FC = () => {
                 <Content>
                     <LeftMenu/>
                         <RightSide>
-                            <Publications/>
-                            <Workspaces/>
-                            <ResumeYourWork/>
+                            <Switch>
+                                <Route path="/entities">
+                                    <Entities/>
+                                </Route>
+                                <Route path="/profile">
+                                    <Profile/>
+                                </Route>
+                                <Route path="/workspaces">
+                                    <WorkspacesMain/>
+                                </Route>
+                                <Route path="/">
+                                    <Publications/>
+                                    <Workspaces/>
+                                    <ResumeYourWork/>
+                                </Route>
+                            </Switch>
                         </RightSide>
                 </Content>
             </Wrapper>
