@@ -6,7 +6,7 @@ import {Wrapper} from '../../styledHelpers/Components';
 import {LatestPublications} from './LatestPublications';
 
 const InnerWrapper = styled.div`
-    max-width:980px;
+    max-width:940px;
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
@@ -23,17 +23,25 @@ const LeftSide = styled.div`
     color: ${Colors.white};
 
     #divBottom{
-        font-size:19px;
-        margin:210px 20px 0px 20px;
+        font-size:${fontSize[18]};
+        margin:220px 20px 0px 20px;
 
         #personInfo{
-            margin-top:20px;
+            margin-top:15px;
             font-size:${fontSize[14]};
-            img{
-                border-radius:90px;
-                width:20px;
-                margin-left:10px;
-                margin-right:10px;
+            display:grid;
+            grid-template-columns:80px 1fr 140px;
+            align-items:center;
+            .left{
+                grid-column:1;
+            }
+            .middle{
+                grid-column:2;
+                border-radius:50%;
+                width:30px;
+            }
+            .right{
+                grid-column:3;
             }
         }
     }
@@ -54,6 +62,7 @@ const RightSide = styled.div`
         border:none;
         font-size:${fontSize[18]};
         cursor:pointer;
+        color:${Colors.purple};
     }
 
 `;
@@ -63,16 +72,16 @@ export const Publications: FC = () => {
         <InnerWrapper>
             <LeftSide>
                 <div id="divBottom">
-                    <span>
+                    <p>
                     Lorem ipsum dolor sit amet,
                     consecteur adipisiscing elit... and
                     one more line for the demo
-                    </span>
+                    </p>
 
                     <div id="personInfo">
-                        <span>7 jan. 2020</span>
-                        <img src="./imgs/portrair1.jpg"/>
-                        <span>Jan Ser</span>
+                        <span className="left">7 jan. 2020</span>
+                        <img className="middle" src="./imgs/portrair1.jpg"/>
+                        <span className="right">Jan Ser</span>
                     </div>
 
                 </div>

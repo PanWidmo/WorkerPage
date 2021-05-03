@@ -70,7 +70,7 @@ const Account = styled.div`
         grid-row: 1;
         margin-top:30px;
         font-size:${fontSize[12]};
-        color:${Colors.blue};
+        color:${Colors.purple};
     }
 
 `;

@@ -9,7 +9,7 @@ import {Accounts} from '../../data/Accounts';
 
 const Wrapper3 = styled.div`
     max-width:220px;
-    margin:10px 40px 0 0;
+    margin:0 40px 0 0;
 `;
 
 const InnerWrapper = styled.div`
@@ -27,6 +27,7 @@ const PersonInfo=styled.div`
 
     a{
         text-decoration:none;
+        color:${Colors.purple};
     }
 
     #foto{
@@ -40,7 +41,7 @@ const PersonInfo=styled.div`
     #name{
     margin-top:10px;
     margin-bottom:10px;
-    color:${Colors.blue};
+    color:${Colors.purple};
     font-weight:bold;
     }
 

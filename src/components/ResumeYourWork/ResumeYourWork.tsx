@@ -6,7 +6,7 @@ import {Wrapper} from '../../styledHelpers/Components';
 import {SingleResumeYourWorkWindow} from './SingleResumeYourWorkWindow';
 
 const InnerWrapper = styled.div`
-    max-width:980px;
+    max-width:940px;
 `;
 
 const Name = styled.div`

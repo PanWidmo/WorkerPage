@@ -7,11 +7,12 @@ import {Wrapper} from '../../styledHelpers/Components';
 const InnerWrapper = styled.div`
     background: ${Colors.white};
     margin-top:30px;
+    padding-top:20px;
     padding-left:20px;
     padding-right:20px;
     h1{
         font-size:${fontSize[20]};
-        color:${Colors.blue};
+        color:${Colors.purple};
         margin-bottom:10px;
 
     }
@@ -23,7 +24,7 @@ const InnerWrapper = styled.div`
 
 const Bottom = styled.div`
     margin:10px 0px;
-    padding-bottom:10px;
+    padding-bottom:20px;
     img{
         width:20px;
     }

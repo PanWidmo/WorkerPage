@@ -13,6 +13,7 @@ const Wrapper2 = styled(Wrapper)`
     background: ${Colors.white};
     box-shadow: 1px 2px 10px ${Colors.boxShadow};
     justify-content: center;
+    margin-bottom:20px;
 `;
 
 const InnerWrapper = styled.div`

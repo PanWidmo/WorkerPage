@@ -22,19 +22,26 @@ const LeftSide = styled.div`
 const RightSide = styled.div`
     margin-left:10px;
     margin-right:30px;
-    display:grid;
-    grid-template-rows:30px 20px;
     span{
         font-size:${fontSize[14]};
-    }
-
-    img{
-        width:20px;
     }
 `;
 
 const BottomSide = styled.div`
+    display:grid;
+    grid-template-columns:80px 40px 80px;
     align-items:center;
+    .left {
+
+    }
+    .middle {
+    width:30px;
+    border-radius:50%;
+    }
+    .right{
+
+    }
+
 `;
 
 export const LatestPublications: FC = () => {
@@ -48,9 +55,9 @@ export const LatestPublications: FC = () => {
                     Lorem ipsum dolor sit amet, consecteur adipisiscing elit... and one more line for the demo
                 </h1>
                     <BottomSide>
-                        <span>7 jan. 2020</span>
-                        <img src="./imgs/portrair1.jpg"/>
-                        <span>Jan Ser</span>
+                        <span className="left">7 jan. 2020</span>
+                        <img className="middle" src="./imgs/portrair1.jpg"/>
+                        <span className="right">Jan Ser</span>
                     </BottomSide>
                 </RightSide>
 

@@ -21,16 +21,16 @@ import {Mock} from '../Mock/Mock';
 
 const Wrapper = styled.section`
     background: #F5F7F9;
+    font-family: Arial, Helvetica, sans-serif;
 `;
 
 const Content = styled.div`
     max-width:1200px;
     display:flex;
-    margin: 10px auto;
+    margin: 0 auto;
 `;
 
 const RightSide = styled.div`
-    margin-top:10px;
 `;
 
 const MainPage: FC = () => {
