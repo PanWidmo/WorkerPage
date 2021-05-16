@@ -42,19 +42,19 @@ const MainPage: FC = () => {
                     <LeftMenu/>
                         <RightSide>
                             <Switch>
-                                <Route path="/entities">
+                                <Route path="/entities" exact>
                                     <Entities/>
                                 </Route>
-                                <Route path="/profile">
+                                <Route path="/profile" exact>
                                     <Profile/>
                                 </Route>
-                                <Route path="/workspaces">
+                                <Route path="/workspaces" exact>
                                     <WorkspacesMain/>
                                 </Route>
-                                <Route path="/mock">
+                                <Route path="/mock" exact>
                                     <Mock/>
                                 </Route>
-                                <Route path="/">
+                                <Route path="/" exact>
                                     <Publications/>
                                     <Workspaces/>
                                     <ResumeYourWork/>
