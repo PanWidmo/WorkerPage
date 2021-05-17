@@ -3,9 +3,8 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 
-import {Wrapper} from '../../styledHelpers/Components';
+//import {Wrapper} from '../../styledHelpers/Components';
 import {LeftNav} from './LeftNav';
-import {Accounts} from '../../data/Accounts';
 
 const Wrapper3 = styled.div`
     max-width:220px;
@@ -84,23 +83,23 @@ const PersonDetails=styled.div`
 
 
 
-export const LeftMenu: FC = (props) => {
+export const LeftMenu: FC = () => {
     return (
         <Wrapper3>
             <InnerWrapper>
                 <PersonInfo>
-                    <img id="foto" src={Accounts[0].image}/>
-                    <span id="name"><Link to="/profile">{Accounts[0].name}</Link></span>
+                    <img id="foto" alt="User portrair"/>
+                    <span id="name"><Link to="/profile"></Link></span>
                     <span id="job">Job title - Company</span>
                 </PersonInfo>
                 <PersonDetails>
-                    <img className="leftImgs" src="./icons/network.png"/>
+                    <img className="leftImgs" alt="Network icon"/>
                     <span className="middle">Your network</span>
-                    <img className="rightImgs" src="./icons/user-plus.png"/>
+                    <img className="rightImgs" src="./icons/user-plus.png" alt="User+ icon"/>
 
-                    <img className="leftImgs" src="./media/icons/publications.png"/>
+                    <img className="leftImgs" src="./media/icons/publications.png" alt="Publications icon"/>
                     <span className="middle">Your Publications</span>
-                    <img className="rightImgs" src="./media/icons/plus.png" />
+                    <img className="rightImgs" src="./media/icons/plus.png" alt="Plus icon"/>
                 </PersonDetails>
             </InnerWrapper>
             <LeftNav>

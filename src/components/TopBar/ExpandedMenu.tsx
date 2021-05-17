@@ -2,7 +2,6 @@ import { FC, useState, ChangeEvent } from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-import {Accounts} from '../../data/Accounts';
 import {Link} from "react-router-dom";
 
 const Wrapper = styled.div`
@@ -101,57 +100,57 @@ export const ExpandedMenu: FC = () => {
                 <li className="category">Platform</li>
                 {'Home'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <Link to="/">
-                <li><img src="./media/icons/house2.png" className="icons"/>Home</li>
+                <li><img src="./media/icons/house2.png" className="icons" alt="fotosy"/>Home</li>
                 </Link>
                 }
                 {'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/publications.png" className="icons"/>Publications</li>
+                <li><img src="./media/icons/publications.png" className="icons" alt="fotosy"/>Publications</li>
                 }
                 {'People'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/people.png" className="icons"/>People</li>
+                <li><img src="./media/icons/people.png" className="icons" alt="fotosy"/>People</li>
                 }
                 {'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
                 <Link to="/entities">
-                <li><img src="./media/icons/entities2.png" className="icons"/>Entities</li>
+                <li><img src="./media/icons/entities2.png" className="icons" alt="fotosy"/>Entities</li>
                 </Link>
                 }
                 {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/administration.png" className="icons"/>Administration</li>
+                <li><img src="./media/icons/administration.png" className="icons" alt="fotosy"/>Administration</li>
                 }
 
                 <Link to="/workspaces">
                 <li className="category">Workspaces</li>
                 {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/ecosystem.png" className="icons"/>Client contract</li>
+                <li><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Client contract</li>
                 }
                 {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/ecosystem.png" className="icons"/>Supplier contract</li>
+                <li><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Supplier contract</li>
                 }
                 {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/entities.png" className="icons"/>Corporate</li>
+                <li><img src="./media/icons/entities.png" className="icons" alt="fotosy"/>Corporate</li>
                 }
                 {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/ecosystem.png" className="icons"/>Group Norms</li>
+                <li><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Group Norms</li>
                 }
                 {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/ecosystem.png" className="icons"/>Real estate contracts</li>
+                <li><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Real estate contracts</li>
                 }
                 </Link>
 
                 <li className="category">Account</li>
                 <Account>
-                    <img id="portrair" src="./imgs/portrair1.jpg"/>
-                    <li id="name">{Accounts[0].name}</li>
+                    <img id="portrair" src="./imgs/portrair1.jpg" alt="fotosy"/>
+                    <li id="name"></li>
                     <li id="see"><Link to="/profile">See profile</Link></li>
 
                 </Account>
-                <li><img src="./media/icons/privacy.png" className="icons"/>Privacy</li>
-                <li><img src="./media/icons/settings.png" className="icons"/>Settings</li>
+                <li><img src="./media/icons/privacy.png" className="icons" alt="fotosy"/>Privacy</li>
+                <li><img src="./media/icons/settings.png" className="icons" alt="fotosy"/>Settings</li>
 
             </ul>
 
             <Logout>
-                <img src="./media/icons/logout.png"/>
+                <img src="./media/icons/logout.png" alt="fotosy"/>
                 <span>Logout</span>
             </Logout>
         </Wrapper>
