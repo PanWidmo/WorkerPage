@@ -1,16 +1,26 @@
-import { FC, useState, ChangeEvent } from 'react';
+import { FC, useState, ChangeEvent, useEffect } from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {Link} from "react-router-dom";
 
+//#region import data from api
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { getUsers, getPhotos } from '../../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
+//#endregion
+
+//#region styles
 const Wrapper = styled.div`
     position: absolute;
     background: ${Colors.white};
     padding-top:10px;
-    margin-left:24px;
+    padding-left:24px;
+    padding-right:14px;
     box-shadow: 1px 2px 10px ${Colors.lightgrayOriginal};
-    width:200px;
+    width:218px;
+    display:grid;
     a{
         text-decoration:none;
         color:${Colors.black};
@@ -19,17 +29,21 @@ const Wrapper = styled.div`
         font-size:${fontSize[16]};
     }
     li{
-        margin-top:10px;
+        margin-top:15px;
         margin-bottom:10px;
-
+        display: grid;
+        grid-template-columns:20% 1fr;
+        align-items: center;
     }
     .icons{
+        width:20px;
         margin-right:20px;
+        grid-column:1;
     }
     .category{
-            font-size:${fontSize[14]};
-            color:${Colors.lightgrayOriginal}
-
+        font-size:${fontSize[14]};
+        color:${Colors.lightgrayOriginal};
+        font-weight:bold;
         }
 `;
 
@@ -82,8 +96,22 @@ const Logout = styled.div`
         padding-right:16px;
     }
 `;
+//#endregion
 
 export const ExpandedMenu: FC = () => {
+
+    const { usersList, usersPhoto } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users;
+    }))
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch<GetUsers>(getUsers());
+        dispatch<GetPhotos>(getPhotos());
+    }, [dispatch]);
+
+    //#region search function
 
     const [inputText, setInputText] = useState<string>('');
 
@@ -91,6 +119,7 @@ export const ExpandedMenu: FC = () => {
         const text= e.target.value;
         setInputText(text);
     }
+    //#endregion
 
     return (
         <Wrapper>

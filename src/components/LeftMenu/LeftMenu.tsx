@@ -84,6 +84,7 @@ const PersonDetails=styled.div`
         margin-bottom:5px;
         font-size: ${fontSize[16]};
         cursor:pointer;
+        font-weight: bold;
     }
     .rightImgs{
         grid-column:3;
