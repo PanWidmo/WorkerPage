@@ -8,11 +8,13 @@ import {LeftNav} from './LeftNav';
 
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
-import { getUsers } from '../../actions/userActions';
+import { getUsers, getPhotos } from '../../actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 type GetUsers = ReturnType<typeof getUsers>
+type GetPhotos = ReturnType<typeof getPhotos>
 
+//#region styles
 const Wrapper3 = styled.div`
     max-width:220px;
     margin:0 40px 0 0;
@@ -87,12 +89,11 @@ const PersonDetails=styled.div`
     }
 
 `;
-
-
+//#endregion
 
 export const LeftMenu: FC = () => {
 
-    const { usersList } = useSelector<IState, IUsersReducer>(state => ({
+    const { usersList, usersPhoto } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }))
 
@@ -100,15 +101,16 @@ export const LeftMenu: FC = () => {
 
     useEffect(() => {
         dispatch<GetUsers>(getUsers());
+        dispatch<GetPhotos>(getPhotos());
     }, [dispatch]);
 
     return (
         <Wrapper3>
             <InnerWrapper>
                 <PersonInfo>
-                    <img id="foto" alt="User portrair"/>
+                    <img id="foto" src={usersPhoto[0]?.url} alt="User portrair"/>
                     <span id="name"><Link to="/profile">{JSON.stringify(usersList[0]?.name)?.slice(1,-1)}</Link></span>
-                    <span id="job">Job title - Company</span>
+                    <span id="job">{JSON.stringify(usersList[0]?.company.name)?.slice(1,-1)}</span>
                 </PersonInfo>
                 <PersonDetails>
                     <img className="leftImgs" alt="Network icon"/>
