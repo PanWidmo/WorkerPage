@@ -1,10 +1,17 @@
-import {FC} from 'react';
+import {FC,useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 
 //import {Wrapper} from '../../styledHelpers/Components';
 import {LeftNav} from './LeftNav';
+
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { getUsers } from '../../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
+
+type GetUsers = ReturnType<typeof getUsers>
 
 const Wrapper3 = styled.div`
     max-width:220px;
@@ -84,12 +91,23 @@ const PersonDetails=styled.div`
 
 
 export const LeftMenu: FC = () => {
+
+    const { usersList } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users
+    }))
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch<GetUsers>(getUsers());
+    }, [dispatch]);
+
     return (
         <Wrapper3>
             <InnerWrapper>
                 <PersonInfo>
                     <img id="foto" alt="User portrair"/>
-                    <span id="name"><Link to="/profile"></Link></span>
+                    <span id="name"><Link to="/profile">{JSON.stringify(usersList[0]?.name)?.slice(1,-1)}</Link></span>
                     <span id="job">Job title - Company</span>
                 </PersonInfo>
                 <PersonDetails>
