@@ -34,13 +34,12 @@ const Menuwrapper = styled.div`
     align-items:center;
     width:250px;
     justify-content:space-between;
-    padding:8px;
+    margin:8px;
 `;
 
 const LeftSide = styled.div`
-    margin:8px;
     span{
-        font-size: ${fontSize[20]};
+        font-size: ${fontSize[16]};
         margin-right:80px;
     }
     #arrowDown{
@@ -63,7 +62,7 @@ const CustomInput = styled.input`
     width:100%;
     padding:4px;
     margin: 0 20px 0 0;
-    font-size: ${fontSize[20]};
+    font-size: ${fontSize[16]};
 
     &:outline{
         outline:none;

@@ -9,6 +9,9 @@ import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
 import { getUsers, getPhotos } from '../../actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
+
+type GetUsers = ReturnType<typeof getUsers>
+type GetPhotos = ReturnType<typeof getPhotos>
 //#endregion
 
 //#region styles
@@ -16,10 +19,9 @@ const Wrapper = styled.div`
     position: absolute;
     background: ${Colors.white};
     padding-top:10px;
-    padding-left:24px;
-    padding-right:14px;
-    box-shadow: 1px 2px 10px ${Colors.lightgrayOriginal};
-    width:218px;
+    margin-top:5px;
+    box-shadow: 1px 2px 10px ${Colors.boxShadow};
+    width:250px;
     display:grid;
     a{
         text-decoration:none;
@@ -27,13 +29,22 @@ const Wrapper = styled.div`
     }
     ul{
         font-size:${fontSize[16]};
+        #scroll{
+            overflow-y:scroll;
+            border-bottom:1px solid ${Colors.lightgray};
+        }
     }
     li{
-        margin-top:15px;
+        margin-left:18px;
         margin-bottom:10px;
+        margin-top:5px;
         display: grid;
         grid-template-columns:20% 1fr;
         align-items: center;
+        font-size: ${fontSize[16]};
+    }
+    .singleRow {
+        margin-top:15px;
     }
     .icons{
         width:20px;
@@ -49,8 +60,10 @@ const Wrapper = styled.div`
 
 const CustomInput = styled.input`
     border:1px solid ${Colors.lightgray};
-    padding:4px;
-    width:90%;
+    padding:6px;
+    margin-left:14px;
+    margin-bottom:4px;
+    width:86%;
     text-align:left;
     &:outline{
         outline:none;
@@ -62,28 +75,33 @@ const CustomInput = styled.input`
 
 const Account = styled.div`
     display:grid;
-    grid-template-columns:60px 1fr;
+    grid-template-columns:20% 1fr;
     grid-template-rows: 1fr;
-    border-top:1px solid ${Colors.lightgray};
-    border-bottom:1px solid ${Colors.lightgray};
     align-items: center;
+    a{
+        color: ${Colors.purple};
+        font-weight:bold;
+    }
     #portrair{
-        width:28px;
+        width:20px;
         border-radius:90px;
         grid-column: 1;
         grid-row: 1;
+        margin-left:18px;
     }
     #name{
         grid-column: 2;
         grid-row: 1;
         margin-bottom:30px;
+        font-size: ${fontSize[12]};
+        white-space: nowrap;
     }
     #see{
         grid-column: 2;
         grid-row: 1;
         margin-top:30px;
         font-size:${fontSize[12]};
-        color:${Colors.purple};
+        white-space: nowrap;
     }
 
 `;
@@ -92,6 +110,7 @@ const Logout = styled.div`
     text-align:center;
     padding:10px;
     border-top:1px solid ${Colors.lightgray};
+    font-size: ${fontSize[16]};
     img{
         padding-right:16px;
     }
@@ -101,7 +120,7 @@ const Logout = styled.div`
 export const ExpandedMenu: FC = () => {
 
     const { usersList, usersPhoto } = useSelector<IState, IUsersReducer>(state => ({
-        ...state.users;
+        ...state.users
     }))
 
     const dispatch = useDispatch();
@@ -126,56 +145,57 @@ export const ExpandedMenu: FC = () => {
             <ul>
                 <CustomInput type="text" value={inputText} onChange={inputHandler} placeholder="Filter..."/>
 
-                <li className="category">Platform</li>
-                {'Home'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <Link to="/">
-                <li><img src="./media/icons/house2.png" className="icons" alt="fotosy"/>Home</li>
-                </Link>
-                }
-                {'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/publications.png" className="icons" alt="fotosy"/>Publications</li>
-                }
-                {'People'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/people.png" className="icons" alt="fotosy"/>People</li>
-                }
-                {'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <Link to="/entities">
-                <li><img src="./media/icons/entities2.png" className="icons" alt="fotosy"/>Entities</li>
-                </Link>
-                }
-                {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/administration.png" className="icons" alt="fotosy"/>Administration</li>
-                }
+                <ul id="scroll">
+                    <li className="category">Platform</li>
+                    {'Home'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/">
+                    <li className="singleRow"><img src="./media/icons/house2.png" className="icons" alt="fotosy"/>Home</li>
+                    </Link>
+                    }
+                    {'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <li className="singleRow"><img src="./media/icons/publications.png" className="icons" alt="fotosy"/>Publications</li>
+                    }
+                    {'People'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <li className="singleRow"><img src="./media/icons/people.png" className="icons" alt="fotosy"/>People</li>
+                    }
+                    {'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/entities">
+                    <li className="singleRow"><img src="./media/icons/entities2.png" className="icons" alt="fotosy"/>Entities</li>
+                    </Link>
+                    }
+                    {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <li className="singleRow"><img src="./media/icons/administration.png" className="icons" alt="fotosy"/>Administration</li>
+                    }
 
-                <Link to="/workspaces">
-                <li className="category">Workspaces</li>
-                {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Client contract</li>
-                }
-                {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Supplier contract</li>
-                }
-                {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/entities.png" className="icons" alt="fotosy"/>Corporate</li>
-                }
-                {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Group Norms</li>
-                }
-                {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
-                <li><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Real estate contracts</li>
-                }
-                </Link>
+                    <Link to="/workspaces">
+                    <li className="category">Workspaces</li>
+                    {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Client contract</li>
+                    }
+                    {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Supplier contract</li>
+                    }
+                    {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <li className="singleRow"><img src="./media/icons/entities.png" className="icons" alt="fotosy"/>Corporate</li>
+                    }
+                    {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Group Norms</li>
+                    }
+                    {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Real estate contracts</li>
+                    }
+                    </Link>
+                    </ul>
 
-                <li className="category">Account</li>
-                <Account>
-                    <img id="portrair" src="./imgs/portrair1.jpg" alt="fotosy"/>
-                    <li id="name"></li>
-                    <li id="see"><Link to="/profile">See profile</Link></li>
+                    <li className="category">Account</li>
+                    <Account>
+                        <img id="portrair" src={usersPhoto[0]?.url} alt="fotosy"/>
+                        <li id="name">{JSON.stringify(usersList[0]?.name)?.slice(1,-1)}</li>
+                        <li id="see" ><Link to="/profile">See profile</Link></li>
 
-                </Account>
-                <li><img src="./media/icons/privacy.png" className="icons" alt="fotosy"/>Privacy</li>
-                <li><img src="./media/icons/settings.png" className="icons" alt="fotosy"/>Settings</li>
-
+                    </Account>
+                    <li><img src="./media/icons/privacy.png" className="icons" alt="fotosy"/>Privacy</li>
+                    <li><img src="./media/icons/settings.png" className="icons" alt="fotosy"/>Settings</li>
             </ul>
 
             <Logout>
