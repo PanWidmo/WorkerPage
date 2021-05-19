@@ -1,9 +1,10 @@
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 
 import {LatestPublications} from './LatestPublications';
+import { Link } from 'react-router-dom';
 
 //#region import data from api
 import { IState } from '../../reducers';
@@ -38,22 +39,30 @@ const LeftSide = styled.div`
         font-size:${fontSize[18]};
         margin:220px 20px 0px 20px;
 
+        p{
+            ::first-letter {
+                text-transform: uppercase;
+            }
+            line-height: 22px;
+        }
         #personInfo{
-            margin-top:15px;
+            margin-top:10px;
             font-size:${fontSize[14]};
             display:grid;
-            grid-template-columns:80px 1fr 140px;
+            grid-template-columns:80px 1fr 150px;
             align-items:center;
             .left{
                 grid-column:1;
+                white-space: nowrap;
             }
             .middle{
                 grid-column:2;
                 border-radius:50%;
-                width:30px;
+                width:20px;
             }
             .right{
                 grid-column:3;
+                white-space: nowrap;
             }
         }
     }
@@ -81,20 +90,29 @@ const RightSide = styled.div`
 //#endregion
 
 export const Publications: FC = () => {
+
+    const { usersList, usersPhoto, usersPost } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users
+    }))
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch<GetUsers>(getUsers());
+        dispatch<GetPhotos>(getPhotos());
+        dispatch<GetPosts>(getPosts());
+    }, [dispatch]);
+
     return (
         <InnerWrapper>
             <LeftSide>
                 <div id="divBottom">
-                    <p>
-                    Lorem ipsum dolor sit amet,
-                    consecteur adipisiscing elit... and
-                    one more line for the demo
-                    </p>
+                    <p>{usersPost[0]?.title}</p>
 
                     <div id="personInfo">
                         <span className="left">7 jan. 2020</span>
-                        <img className="middle" src="./imgs/portrair1.jpg"/>
-                        <span className="right">Jan Ser</span>
+                        <img className="middle" src={usersPhoto[0]?.url} alt="User portrair"/>
+                        <span className="right">{usersList[0]?.name}</span>
                     </div>
 
                 </div>
@@ -106,7 +124,7 @@ export const Publications: FC = () => {
                 <LatestPublications></LatestPublications>
                 <LatestPublications></LatestPublications>
 
-                <button type="button" className="btn">See more publications</button>
+                <Link to="/mock"><button type="button" className="btn">See more publications</button></Link>
 
             </RightSide>
         </InnerWrapper>
