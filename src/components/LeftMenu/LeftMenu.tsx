@@ -120,8 +120,8 @@ export const LeftMenu: FC = () => {
             <InnerWrapper>
                 <PersonInfo>
                     <img id="foto" src={usersPhoto[0]?.url} alt="User portrair"/>
-                    <span id="name"><Link to="/profile">{JSON.stringify(usersList[0]?.name)?.slice(1,-1)}</Link></span>
-                    <span id="job">{JSON.stringify(usersList[0]?.company.name)?.slice(1,-1)}</span>
+                    <span id="name"><Link to="/profile">{usersList[0]?.name}</Link></span>
+                    <span id="job">{usersList[0]?.company.name}</span>
                 </PersonInfo>
                 <PersonDetails>
                     <img className="leftImgs" src="./icons/people.png" alt="Network icon"/>

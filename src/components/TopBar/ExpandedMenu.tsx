@@ -190,7 +190,7 @@ export const ExpandedMenu: FC = () => {
                     <li className="category">Account</li>
                     <Account>
                         <img id="portrair" src={usersPhoto[0]?.url} alt="fotosy"/>
-                        <li id="name">{JSON.stringify(usersList[0]?.name)?.slice(1,-1)}</li>
+                        <li id="name">{usersList[0]?.name}</li>
                         <li id="see" ><Link to="/profile">See profile</Link></li>
 
                     </Account>
