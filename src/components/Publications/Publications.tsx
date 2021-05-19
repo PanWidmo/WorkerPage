@@ -2,9 +2,21 @@ import {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-import {Wrapper} from '../../styledHelpers/Components';
+
 import {LatestPublications} from './LatestPublications';
 
+//#region import data from api
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { getUsers, getPhotos, getPosts } from '../../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
+
+type GetUsers = ReturnType<typeof getUsers>
+type GetPhotos = ReturnType<typeof getPhotos>
+type GetPosts = ReturnType<typeof getPosts>
+//#endregion
+
+//#region styles
 const InnerWrapper = styled.div`
     max-width:940px;
     display:grid;
@@ -66,6 +78,7 @@ const RightSide = styled.div`
     }
 
 `;
+//#endregion
 
 export const Publications: FC = () => {
     return (

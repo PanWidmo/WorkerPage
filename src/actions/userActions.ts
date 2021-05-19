@@ -2,6 +2,7 @@ import {Dispatch} from 'redux';
 import * as actionTypes from '../actions/actionTypes/userTypes';
 import { ISingleUser } from '../entities/users';
 import { ISinglePhoto } from '../entities/photos';
+import { ISinglePost } from '../entities/posts';
 
 export const getUsers = (): Promise<ISingleUser[]> => ((dispatch: Dispatch) => {
 
@@ -23,6 +24,18 @@ export const getPhotos = (): Promise<ISinglePhoto[]> => ((dispatch: Dispatch) =>
         dispatch({
             type: actionTypes.GET_PHOTOS,
             usersPhoto
+        })
+    })
+}) as any;
+
+export const getPosts = (): Promise<ISingleUser[]> => ((dispatch: Dispatch) => {
+
+    return fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then((usersPost: ISinglePost[]) => {
+        dispatch({
+            type: actionTypes.GET_POSTS,
+            usersPost
         })
     })
 }) as any;
