@@ -3,6 +3,7 @@ import * as actionTypes from '../actions/actionTypes/userTypes';
 import { ISingleUser } from '../entities/users';
 import { ISinglePhoto } from '../entities/photos';
 import { ISinglePost } from '../entities/posts';
+import { ISingleComment } from '../entities/comments';
 
 export const getUsers = (): Promise<ISingleUser[]> => ((dispatch: Dispatch) => {
 
@@ -38,6 +39,19 @@ export const getPosts = (): Promise<ISingleUser[]> => ((dispatch: Dispatch) => {
             usersPost
         })
     })
+}) as any;
+
+export const getComments = (): Promise<ISingleUser[]> => ((dispatch: Dispatch) => {
+
+    return fetch('https://jsonplaceholder.typicode.com/comments')
+    .then(response => response.json())
+    .then((usersComment: ISingleComment[]) =>{
+        dispatch({
+            type: actionTypes.GET_COMMENTS,
+            usersComment
+        })
+    })
+
 }) as any;
 
 // export const getSomeData = (someData: string):Promise<ISingleUser[]> => ((dispatch: Dispatch) => {

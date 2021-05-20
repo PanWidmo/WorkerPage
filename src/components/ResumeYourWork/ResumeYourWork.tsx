@@ -36,9 +36,6 @@ export const ResumeYourWork: FC = () => {
             </Name>
 
             <SingleResumeYourWorkWindow></SingleResumeYourWorkWindow>
-            <SingleResumeYourWorkWindow></SingleResumeYourWorkWindow>
-            <SingleResumeYourWorkWindow></SingleResumeYourWorkWindow>
-            <SingleResumeYourWorkWindow></SingleResumeYourWorkWindow>
 
         </InnerWrapper>
     );

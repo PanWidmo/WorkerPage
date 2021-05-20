@@ -1,18 +1,21 @@
 import { ISingleUser } from '../entities/users';
 import { ISinglePhoto } from '../entities/photos';
 import { ISinglePost } from '../entities/posts';
+import { ISingleComment } from '../entities/comments';
 import * as actionTypes from '../actions/actionTypes/userTypes';
 
 export interface IUsersReducer{
     usersList: ISingleUser[];
     usersPhoto: ISinglePhoto[];
     usersPost: ISinglePost[];
+    usersComment: ISingleComment[];
 }
 
 const defaultState = (): IUsersReducer => ({
     usersList: [],
     usersPhoto: [],
     usersPost: [],
+    usersComment: [],
 });
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -39,6 +42,14 @@ export default (state = defaultState(), action: any) => {
             return {
                 ...state,
                 usersPost: data.usersPost
+            }
+        }
+
+        case actionTypes.GET_COMMENTS: {
+            const data: actionTypes.IUserTypes['GET_COMMENTS'] = action;
+            return {
+                ...state,
+                usersComment: data.usersComment
             }
         }
         // case actionTypes.PUSH_DATA: {

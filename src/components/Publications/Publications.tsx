@@ -121,8 +121,8 @@ export const Publications: FC = () => {
                 <span id="title">Latest publications</span>
 
                 <LatestPublications></LatestPublications>
-                <LatestPublications></LatestPublications>
-                <LatestPublications></LatestPublications>
+                {/* <LatestPublications></LatestPublications>
+                <LatestPublications></LatestPublications> */}
 
                 <Link to="/mock"><button type="button" className="btn">See more publications</button></Link>
 
