@@ -1,9 +1,21 @@
-import {FC} from 'react';
+import {FC, useEffect} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-import {Wrapper} from '../../styledHelpers/Components';
+// import {Wrapper} from '../../styledHelpers/Components';
 
+//#region import data from api
+import { IState } from '../../reducers';
+import { IUsersReducer } from '../../reducers/usersReducers';
+import { getUsers, getPhotos, getComments } from '../../actions/userActions';
+import { useDispatch, useSelector } from 'react-redux';
+
+type GetUsers = ReturnType<typeof getUsers>
+type GetPhotos = ReturnType<typeof getPhotos>
+type GetComments = ReturnType<typeof getComments>
+//#endregion
+
+//#region styles
 const InnerWrapper = styled.div`
     background: ${Colors.white};
     margin-top:30px;
@@ -14,11 +26,16 @@ const InnerWrapper = styled.div`
         font-size:${fontSize[20]};
         color:${Colors.purple};
         margin-bottom:10px;
-
+        ::first-letter {
+                text-transform: uppercase;
+            }
     }
 
     p{
         font-size:${fontSize[18]};
+        ::first-letter {
+                text-transform: uppercase;
+            }
     }
 `;
 
@@ -32,23 +49,41 @@ const Bottom = styled.div`
         margin:0 10px;
     }
 `;
-
+//#endregion
 
 export const SingleResumeYourWorkWindow: FC = () => {
+
+    const { usersList, usersPhoto, usersComment } = useSelector<IState, IUsersReducer>(state => ({
+        ...state.users
+    }))
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch<GetUsers>(getUsers());
+        dispatch<GetPhotos>(getPhotos());
+        dispatch<GetComments>(getComments());
+    }, [dispatch]);
+
     return (
         <InnerWrapper>
-            <h1>World company SAS</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et hendrit orci. Donec vehicula justo ut nulla aliquet, ac tincidunt metus tristique.</p>
+            {usersComment.map(item => (
+
+
+            <h1>{item.name}</h1>
+            ))}
+            <p>{usersComment[0]?.body}</p>
             <Bottom>
-                <img src="./media/logo.png"/>
+                <img src="./media/logo.png" alt="Logo img"/>
                 <span>Subsid. corp. </span>
                 &#9679;
-                <img src="./imgs/write.png"/>
+                <img src="./imgs/write.png" alt="Icon img"/>
                 <span>Corporate</span>
                 &#9679;
                 Updated 3 days ago by John Doe
 
             </Bottom>
+
         </InnerWrapper>
     );
 };
