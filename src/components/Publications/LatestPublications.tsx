@@ -21,15 +21,15 @@ type GetPosts = ReturnType<typeof getPosts>
 const InnerWrapper = styled.div`
     display:flex;
     align-items:center;
-    margin-top:25px;
-    margin-bottom:15px;
+    margin-top:10px;
+    margin-bottom:5px;
 
 `;
 
 const LeftSide = styled.div`
 
     img{
-        width:90px;
+        width:80px;
     }
 `;
 
