@@ -28,14 +28,14 @@ const InnerWrapper = styled.div`
         margin-bottom:10px;
         ::first-letter {
                 text-transform: uppercase;
-            }
+        }
     }
 
     p{
         font-size:${fontSize[18]};
         ::first-letter {
                 text-transform: uppercase;
-            }
+        }
     }
 `;
 
