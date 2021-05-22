@@ -81,7 +81,6 @@ export const SingleResumeYourWorkWindow: FC = () => {
                 <span>Corporate</span>
                 &#9679;
                 Updated 3 days ago by John Doe
-
             </Bottom>
 
         </InnerWrapper>
