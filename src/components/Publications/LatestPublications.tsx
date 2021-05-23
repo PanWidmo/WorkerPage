@@ -2,9 +2,7 @@ import {FC, useEffect} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-import {Wrapper} from '../../styledHelpers/Components';
 
-import { Link } from 'react-router-dom';
 
 //#endregion import data from api
 import { IState } from '../../reducers';
@@ -18,15 +16,25 @@ type GetPosts = ReturnType<typeof getPosts>
 //#endregion
 
 //#region styles
-const InnerWrapper = styled.div`
+
+const Wrapper = styled.div`
     display:flex;
-    align-items:center;
+    flex-direction: column;
+`;
+
+
+const InnerWrapper = styled.div`
     margin-top:10px;
     margin-bottom:5px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
 
     .leftImg{
         width:80px;
-        margin-right: 5px;
+    }
+
+    .rightSide{
+        margin-left:10px;
     }
 
     h1{
@@ -34,14 +42,15 @@ const InnerWrapper = styled.div`
                 text-transform: uppercase;
             }
         word-spacing: 5px;
+        margin-top: 10px;
     }
 
     .bottom{
         display: grid;
         grid-template-columns: 75px 1fr 1fr;
-        width:40%;
+        width:35%;
         align-items: center;
-        margin-top:8px;
+        margin-top:18px;
         font-size: ${fontSize[14]};
     }
 
@@ -67,49 +76,6 @@ const InnerWrapper = styled.div`
 
 `;
 
-
-
-
-
-//#region old
-const LeftSide = styled.div`
-
-    img{
-        width:80px;
-    }
-`;
-
-const RightSide = styled.div`
-    margin-left:10px;
-    margin-right:30px;
-    p{
-        ::first-letter {
-            text-transform: uppercase;
-            }
-    }
-    span{
-        font-size:${fontSize[14]};
-    }
-`;
-
-const BottomSide = styled.div`
-    display:grid;
-    grid-template-columns:80px 30px 80px;
-    align-items:center;
-    margin-top:7px;
-    .left {
-
-    }
-    .middle {
-    width:20px;
-    border-radius:50%;
-    }
-    .right{
-        white-space: nowrap;
-    }
-
-`;
-//#endregion
 //#endregion
 
 export const LatestPublications: FC = () => {
@@ -127,18 +93,25 @@ export const LatestPublications: FC = () => {
     }, [dispatch]);
 
     return (
-            <InnerWrapper>
-            <img className="leftImg" src={usersPhoto[1]?.url} alt="Post img"/>
-            <div className="rightSide">
-                <h1>{usersPost[0]?.title}</h1>
-                <div className="bottom">
-                    <span className="date">7 jan. 2020</span>
-                    <img className="portrairImg" src={usersPhoto[0]?.url} alt="Portrair img"/>
-                    <span className="name">qwe</span>
-                </div>
-            </div>
+        <Wrapper>
 
-        </InnerWrapper>
+            {usersPost.map((x:any) =>{
+                return(
+                    <InnerWrapper>
+                    <img className="leftImg" src={usersPhoto[x.userId]?.url} alt="Post img"/>
+                    <div className="rightSide">
+                        <h1>{x?.title}</h1>
+                        <div className="bottom">
+                            <span className="date">7 jan. 2020</span>
+                            <img className="portrairImg" src={usersPhoto[x.userId]?.url} alt="Portrair img"/>
+                            <span className="name">{usersList[x.userId]?.name}</span>
+                        </div>
+                    </div>
+                    </InnerWrapper>
+                )
+            })}
+
+        </Wrapper>
 
 
     );

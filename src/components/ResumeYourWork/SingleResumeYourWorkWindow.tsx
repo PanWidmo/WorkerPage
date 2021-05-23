@@ -67,11 +67,9 @@ export const SingleResumeYourWorkWindow: FC = () => {
 
     return (
         <InnerWrapper>
-            {usersComment.map(item => (
 
 
-            <h1>{item.name}</h1>
-            ))}
+            <h1>{usersList[2]?.name}</h1>
             <p>{usersComment[0]?.body}</p>
             <Bottom>
                 <img src="./media/logo.png" alt="Logo img"/>

@@ -70,9 +70,15 @@ const LeftSide = styled.div`
 
 const RightSide = styled.div`
     grid-column:2;
+    max-height:400px;
     margin-top:5px;
     margin-left:20px;
     align-items:Center;
+
+    #content{
+        overflow-y:scroll;
+        max-height: 280px;
+    }
 
     span#title{
         font-size:${fontSize[24]};
@@ -84,6 +90,7 @@ const RightSide = styled.div`
         font-size:${fontSize[18]};
         cursor:pointer;
         color:${Colors.purple};
+        margin-top:10px;
     }
 
 `;
@@ -120,9 +127,9 @@ export const Publications: FC = () => {
             <RightSide>
                 <span id="title">Latest publications</span>
 
-                <LatestPublications></LatestPublications>
-                {/* <LatestPublications></LatestPublications>
-                <LatestPublications></LatestPublications> */}
+                <div id="content">
+                    <LatestPublications/>
+                </div>
 
                 <Link to="/mock"><button type="button" className="btn">See more publications</button></Link>
 

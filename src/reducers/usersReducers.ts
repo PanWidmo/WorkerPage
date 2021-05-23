@@ -18,7 +18,7 @@ const defaultState = (): IUsersReducer => ({
     usersComment: [],
 });
 
-// eslint-disable-next-line import/no-anonymous-default-export
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default (state = defaultState(), action: any) => {
     switch (action.type) {
         case actionTypes.GET_USERS: {
