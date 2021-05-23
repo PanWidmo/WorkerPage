@@ -24,8 +24,54 @@ const InnerWrapper = styled.div`
     margin-top:10px;
     margin-bottom:5px;
 
+    .leftImg{
+        width:80px;
+        margin-right: 5px;
+    }
+
+    h1{
+        ::first-letter {
+                text-transform: uppercase;
+            }
+        word-spacing: 5px;
+    }
+
+    .bottom{
+        display: grid;
+        grid-template-columns: 75px 1fr 1fr;
+        width:40%;
+        align-items: center;
+        margin-top:8px;
+        font-size: ${fontSize[14]};
+    }
+
+    .date{
+        grid-column: 1;
+        white-space: nowrap;
+        color: ${Colors.lightgrayOriginal};
+    }
+
+    .portrairImg{
+        grid-column: 2;
+        width:20px;
+        border-radius: 50%;
+
+
+    }
+
+    .name{
+        grid-column: 3;
+        white-space: nowrap;
+
+    }
+
 `;
 
+
+
+
+
+//#region old
 const LeftSide = styled.div`
 
     img{
@@ -64,6 +110,7 @@ const BottomSide = styled.div`
 
 `;
 //#endregion
+//#endregion
 
 export const LatestPublications: FC = () => {
 
@@ -81,18 +128,18 @@ export const LatestPublications: FC = () => {
 
     return (
             <InnerWrapper>
-                <LeftSide>
-                    <img src={usersPhoto[1]?.url} alt="Post img"/>
-                </LeftSide>
-                <RightSide>
-                <p>{usersPost[0]?.title}</p>
-                    <BottomSide>
-                        <span className="left">7 jan. 2020</span>
-                        <img className="middle" src={usersPhoto[0]?.url} alt="User portrair"/>
-                        <span className="right">{usersList[0]?.name}</span>
-                    </BottomSide>
-                </RightSide>
+            <img className="leftImg" src={usersPhoto[1]?.url} alt="Post img"/>
+            <div className="rightSide">
+                <h1>{usersPost[0]?.title}</h1>
+                <div className="bottom">
+                    <span className="date">7 jan. 2020</span>
+                    <img className="portrairImg" src={usersPhoto[0]?.url} alt="Portrair img"/>
+                    <span className="name">qwe</span>
+                </div>
+            </div>
 
-            </InnerWrapper>
+        </InnerWrapper>
+
+
     );
 };
