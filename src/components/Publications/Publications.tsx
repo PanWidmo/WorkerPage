@@ -34,11 +34,14 @@ const LeftSide = styled.div`
     background-position: center;
     background-size: cover;
     color: ${Colors.white};
+    position: relative;
 
     #divBottom{
         font-size:${fontSize[18]};
-        margin:220px 20px 0px 20px;
-
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin:0 0 25px 20px;
         p{
             ::first-letter {
                 text-transform: uppercase;
@@ -48,20 +51,17 @@ const LeftSide = styled.div`
         #personInfo{
             margin-top:10px;
             font-size:${fontSize[14]};
-            display:grid;
-            grid-template-columns:80px 1fr 150px;
+            display:flex;
             align-items:center;
             .left{
-                grid-column:1;
                 white-space: nowrap;
             }
             .middle{
-                grid-column:2;
                 border-radius:50%;
                 width:20px;
+                margin:0 10px;
             }
             .right{
-                grid-column:3;
                 white-space: nowrap;
             }
         }
@@ -81,16 +81,16 @@ const RightSide = styled.div`
     }
 
     span#title{
-        font-size:${fontSize[24]};
+        font-size:${fontSize[20]};
     }
 
     .btn{
         background:none;
         border:none;
-        font-size:${fontSize[18]};
+        font-size:${fontSize[16]};
         cursor:pointer;
         color:${Colors.purple};
-        margin-top:10px;
+        margin-top:8px;
     }
 
 `;
@@ -113,16 +113,20 @@ export const Publications: FC = () => {
     return (
         <InnerWrapper>
             <LeftSide>
-                <div id="divBottom">
-                    <p>{usersPost[0]?.title}</p>
+                {usersPost.slice(0,1).map((x:any) => {
+                    return(
+                        <div id="divBottom">
+                            <p>{x?.title}</p>
 
-                    <div id="personInfo">
-                        <span className="left">7 jan. 2020</span>
-                        <img className="middle" src={usersPhoto[0]?.url} alt="User portrair"/>
-                        <span className="right">{usersList[0]?.name}</span>
-                    </div>
+                            <div id="personInfo">
+                                <span className="left">7 jan. 2020</span>
+                                <img className="middle" src={usersPhoto[x.userId]?.url} alt="User portrair"/>
+                                <span className="right">{usersList[x.userId]?.name}</span>
+                            </div>
 
-                </div>
+                        </div>
+                    )
+                })}
             </LeftSide>
             <RightSide>
                 <span id="title">Latest publications</span>

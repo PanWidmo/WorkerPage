@@ -24,52 +24,52 @@ const Wrapper = styled.div`
 
 
 const InnerWrapper = styled.div`
-    margin-top:10px;
+    margin-top:8px;
     margin-bottom:5px;
     display: grid;
     grid-template-columns: 80px 1fr;
+    position: relative;
 
     .leftImg{
-        width:80px;
+        max-width:80px;
+        max-height:80px;
     }
 
     .rightSide{
         margin-left:10px;
+        max-height:80px;
     }
 
     h1{
         ::first-letter {
-                text-transform: uppercase;
+            text-transform: uppercase;
             }
         word-spacing: 5px;
         margin-top: 10px;
     }
 
     .bottom{
-        display: grid;
-        grid-template-columns: 75px 1fr 1fr;
-        width:35%;
+        display: flex;
         align-items: center;
-        margin-top:18px;
         font-size: ${fontSize[14]};
+        position: absolute;
+        bottom: 0;
+        left: 90;
     }
 
     .date{
-        grid-column: 1;
         white-space: nowrap;
         color: ${Colors.lightgrayOriginal};
     }
 
     .portrairImg{
-        grid-column: 2;
         width:20px;
         border-radius: 50%;
-
+        margin:0 10px;
 
     }
 
     .name{
-        grid-column: 3;
         white-space: nowrap;
 
     }
@@ -95,18 +95,18 @@ export const LatestPublications: FC = () => {
     return (
         <Wrapper>
 
-            {usersPost.map((x:any) =>{
+            {usersPost.slice(0,3).map((x:any) =>{
                 return(
                     <InnerWrapper>
-                    <img className="leftImg" src={usersPhoto[x.userId]?.url} alt="Post img"/>
-                    <div className="rightSide">
-                        <h1>{x?.title}</h1>
-                        <div className="bottom">
-                            <span className="date">7 jan. 2020</span>
-                            <img className="portrairImg" src={usersPhoto[x.userId]?.url} alt="Portrair img"/>
-                            <span className="name">{usersList[x.userId]?.name}</span>
+                        <img className="leftImg" src={usersPhoto[x.userId]?.url} alt="Post img"/>
+                        <div className="rightSide">
+                            <h1>{x?.title}</h1>
+                            <div className="bottom">
+                                <span className="date">7 jan. 2020</span>
+                                <img className="portrairImg" src={usersPhoto[x.userId]?.url} alt="Portrair img"/>
+                                <span className="name">{usersList[x.userId]?.name}</span>
+                            </div>
                         </div>
-                    </div>
                     </InnerWrapper>
                 )
             })}
