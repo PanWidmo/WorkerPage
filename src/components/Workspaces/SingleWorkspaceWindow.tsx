@@ -13,7 +13,7 @@ const Box = styled.div`
 `;
 
 const CustomImage = styled.img`
-    width:240px;
+    width:238px;
 `;
 
 const Icon = styled.div`
@@ -48,6 +48,7 @@ const AndUsers = styled.div`
     p{
         margin-top:15px;
         margin-bottom:10px;
+        padding-bottom: 10px;
         color:${Colors.lightgrayOriginal}
     }
 

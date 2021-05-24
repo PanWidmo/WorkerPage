@@ -7,11 +7,10 @@ import {fontSize} from '../../styledHelpers/FontSizes';
 //#region import data from api
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
-import { getUsers, getPhotos, getComments } from '../../actions/userActions';
+import { getUsers, getComments } from '../../actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 type GetUsers = ReturnType<typeof getUsers>
-type GetPhotos = ReturnType<typeof getPhotos>
 type GetComments = ReturnType<typeof getComments>
 //#endregion
 
@@ -53,7 +52,7 @@ const Bottom = styled.div`
 
 export const SingleResumeYourWorkWindow: FC = () => {
 
-    const { usersList, usersPhoto, usersComment } = useSelector<IState, IUsersReducer>(state => ({
+    const { usersList, usersComment } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }))
 
@@ -61,25 +60,32 @@ export const SingleResumeYourWorkWindow: FC = () => {
 
     useEffect(() => {
         dispatch<GetUsers>(getUsers());
-        dispatch<GetPhotos>(getPhotos());
         dispatch<GetComments>(getComments());
     }, [dispatch]);
 
     return (
         <InnerWrapper>
 
+            {usersComment.map((x:any) => {
+                return(
 
-            <h1>{usersList[2]?.name}</h1>
-            <p>{usersComment[0]?.body}</p>
-            <Bottom>
-                <img src="./media/logo.png" alt="Logo img"/>
-                <span>Subsid. corp. </span>
-                &#9679;
-                <img src="./imgs/write.png" alt="Icon img"/>
-                <span>Corporate</span>
-                &#9679;
-                Updated 3 days ago by John Doe
-            </Bottom>
+                <div id="content">
+                <h1>{x?.name}</h1>
+                <p>{x?.body}</p>
+                <Bottom>
+                    <img src="./media/logo.png" alt="Logo img"/>
+                    <span>Subsid. corp. </span>
+                    &#9679;
+                    <img src="./imgs/write.png" alt="Icon img"/>
+                    <span>Corporate</span>
+                    &#9679;
+                    Updated 3 days ago by {usersList[x.userId]?.name}
+                </Bottom>
+
+                </div>
+            )
+
+        })}
 
         </InnerWrapper>
     );

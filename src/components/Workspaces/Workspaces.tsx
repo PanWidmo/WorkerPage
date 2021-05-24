@@ -12,7 +12,7 @@ const InnerWrapper = styled.div`
 const Name = styled.p`
     margin-top:20px;
     margin-left:10px;
-    font-size:${fontSize[24]};
+    font-size:${fontSize[20]};
 
 `;
 
