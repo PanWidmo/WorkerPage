@@ -1,5 +1,6 @@
-import {FC, useEffect} from 'react';
+import {FC, useEffect, useState} from 'react';
 import styled from 'styled-components';
+import ReactPaginate from 'react-paginate';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 // import {Wrapper} from '../../styledHelpers/Components';
@@ -36,6 +37,28 @@ const InnerWrapper = styled.div`
                 text-transform: uppercase;
         }
     }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        margin-bottom: 20px;
+        .previous{
+            margin-right:10px;
+        }
+        .active {
+            color:${Colors.purple};
+        }
+        .break-me{
+        }
+        .page{
+            margin: 0 10px;
+        }
+        .next{
+            margin-left:10px;
+        }
+
+    }
 `;
 
 const Bottom = styled.div`
@@ -63,10 +86,17 @@ export const SingleResumeYourWorkWindow: FC = () => {
         dispatch<GetComments>(getComments());
     }, [dispatch]);
 
+    const [currentPage, setCurrentPage] = useState<number>(0);
+    const handlePageClick = (data:any) => {
+        const selected = data.selected;
+        setCurrentPage(selected);
+
+    }
+
     return (
         <InnerWrapper>
 
-            {usersComment.map((x:any) => {
+            {usersComment.slice(currentPage, currentPage + 5).map((x:any) => {
                 return(
 
                 <div id="content">
@@ -79,13 +109,31 @@ export const SingleResumeYourWorkWindow: FC = () => {
                     <img src="./imgs/write.png" alt="Icon img"/>
                     <span>Corporate</span>
                     &#9679;
-                    Updated 3 days ago by {usersList[x.userId]?.name}
+                    Updated 3 days ago by {usersList[x.id]?.name}
                 </Bottom>
 
                 </div>
             )
 
         })}
+        <ReactPaginate
+                previousLabel={'PREV'}
+                nextLabel={'NEXT'}
+                breakLabel={'...'}
+
+
+                pageCount={Math.ceil(usersComment.length/5)}
+                marginPagesDisplayed={1}
+                pageRangeDisplayed={3}
+                onPageChange={handlePageClick}
+
+                containerClassName={'pagination'}
+                previousClassName={'previous'}
+                pageClassName={'page'}
+                breakClassName={'break-me'}
+                activeClassName={'active'}
+                nextClassName={'next'}
+            />
 
         </InnerWrapper>
     );

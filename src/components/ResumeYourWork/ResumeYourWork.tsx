@@ -1,19 +1,10 @@
-import {FC, useEffect} from 'react';
+import React, {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {Wrapper} from '../../styledHelpers/Components';
 import {SingleResumeYourWorkWindow} from './SingleResumeYourWorkWindow';
 
-//#region import data from api
-import { IState } from '../../reducers';
-import { IUsersReducer } from '../../reducers/usersReducers';
-import { getUsers, getComments } from '../../actions/userActions';
-import { useDispatch, useSelector } from 'react-redux';
-
-type GetUsers = ReturnType<typeof getUsers>
-type GetComments = ReturnType<typeof getComments>
-//#endregion
 
 //#region styles
 const InnerWrapper = styled.div`
@@ -34,18 +25,6 @@ const RightSide = styled.div`
 
 export const ResumeYourWork: FC = () => {
 
-    const { usersList, usersComment } = useSelector<IState, IUsersReducer>(state => ({
-        ...state.users
-    }))
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch<GetUsers>(getUsers());
-        dispatch<GetComments>(getComments());
-    }, [dispatch]);
-
-
     return (
         <InnerWrapper>
             <Name>
@@ -61,7 +40,8 @@ export const ResumeYourWork: FC = () => {
             </Name>
 
             <SingleResumeYourWorkWindow></SingleResumeYourWorkWindow>
-
+            
+            
         </InnerWrapper>
     );
 };
