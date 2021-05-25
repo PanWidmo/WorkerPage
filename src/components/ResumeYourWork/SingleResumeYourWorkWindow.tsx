@@ -43,11 +43,16 @@ const InnerWrapper = styled.div`
         justify-content: center;
         cursor: pointer;
         margin-bottom: 20px;
+        color: ${Colors.purple};
+        border: none;
+        outline: none;
+        user-select: none; /* no background on double click */
+
         .previous{
             margin-right:10px;
         }
         .active {
-            color:${Colors.purple};
+            color:${Colors.black};
         }
         .break-me{
         }
@@ -56,8 +61,8 @@ const InnerWrapper = styled.div`
         }
         .next{
             margin-left:10px;
-        }
 
+        }
     }
 `;
 
@@ -96,7 +101,7 @@ export const SingleResumeYourWorkWindow: FC = () => {
     return (
         <InnerWrapper>
 
-            {usersComment.slice(currentPage, currentPage + 5).map((x:any) => {
+            {usersComment.slice(currentPage, currentPage + 10).map((x:any) => {
                 return(
 
                 <div id="content">
@@ -117,12 +122,12 @@ export const SingleResumeYourWorkWindow: FC = () => {
 
         })}
         <ReactPaginate
-                previousLabel={'PREV'}
+                previousLabel={'PREVIOUS'}
                 nextLabel={'NEXT'}
                 breakLabel={'...'}
 
 
-                pageCount={Math.ceil(usersComment.length/5)}
+                pageCount={Math.ceil(usersComment.length/10)}
                 marginPagesDisplayed={1}
                 pageRangeDisplayed={3}
                 onPageChange={handlePageClick}
