@@ -27,14 +27,14 @@ const InnerWrapper = styled.div`
         color:${Colors.purple};
         margin-bottom:10px;
         ::first-letter {
-                text-transform: uppercase;
+            text-transform: uppercase;
         }
     }
 
     p{
         font-size:${fontSize[18]};
         ::first-letter {
-                text-transform: uppercase;
+            text-transform: uppercase;
         }
     }
 
