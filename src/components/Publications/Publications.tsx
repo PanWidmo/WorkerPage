@@ -34,13 +34,10 @@ const LeftSide = styled.div`
     background-position: center;
     background-size: cover;
     color: ${Colors.white};
-    position: relative;
 
     #divBottom{
         font-size:${fontSize[18]};
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        padding-top:220px;
         margin:0 0 25px 20px;
         p{
             ::first-letter {

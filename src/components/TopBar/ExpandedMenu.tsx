@@ -199,7 +199,7 @@ export const ExpandedMenu: FC = () => {
             </ul>
 
             <Logout>
-                <img src="./media/icons/logout.png" alt="fotosy"/>
+                <img src="./media/icons/logout.png" alt="Logout img"/>
                 <span>Logout</span>
             </Logout>
         </Wrapper>
