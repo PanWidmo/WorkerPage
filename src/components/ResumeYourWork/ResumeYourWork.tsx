@@ -137,7 +137,6 @@ export const ResumeYourWork: FC = () => {
                     Followed
                     <img src="./media/icons/arrow-down.png" alt=""/>
                 </RightSide>
-
             </Name>
 
             {usersComment.slice(currentPage, currentPage + 10).map((x:any) => {
