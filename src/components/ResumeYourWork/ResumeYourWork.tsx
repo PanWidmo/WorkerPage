@@ -79,6 +79,7 @@ const Name = styled.div`
     font-size:${fontSize[20]};
     margin-left:10px;
     margin-bottom: 20px;
+
 `;
 
 const RightSide = styled.div`
