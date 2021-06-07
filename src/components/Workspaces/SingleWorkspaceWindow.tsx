@@ -2,7 +2,7 @@ import {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-import {Wrapper} from '../../styledHelpers/Components';
+// import {Wrapper} from '../../styledHelpers/Components';
 
 const InnerWrapper = styled.div`
 `;
@@ -37,6 +37,10 @@ const Icon = styled.div`
 const AndUsers = styled.div`
     margin-left:12px;
     margin-top:40px;
+    color:${Colors.lightgrayOriginal};
+    font-size: ${fontSize[14]};
+    font-weight: bold;
+
     img{
         width:20px;
         margin-right:5px;
@@ -49,7 +53,6 @@ const AndUsers = styled.div`
         margin-top:15px;
         margin-bottom:10px;
         padding-bottom: 10px;
-        color:${Colors.lightgrayOriginal}
     }
 
 `;
@@ -59,14 +62,14 @@ export const SingleWorkspaceWindow: FC = () => {
                 <Box>
                     <CustomImage src="./imgs/write2.jpg"/>
                         <Icon>
-                            <img src="./imgs/write.png"/>
+                            <img src="./imgs/write.png" alt="Writing img"/>
                             <p>Client contract</p>
                         </Icon>
                         <AndUsers>
-                            <img src="./imgs/write.png"/>
+                            <img src="./imgs/write.png" alt="Writing img cloud"/>
                             Contract
                             <span>&#9679;</span>
-                            <img src="./icons/people.png"/>
+                            <img src="./icons/people.png" alt="People icon"/>
                             150 users
                             <p>Last update 2 day ago</p>
                         </AndUsers>
