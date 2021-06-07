@@ -6,6 +6,7 @@ import {fontSize} from '../../styledHelpers/FontSizes';
 // import {Wrapper} from '../../styledHelpers/Components';
 import useDropdown from 'react-dropdown-hook';
 import {FollowedExpandedMenu} from './FollowedExpandedMenu';
+import {boxShadow} from '../../styledHelpers/Components';
 
 //#region import data from api
 import { IState } from '../../reducers';
@@ -23,6 +24,7 @@ const InnerWrapper = styled.div`
     padding-top:10px;
     max-width:940px;
 
+
     #content{
         margin:10px 0px;
         padding-top:10px;
@@ -31,6 +33,7 @@ const InnerWrapper = styled.div`
         padding-right: 20px;
         background: ${Colors.white};
         border-radius: 2%;
+        ${boxShadow()};
 
         h1{
         font-size:${fontSize[20]};

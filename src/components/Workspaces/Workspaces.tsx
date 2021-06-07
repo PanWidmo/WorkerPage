@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {Wrapper} from '../../styledHelpers/Components';
+import {boxShadow} from '../../styledHelpers/Components';
 import {SingleWorkspaceWindow} from './SingleWorkspaceWindow';
 
 const InnerWrapper = styled.div`
     max-width:940px;
+    ${boxShadow()};
 `;
 
 const Name = styled.p`

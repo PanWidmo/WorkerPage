@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {Colors} from '../../styledHelpers/Colors';
+import {boxShadow} from '../../styledHelpers/Components';
 
 import {LeftNav} from './LeftNav';
 
@@ -27,6 +28,7 @@ const InnerWrapper = styled.div`
     width: 220px;
     text-align: center;
     background: ${Colors.white};
+    ${boxShadow()};
 
 `;
 

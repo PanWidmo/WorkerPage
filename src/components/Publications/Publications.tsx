@@ -2,6 +2,7 @@ import {FC, useEffect} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
+import {boxShadow} from '../../styledHelpers/Components';
 
 import {LatestPublications} from './LatestPublications';
 import { Link } from 'react-router-dom';
@@ -23,7 +24,7 @@ const InnerWrapper = styled.div`
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
-    box-shadow: 1px 2px 10px ${Colors.boxShadow};
+    ${boxShadow()};
 `;
 
 const LeftSide = styled.div`
