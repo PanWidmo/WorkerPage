@@ -4,6 +4,8 @@ import ReactPaginate from 'react-paginate';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 // import {Wrapper} from '../../styledHelpers/Components';
+import useDropdown from 'react-dropdown-hook';
+import {FollowedExpandedMenu} from './FollowedExpandedMenu';
 
 //#region import data from api
 import { IState } from '../../reducers';
@@ -29,22 +31,20 @@ const InnerWrapper = styled.div`
         padding-right: 20px;
         background: ${Colors.white};
         border-radius: 2%;
-    }
 
-    h1{
+        h1{
         font-size:${fontSize[20]};
         color:${Colors.purple};
         margin-bottom:10px;
         ::first-letter {
             text-transform: uppercase;
-        }
-    }
+        }}
 
-    p{
+        p{
         font-size:${fontSize[18]};
         ::first-letter {
             text-transform: uppercase;
-        }
+        }}
     }
 
     .pagination {
@@ -75,29 +75,70 @@ const InnerWrapper = styled.div`
     }
 `;
 
-const Name = styled.div`
-    font-size:${fontSize[20]};
-    margin-left:10px;
-    margin-bottom: 20px;
+const TopSide = styled.div`
+    display:flex;
+    align-items:center;
+    margin:0 0 0 10px;
+
+    .title{
+        font-size: ${fontSize[20]};
+        margin-right: 35%;
+    }
 
 `;
 
-const RightSide = styled.div`
-    float:right;
+const InputFilter = styled.div`
+    background: ${Colors.white};
+    padding:7px;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+
+    input{
+        border:none;
+        &:outline{
+            outline:none;
+        }
+        &:focus{
+            outline:none;
+        }
+        font-size: ${fontSize[16]};
+    }
+`;
+
+const MenuWrapper = styled.div`
+    cursor:pointer;
+    display:flex;
+    align-items: center;
+    column-gap: 12px;
+    user-select: none; /* no background on double click */
+    font-size: ${fontSize[18]};
+    font-weight: bold;
+    color:${Colors.purple};
+
+
 `;
 
 const Bottom = styled.div`
     margin:10px 0px;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
     img{
         width:20px;
-    }
-    span{
-        margin:0 10px;
     }
 `;
 //#endregion
 
 export const ResumeYourWork: FC = () => {
+    //#region dropDownMenu
+    const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
+
+    const menuHandler = () => {
+        toggleDropdown();
+    };
+    //#endregion
+
 
     const { usersList, usersComment } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
@@ -129,16 +170,24 @@ export const ResumeYourWork: FC = () => {
 
     return (
         <InnerWrapper>
-            <Name>
-                Resume your work
-                <RightSide>
-                    <input type="text" value={inputText} onChange={inputHandler} placeholder="Filter by title..."/>
-                    <img src="./media/icons/search.png" id="search" alt=""/>
-                    <img src="./media/icons/ecosystem.png" alt=""/>
-                    Followed
-                    <img src="./media/icons/arrow-down.png" alt=""/>
-                </RightSide>
-            </Name>
+            <TopSide>
+                    <span className="title">Resume your work</span>
+
+                    <InputFilter>
+                        <input type="text" value={inputText} onChange={inputHandler} placeholder="Filter by title..."/>
+                        <img src="./media/icons/search.png" id="search" alt=""/>
+                    </InputFilter>
+
+                    <MenuWrapper ref={wrapperRef} onClick={menuHandler}>
+                        <img src="./media/icons/people.png" alt=""/>
+                        <span>Followed</span>
+                        <img src="./media/icons/arrow-down.png" alt=""/>
+
+                        {dropdownOpen &&
+                        <FollowedExpandedMenu/>
+                    }
+                    </MenuWrapper>
+            </TopSide>
 
             {usersComment.slice(currentPage, currentPage + 10).map((x:any) => {
                 return(
@@ -149,11 +198,11 @@ export const ResumeYourWork: FC = () => {
                     <Bottom>
                         <img src="./media/logo.png" alt="Logo img"/>
                         <span> {usersList[x.id]?.company.name} </span>
-                        &bull;
+                        <span>&bull; </span>
                         <img src="./imgs/write.png" alt="Icon img"/>
                         <span>Corporate</span>
-                        &bull;
-                        Updated 3 days ago by {usersList[x.id]?.name}
+                        <span>&bull; </span>
+                        <span>Updated 3 days ago by {usersList[x.id]?.name}</span>
                     </Bottom>
                     </div>
                 )
