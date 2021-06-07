@@ -51,7 +51,7 @@ const InnerWrapper = styled.div`
         display: flex;
         justify-content: center;
         cursor: pointer;
-        margin-bottom: 20px;
+        margin:15px 0;
         color: ${Colors.purple};
         border: none;
         outline: none;
