@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
@@ -28,11 +29,18 @@ export const Workspaces: FC = () => {
         <InnerWrapper>
             <Name>Workspaces</Name>
             <Slider>
+            <Swiper
+                spaceBetween={50}
+                slidesPerView={3}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+            >
+                <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
+                <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
                 <SingleWorkspaceWindow></SingleWorkspaceWindow>
                 <SingleWorkspaceWindow></SingleWorkspaceWindow>
                 <SingleWorkspaceWindow></SingleWorkspaceWindow>
-                <SingleWorkspaceWindow></SingleWorkspaceWindow>
-                <SingleWorkspaceWindow></SingleWorkspaceWindow>
+            </Swiper>
 
             </Slider>
 
