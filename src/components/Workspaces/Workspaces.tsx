@@ -6,6 +6,8 @@ import {fontSize} from '../../styledHelpers/FontSizes';
 // import {Wrapper} from '../../styledHelpers/Components';
 import {boxShadow} from '../../styledHelpers/Components';
 import {SingleWorkspaceWindow} from './SingleWorkspaceWindow';
+import SwiperCore, { EffectFade } from 'swiper';
+SwiperCore.use([EffectFade]);
 
 const InnerWrapper = styled.div`
     max-width:940px;
@@ -14,10 +16,13 @@ const InnerWrapper = styled.div`
     .swiper-container {
         border:2px solid ${Colors.black};
         width:100%;
+        overflow:hidden;
     }
 
     .swiper-wrapper {
+        width:100%;
         display: flex;
+        border:2px solid ${Colors.purple};
     }
 `;
 
@@ -42,12 +47,11 @@ export const Workspaces: FC = () => {
             <Name>Workspaces</Name>
             {/* <Slider> */}
                 <Swiper
-                    spaceBetween={50}
+                    spaceBetween={40}
                     slidesPerView={3}
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log(swiper)}
                 >
-                    <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
                     <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
                     <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
                     <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
