@@ -84,9 +84,8 @@ const TopButtons = styled.div`
 
 const UserProfileTop = styled.div`
     display:grid;
-    align-items: end;
     margin:30px 0;
-    grid-template-columns: 20% 40% 40%;
+    grid-template-columns: 40% 60%;
 
     .left{
         grid-column: 1;
@@ -102,26 +101,75 @@ const UserProfileTop = styled.div`
         }
     }
 
-    .middle{
-        grid-column: 2;
-        line-height: 20px;
-    }
-
     .right{
-        text-align: right;
-        grid-column: 3;
-        line-height: 20px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 25% 25% 25% 25%;
+        line-height: 26px;
 
-        p{
-            text-align: left;
+        #name{
+            grid-column: 1;
+            grid-row: 1;
         }
 
+        #companyName{
+            grid-column: 1;
+            grid-row: 2;
+        }
 
+        #address{
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        #username{
+            grid-column: 1;
+            grid-row: 4;
+        }
+
+        #pencilId{
+            grid-column: 2;
+            grid-row: 1;
+            text-align:right;
+        }
+
+        #email{
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        #phone{
+            grid-column: 2;
+            grid-row: 4;
+        }
+
+        img{
+            width:28px;
+        }
     }
 `;
 
 const Expertise = styled.div`
     border-top: 1px solid ${Colors.lightgray};
+
+    #topWithPencil{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+    }
+    #expertiseTitle{
+        grid-column: 1;
+    }
+
+    #expertisePencil{
+        grid-column: 2;
+        text-align:right;
+        background: ${Colors.white};
+    }
+
+    img{
+        width:28px;
+    }
 
     p{
         padding:5px;
@@ -238,7 +286,7 @@ const AmountOfFees = styled.div`
         #lawFirm{
             grid-column: 4;
         }
-
+    }
 
 `;
 //#endregion
@@ -284,21 +332,22 @@ export const Profile: FC = () => {
                     <p>See profile</p>
                 </div>
 
-                <div className="middle">
-                    <p>{usersList[0]?.name}</p>
-                    <p>{usersList[0]?.company.name}</p>
-                    <p>{usersList[0]?.address.city}</p>
-                </div>
-
                 <div className="right">
-                    <img className="imgs" src="./media/icons/ecosystem.png" alt="Pen icon"/>
-                    <p>{usersList[0]?.email}</p>
-                    <p>{usersList[0]?.phone}</p>
+                    <p id="name">{usersList[0]?.name}</p>
+                    <p id="companyName">{usersList[0]?.company.name}</p>
+                    <p id="address">{usersList[0]?.address.city}</p>
+                    <p id="username">{usersList[0]?.username}</p>
+                    <p id="pencilId"><img id="editProfile" src="./media/icons/pencil.png" alt="Pen icon"/></p>
+                    <p id="email">{usersList[0]?.email}</p>
+                    <p id="phone">{usersList[0]?.phone}</p>
                 </div>
 
             </UserProfileTop>
             <Expertise>
-                <h1>Expertise</h1>
+                <div id="topWithPencil">
+                    <h1 id="expertiseTitle">Expertise</h1>
+                    <p id="expertisePencil"><img id="editExpertise" src="./media/icons/pencil.png" alt="Pen icon"/></p>
+                    </div>
 
                 <div className="boxDiv" id="expertise">
                     <p>Mergers and acquisition</p>
