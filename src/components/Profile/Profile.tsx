@@ -17,8 +17,20 @@ type GetPhotos = ReturnType<typeof getPhotos>
 //#region styles
 const Wrapper = styled.div`
     width:940px;
-    margin:10px 40px 0 0;
+    margin:10px 40px 10px 0;
+    padding-bottom: 60px;
     background: ${Colors.white};
+
+    h1{
+        margin:20px 0;
+        font-weight: bold;
+    }
+
+    #titleRow{
+        font-weight: bold;
+        border-bottom: 1px solid ${Colors.lightgray};
+        padding-bottom: 10px;
+    }
 
     .table{
         display: grid;
@@ -103,17 +115,13 @@ const UserProfileTop = styled.div`
         p{
             text-align: left;
         }
-        
+
 
     }
 `;
 
 const Expertise = styled.div`
     border-top: 1px solid ${Colors.lightgray};
-
-    h1{
-        margin:10px 0;
-    }
 
     p{
         padding:5px;
@@ -129,11 +137,6 @@ const Expertise = styled.div`
 
 const PanelInformation = styled.div`
     border-top: 1px solid ${Colors.lightgray};
-    
-    h1{
-        margin:20px 0;
-        font-weight: bold;
-    }
 
     .infoDiv{
         margin:10px;
@@ -174,7 +177,7 @@ const PanelInformation = styled.div`
 
             .message{
                 grid-column: 3;
-                
+
                 img{
                     width:20px;
                 }
@@ -197,21 +200,9 @@ const PanelInformation = styled.div`
 const Proposals = styled.div`
     border-top: 1px solid ${Colors.lightgray};
 
-    h1{
-        margin:20px 0;
-        font-weight: bold;
-    }
-
-    #titleRow{
-        font-weight: bold;
-        border-bottom: 1px solid ${Colors.lightgray};
-        padding-bottom: 10px;
-    }
-
-    
-
     #moreProposals{
         margin-top:20px;
+        margin-right:20px;
         padding-bottom: 20px;
         text-align: right;
         color:${Colors.lightgrayOriginal}
@@ -222,20 +213,32 @@ const Proposals = styled.div`
 const InternalReviews = styled.div`
     border-top: 1px solid ${Colors.lightgray};
 
-    h1{
-        margin:20px 0;
-        font-weight: bold;
-    }
-
 `;
 
 const AmountOfFees = styled.div`
     border-top: 1px solid ${Colors.lightgray};
 
-    h1{
-        margin:20px 0;
-        font-weight: bold;
-    }
+    .tableFees{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        margin-top:10px;
+
+        #year{
+            grid-column: 1;
+        }
+
+        #costCenter{
+            grid-column: 2;
+        }
+
+        #totalAmount{
+            grid-column: 3;
+        }
+
+        #lawFirm{
+            grid-column: 4;
+        }
+
 
 `;
 //#endregion
@@ -282,7 +285,7 @@ export const Profile: FC = () => {
                 </div>
 
                 <div className="middle">
-                    <p>{usersList[0]?.name}</p> 
+                    <p>{usersList[0]?.name}</p>
                     <p>{usersList[0]?.company.name}</p>
                     <p>{usersList[0]?.address.city}</p>
                 </div>
@@ -321,7 +324,7 @@ export const Profile: FC = () => {
             </Expertise>
             <PanelInformation>
                 <h1>Panel information</h1>
-                
+
                 <div className="infoDiv">
                     <h2>Hourly fee</h2>
                     <p>610$/hour (Negociated)</p>
@@ -331,18 +334,18 @@ export const Profile: FC = () => {
                     <h2>Terms &amp; conditions</h2>
                     <p>Monthly 10k$ retainer - see with {usersList[1]?.name}</p>
 
-                    <div id="attachment"> 
+                    <div id="attachment">
                         <img src="./media/icons/ecosystem.png" alt="Attachment img"/>
                         attachment.jpg
                     </div>
                 </div>
-                
+
                 <h1>Services &amp; projects</h1>
 
                 <div className="infoDiv">
                     <p>Corporate M&amp;A and international acquistions</p>
                 </div>
-                
+
                 <h1>Internal correspondants</h1>
 
                 <div className="infoDiv">
@@ -426,7 +429,7 @@ export const Profile: FC = () => {
                         <p>Racine</p>
                     </div>
                 </div>
-                
+
                 <div className="table">
                     <div id="name">
                         <p>Op. Prometh...</p>
@@ -538,7 +541,7 @@ export const Profile: FC = () => {
                         <p>Racine</p>
                     </div>
                 </div>
-                
+
                 <div className="table">
                     <div id="name">
                         <p>Op. Prometh...</p>
@@ -593,10 +596,120 @@ export const Profile: FC = () => {
 
                 <h1 id="moreReviews">See more Reviews</h1>
 
-            
+
             </InternalReviews>
             <AmountOfFees>
                 <h1>Amount of fees</h1>
+
+                <div className="tableFees" id="titleRow">
+                    <div id="year">
+                        <p>Year</p>
+                    </div>
+
+                    <div id="costCenter">
+                        <p>Cost center</p>
+                    </div>
+
+                    <div id="totalAmount">
+                        <p>Total amount</p>
+                    </div>
+
+                    <div id="lawFirm">
+                        <p>Law firm</p>
+                    </div>
+                </div>
+
+                <div className="tableFees">
+                    <div id="year">
+                        <p>2019</p>
+                    </div>
+
+                    <div id="costCenter">
+                        <p>CS 153</p>
+                    </div>
+
+                    <div id="totalAmount">
+                        <p>3 500$</p>
+                    </div>
+
+                    <div id="lawFirm">
+                        <p>Clifford chance</p>
+                    </div>
+                </div>
+
+                <div className="tableFees">
+                    <div id="year">
+                        <p>2018</p>
+                    </div>
+
+                    <div id="costCenter">
+                        <p>CS 153</p>
+                    </div>
+
+                    <div id="totalAmount">
+                        <p>9 500$</p>
+                    </div>
+
+                    <div id="lawFirm">
+                        <p>Linklaters</p>
+                    </div>
+                </div>
+
+                <div className="tableFees">
+                    <div id="year">
+                        <p>2017</p>
+                    </div>
+
+                    <div id="costCenter">
+                        <p>CS 47</p>
+                    </div>
+
+                    <div id="totalAmount">
+                        <p>10 500$</p>
+                    </div>
+
+                    <div id="lawFirm">
+                        <p>Linklaters</p>
+                    </div>
+                </div>
+
+                <div className="tableFees">
+                    <div id="year">
+                        <p></p>
+                    </div>
+
+                    <div id="costCenter">
+                        <p>CS 153</p>
+                    </div>
+
+                    <div id="totalAmount">
+                        <p>18 500$</p>
+                    </div>
+
+                    <div id="lawFirm">
+                        <p>Linklaters</p>
+                    </div>
+                </div>
+
+                <div className="tableFees">
+                    <div id="year">
+                        <p></p>
+                    </div>
+
+                    <div id="costCenter">
+                        <p>CS 32</p>
+                    </div>
+
+                    <div id="totalAmount">
+                        <p>15 500$</p>
+                    </div>
+
+                    <div id="lawFirm">
+                        <p>Linklaters</p>
+                    </div>
+                </div>
+
+
             </AmountOfFees>
         </Wrapper>
     );
