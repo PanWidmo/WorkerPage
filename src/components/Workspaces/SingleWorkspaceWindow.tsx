@@ -2,6 +2,7 @@ import {FC} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
+import {boxShadow} from '../../styledHelpers/Components';
 // import {Wrapper} from '../../styledHelpers/Components';
 
 const InnerWrapper = styled.div`
@@ -10,6 +11,7 @@ const InnerWrapper = styled.div`
 const Box = styled.div`
     margin:20px 20px 20px 0;
     box-shadow: 1px 2px 10px ${Colors.boxShadow};
+    ${boxShadow()};
 `;
 
 const CustomImage = styled.img`

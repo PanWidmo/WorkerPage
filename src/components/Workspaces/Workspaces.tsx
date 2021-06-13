@@ -11,10 +11,9 @@ SwiperCore.use([EffectFade]);
 
 const InnerWrapper = styled.div`
     max-width:940px;
-    ${boxShadow()};
+    /* ${boxShadow()}; */
 
     .swiper-container {
-        border:2px solid ${Colors.black};
         width:100%;
         overflow:hidden;
     }
@@ -22,8 +21,11 @@ const InnerWrapper = styled.div`
     .swiper-wrapper {
         width:100%;
         display: flex;
-        border:2px solid ${Colors.purple};
     }
+
+    /* .SwiperSlide{
+
+    } */
 `;
 
 const Name = styled.p`
@@ -47,10 +49,8 @@ export const Workspaces: FC = () => {
             <Name>Workspaces</Name>
             {/* <Slider> */}
                 <Swiper
-                    spaceBetween={40}
-                    slidesPerView={3}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
+                    freeMode={true}
+
                 >
                     <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
                     <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
