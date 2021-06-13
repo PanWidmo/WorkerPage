@@ -18,6 +18,7 @@ type GetPhotos = ReturnType<typeof getPhotos>
 const Wrapper = styled.div`
     width:940px;
     margin:10px 40px 10px 0;
+    padding-top:10px;
     padding-bottom: 60px;
     background: ${Colors.white};
 
@@ -64,27 +65,27 @@ const Wrapper = styled.div`
 `;
 
 const TopButtons = styled.div`
-    width:100%;
     display: flex;
-    justify-content: right;
+    float:right;
 
     .buttonTop{
-        margin-left: 30px;
-        cursor:pointer;
+        display: flex;
         align-items: center;
+        margin-right: auto;
+        cursor: pointer;
+        margin:0 14px;
+
 
         img {
         width: 20px;
+        margin:0 4px;
 
-        .text {
-            border:2px solid red;
-        }
     }}
 `;
 
 const UserProfileTop = styled.div`
     display:grid;
-    margin:30px 0;
+    margin:50px 0 20px 0;
     grid-template-columns: 40% 60%;
 
     .left{
@@ -225,17 +226,23 @@ const PanelInformation = styled.div`
 
             .message{
                 grid-column: 3;
+                display: flex;
+                align-items: center;
 
                 img{
                     width:20px;
+                    margin-right:5px;
                 }
             }
 
             .profile{
                 grid-column: 4;
+                display: flex;
+                align-items: center;
 
                 img{
                     width:20px;
+                    margin-right:5px;
                 }
             }
 
@@ -306,24 +313,24 @@ export const Profile: FC = () => {
     return (
         <Wrapper>
             <TopButtons>
-                    <span className="buttonTop">
-                        <img src="./media/icons/ecosystem.png" alt="Message img"/>
+                    <div className="buttonTop" id="message">
+                        <img src="./media/icons/people.png" alt="Message img"/>
                         <span className="text">Message</span>
-                    </span>
+                    </div>
 
-                    <span className="buttonTop">
+                    <div className="buttonTop" id="request">
                         <img src="./media/icons/ecosystem.png" alt="Message img"/>
                         <span className="text">Create a request</span>
-                    </span>
+                    </div>
 
-                    <span className="buttonTop">
-                        <img src="./media/icons/ecosystem.png" alt="Message img"/>
+                    <div className="buttonTop" id="cluster">
+                        <img src="./media/icons/network.png" alt="Message img"/>
                         <span className="text">Add to a cluster</span>
-                    </span>
+                    </div>
 
-                    <span className="buttonTop">
+                    <div className="buttonTop">
                         X
-                    </span>
+                    </div>
 
             </TopButtons>
             <UserProfileTop>
