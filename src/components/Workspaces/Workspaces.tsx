@@ -35,19 +35,10 @@ const Name = styled.p`
 
 `;
 
-// const Slider = styled.div`
-//     width:400px;
-//     border:2px solid red;
-//     overflow-x:scroll;
-//     display: flex;
-// `;
-
-
 export const Workspaces: FC = () => {
     return (
         <InnerWrapper>
             <Name>Workspaces</Name>
-            {/* <Slider> */}
                 <Swiper
                     freeMode={true}
 
@@ -62,7 +53,6 @@ export const Workspaces: FC = () => {
                     <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
                     <SwiperSlide><SingleWorkspaceWindow></SingleWorkspaceWindow></SwiperSlide>
                 </Swiper>
-            {/* </Slider> */}
 
         </InnerWrapper>
     );
