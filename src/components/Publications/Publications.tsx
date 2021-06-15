@@ -74,7 +74,7 @@ const RightSide = styled.div`
     align-items:Center;
 
     #content{
-        overflow-y:scroll;
+        /* overflow-y:scroll; */
         max-height: 280px;
     }
 
