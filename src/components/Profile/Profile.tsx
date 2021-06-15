@@ -1,7 +1,7 @@
 import {FC,useEffect} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {fontSize} from '../../styledHelpers/FontSizes';
+// import {fontSize} from '../../styledHelpers/FontSizes';
 import {Colors} from '../../styledHelpers/Colors';
 
 //#region import data from api
@@ -25,6 +25,10 @@ const Wrapper = styled.div`
     h1{
         margin:20px 0;
         font-weight: bold;
+    }
+
+    .pencilHover{
+        cursor: pointer;
     }
 
     #titleRow{
@@ -299,6 +303,23 @@ const AmountOfFees = styled.div`
 //#endregion
 export const Profile: FC = () => {
 
+
+    const editValues = () => {
+        const nameValue = document.getElementById('name')?.contentEditable;
+
+        if(nameValue === 'inherit' || nameValue === 'false'){
+            const x = document.getElementById('name');
+            x?.setAttribute("contentEditable","true");
+            console.log("na true");
+            }
+
+            else{
+                // @ts-ignore: Object is possibly 'null'.
+                document.getElementById('name').contentEditable = false;
+                console.log("na false");
+            }
+    }
+
     const { usersList, usersPhoto } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }))
@@ -344,14 +365,14 @@ export const Profile: FC = () => {
                     <p id="companyName">{usersList[0]?.company.name}</p>
                     <p id="address">{usersList[0]?.address.city}</p>
                     <p id="username">{usersList[0]?.username}</p>
-                    <p id="pencilId"><img id="editProfile" src="./media/icons/pencil.png" alt="Pen icon"/></p>
+                    <p id="pencilId" onClick={editValues}><img id="editProfile" className="pencilHover" src="./media/icons/pencil.png" alt="Pen icon"/></p>
                     <p id="email">{usersList[0]?.email}</p>
                     <p id="phone">{usersList[0]?.phone}</p>
                 </div>
 
             </UserProfileTop>
             <Expertise>
-                <div id="topWithPencil">
+                <div id="topWithPencil" className="pencilHover">
                     <h1 id="expertiseTitle">Expertise</h1>
                     <p id="expertisePencil"><img id="editExpertise" src="./media/icons/pencil.png" alt="Pen icon"/></p>
                     </div>
