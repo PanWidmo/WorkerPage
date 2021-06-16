@@ -305,17 +305,18 @@ export const Profile: FC = () => {
 
 
     const editValues = () => {
-        const nameValue = document.getElementById('name')?.contentEditable;
+        const nameValue = document.getElementById('nameProfile')!.contentEditable;
 
+        //dodac eventListenera?
         if(nameValue === 'inherit' || nameValue === 'false'){
-            const x = document.getElementById('name');
-            x?.setAttribute("contentEditable","true");
+            // @ts-ignore: Object is possibly 'null'.
+            document.getElementById('nameProfile')!.contentEditable = true;
             console.log("na true");
             }
 
             else{
                 // @ts-ignore: Object is possibly 'null'.
-                document.getElementById('name').contentEditable = false;
+                document.getElementById('name')!.contentEditable = false;
                 console.log("na false");
             }
     }
@@ -361,7 +362,7 @@ export const Profile: FC = () => {
                 </div>
 
                 <div className="right">
-                    <p id="name">{usersList[0]?.name}</p>
+                    <p id="nameProfile">{usersList[0]?.name}</p>
                     <p id="companyName">{usersList[0]?.company.name}</p>
                     <p id="address">{usersList[0]?.address.city}</p>
                     <p id="username">{usersList[0]?.username}</p>
