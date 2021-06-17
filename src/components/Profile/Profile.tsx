@@ -303,7 +303,6 @@ const AmountOfFees = styled.div`
 //#endregion
 export const Profile: FC = () => {
 
-
     const editValues = () => {
         const nameValue = document.getElementById('nameProfile')!.contentEditable;
 
