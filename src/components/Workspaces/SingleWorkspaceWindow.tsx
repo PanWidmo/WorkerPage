@@ -62,16 +62,16 @@ export const SingleWorkspaceWindow: FC = () => {
     return (
         <InnerWrapper>
                 <Box>
-                    <CustomImage src="./imgs/write2.jpg"/>
+                    <CustomImage src="./media/imgs/write2.jpg"/>
                         <Icon>
-                            <img src="./imgs/write.png" alt="Writing img"/>
+                            <img src="./media/imgs/write.png" alt="Writing img"/>
                             <p>Client contract</p>
                         </Icon>
                         <AndUsers>
-                            <img src="./imgs/write.png" alt="Writing img cloud"/>
+                            <img src="./media/imgs/write.png" alt="Writing img cloud"/>
                             Contract
                             <span>&#9679;</span>
-                            <img src="./icons/people.png" alt="People icon"/>
+                            <img src="./media/icons/people.png" alt="People icon"/>
                             150 users
                             <p>Last update 2 day ago</p>
                         </AndUsers>

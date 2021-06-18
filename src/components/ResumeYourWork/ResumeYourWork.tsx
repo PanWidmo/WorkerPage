@@ -199,10 +199,10 @@ export const ResumeYourWork: FC = () => {
                     <h1>{x?.name}</h1>
                     <p>{x?.body}</p>
                     <Bottom>
-                        <img src="./media/logo.png" alt="Logo img"/>
+                        <img src="./media/imgs/logo.png" alt="Logo img"/>
                         <span> {usersList[x.id]?.company.name} </span>
                         <span>&bull; </span>
-                        <img src="./imgs/write.png" alt="Icon img"/>
+                        <img src="./media/imgs/write.png" alt="Icon img"/>
                         <span>Corporate</span>
                         <span>&bull; </span>
                         <span>Updated 3 days ago by {usersList[x.id]?.name}</span>

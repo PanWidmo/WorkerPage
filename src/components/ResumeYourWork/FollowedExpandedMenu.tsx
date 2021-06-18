@@ -26,8 +26,8 @@ export const FollowedExpandedMenu: FC = () => {
                     <li className="category">Platform</li>
                     <li className="category">Workspaces</li>
                     <li className="category">Account</li>
-                    <li><img src="./media/icons/privacy.png" className="icons" alt="fotosy"/>Privacy</li>
-                    <li><img src="./media/icons/settings.png" className="icons" alt="fotosy"/>Settings</li>
+                    <li><img src="./media/icons/privacy.png" className="icons" alt="Privacy icon"/>Privacy</li>
+                    <li><img src="./media/icons/settings.png" className="icons" alt="Settings icon"/>Settings</li>
             </ul>
         </Wrapper>
     );

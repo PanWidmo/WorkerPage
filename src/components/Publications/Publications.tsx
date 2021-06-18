@@ -31,7 +31,7 @@ const LeftSide = styled.div`
     width:300px;
     height:340px;
     grid-column:1;
-    background-image: url("./imgs/city2.png");
+    background-image: url("./media/imgs/city2.png");
     background-position: center;
     background-size: cover;
     color: ${Colors.white};

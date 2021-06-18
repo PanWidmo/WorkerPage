@@ -126,9 +126,9 @@ export const LeftMenu: FC = () => {
                     <span id="job">{usersList[0]?.company.name}</span>
                 </PersonInfo>
                 <PersonDetails>
-                    <img className="leftImgs" src="./icons/people.png" alt="Network icon"/>
+                    <img className="leftImgs" src="./media/icons/people.png" alt="Network icon"/>
                     <span className="middle">Your network</span>
-                    <img className="rightImgs" src="./icons/user-plus.png" alt="User+ icon"/>
+                    <img className="rightImgs" src="./media/icons/user-plus.png" alt="User with plus icon"/>
 
                     <img className="leftImgs" src="./media/icons/publications.png" alt="Publications icon"/>
                     <span className="middle">Your Publications</span>
