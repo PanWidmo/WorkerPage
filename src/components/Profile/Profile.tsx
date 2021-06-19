@@ -1,8 +1,9 @@
-import {FC,useEffect} from 'react';
+import {FC,useEffect, useState} from 'react';
 // import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 // import {fontSize} from '../../styledHelpers/FontSizes';
 import {Colors} from '../../styledHelpers/Colors';
+// import { withFormik, Form, Field } from 'formik';
 
 //#region import data from api
 import { IState } from '../../reducers';
@@ -25,6 +26,7 @@ const Wrapper = styled.div`
     h1{
         margin:20px 0;
         font-weight: bold;
+        padding:10px;
     }
 
     .pencilHover{
@@ -44,6 +46,7 @@ const Wrapper = styled.div`
 
         #name{
             grid-column: 1;
+            padding-left:10px;
         }
 
         #entity{
@@ -64,6 +67,17 @@ const Wrapper = styled.div`
 
         #firm{
             grid-column: 6;
+        }
+    }
+
+    .userProfileContentEditAfter{
+        user-select: all;
+        border:1px dotted blue;
+        font-style:italic;
+        text-decoration: none;
+
+        &:focus{
+            font-style: normal;
         }
     }
 `;
@@ -283,6 +297,7 @@ const AmountOfFees = styled.div`
         margin-top:10px;
 
         #year{
+            padding-left:10px;
             grid-column: 1;
         }
 
@@ -303,19 +318,66 @@ const AmountOfFees = styled.div`
 //#endregion
 export const Profile: FC = () => {
 
-    const editValues = () => {
+    const editValuesUser = () => {
         const nameValue = document.getElementById('nameProfile')!.contentEditable;
+        const nameValue2 = document.getElementById('companyName')!.contentEditable;
+        const nameValue3 = document.getElementById('address')!.contentEditable;
+        const nameValue4 = document.getElementById('username')!.contentEditable;
+        const nameValue5 = document.getElementById('email')!.contentEditable;
+        const nameValue6 = document.getElementById('phone')!.contentEditable;
 
-        //dodac eventListenera?
-        if(nameValue === 'inherit' || nameValue === 'false'){
-            // @ts-ignore: Object is possibly 'null'.
-            document.getElementById('nameProfile')!.contentEditable = true;
+        if(nameValue === 'inherit' || nameValue === 'false' || nameValue2 === 'inherit' || nameValue2 === 'false'
+        || nameValue3 === 'inherit' || nameValue3 === 'false'|| nameValue4 === 'inherit' || nameValue4 === 'false'
+        || nameValue5 === 'inherit' || nameValue5 === 'false' || nameValue6 === 'inherit' || nameValue6 === 'false'
+        ){
+            const t1 = document.getElementById('nameProfile')
+            t1!.contentEditable = 'true';
+            t1!.classList.add('userProfileContentEditAfter');
+            const t2 = document.getElementById('companyName')
+            t2!.contentEditable = 'true';
+            t2!.classList.add('userProfileContentEditAfter');
+            const t3 = document.getElementById('address')
+            t3!.contentEditable = 'true';
+            t3!.classList.add('userProfileContentEditAfter');
+            const t4 = document.getElementById('username')
+            t4!.contentEditable = 'true';
+            t4!.classList.add('userProfileContentEditAfter');
+            const t5 = document.getElementById('email')
+            t5!.contentEditable = 'true';
+            t5!.classList.add('userProfileContentEditAfter');
+            const t6 = document.getElementById('phone')
+            t6!.contentEditable = 'true';
+            t6!.classList.add('userProfileContentEditAfter');
+
+            setSrc1 (srcImg[1]);
+
+
+
             console.log("na true");
             }
 
             else{
-                // @ts-ignore: Object is possibly 'null'.
-                document.getElementById('name')!.contentEditable = false;
+                const t1 = document.getElementById('nameProfile')
+                t1!.contentEditable = 'false';
+                t1!.classList.remove('userProfileContentEditAfter');
+                const t2 = document.getElementById('companyName')
+                t2!.contentEditable = 'false';
+                t2!.classList.remove('userProfileContentEditAfter');
+                const t3 = document.getElementById('address')
+                t3!.contentEditable = 'false';
+                t3!.classList.remove('userProfileContentEditAfter');
+                const t4 = document.getElementById('username')
+                t4!.contentEditable = 'false';
+                t4!.classList.remove('userProfileContentEditAfter');
+                const t5 = document.getElementById('email')
+                t5!.contentEditable = 'false';
+                t5!.classList.remove('userProfileContentEditAfter');
+                const t6 = document.getElementById('phone')
+                t6!.contentEditable = 'false';
+                t6!.classList.remove('userProfileContentEditAfter');
+
+                setSrc1 (srcImg[0]);
+
                 console.log("na false");
             }
     }
@@ -325,6 +387,17 @@ export const Profile: FC = () => {
     }))
 
     const dispatch = useDispatch();
+
+    //#region states
+
+    const srcImg = [
+        "./media/icons/pencil.png",
+        "./media/icons/save.png"
+    ]
+
+    const [src1, setSrc1] = useState(srcImg[0]);
+
+    //#endregion
 
     useEffect(() => {
         dispatch<GetUsers>(getUsers());
@@ -361,13 +434,13 @@ export const Profile: FC = () => {
                 </div>
 
                 <div className="right">
-                    <p id="nameProfile">{usersList[0]?.name}</p>
-                    <p id="companyName">{usersList[0]?.company.name}</p>
-                    <p id="address">{usersList[0]?.address.city}</p>
-                    <p id="username">{usersList[0]?.username}</p>
-                    <p id="pencilId" onClick={editValues}><img id="editProfile" className="pencilHover" src="./media/icons/pencil.png" alt="Pen icon"/></p>
-                    <p id="email">{usersList[0]?.email}</p>
-                    <p id="phone">{usersList[0]?.phone}</p>
+                    <p id="nameProfile" className="userProfileContentEdit">{usersList[0]?.name}</p>
+                    <p id="companyName" className="userProfileContentEdit">{usersList[0]?.company.name}</p>
+                    <p id="address" className="userProfileContentEdit">{usersList[0]?.address.city}</p>
+                    <p id="username" className="userProfileContentEdit">{usersList[0]?.username}</p>
+                    <p id="pencilId"><img id="editProfile" className="pencilHover" onClick={editValuesUser} src={src1} alt="Pen icon"/></p>
+                    <p id="email" className="userProfileContentEdit">{usersList[0]?.email}</p>
+                    <p id="phone" className="userProfileContentEdit">{usersList[0]?.phone}</p>
                 </div>
 
             </UserProfileTop>

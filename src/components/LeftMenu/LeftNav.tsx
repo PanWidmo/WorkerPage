@@ -45,7 +45,7 @@ export const LeftNav: FC = () => {
                 <img className="imgs" src="./media/icons/ecosystem.png" alt="Ecosystem icon"/>
                 <span className="titles">Ecosystem</span>
 
-                <img className="imgs" src="./media/icons/entities.png" alt="Entities icon"/>
+                <img className="imgs" src="./media/icons/entities2.png" alt="Entities icon"/>
                 <span className="titles"><Link to="/entities">Entities</Link></span>
             </InnerWrapper>
     );
