@@ -10,16 +10,18 @@ import {boxShadow} from '../../styledHelpers/Components';
 //#region import data from api
 import { IState } from '../../reducers';
 import { IUsersReducer } from '../../reducers/usersReducers';
-import { getUsers, getComments } from '../../actions/userActions';
+import { getUsers, getPhotos, getPosts } from '../../actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 type GetUsers = ReturnType<typeof getUsers>
-type GetComments = ReturnType<typeof getComments>
+type GetPhotos = ReturnType<typeof getPhotos>
+type GetPosts = ReturnType<typeof getPosts>
 //#endregion
 
 const Wrapper = styled.div`
     width:940px;
     margin:10px 40px 0 0;
+    background: ${Colors.white};
 
     .iconsSizes{
         width:15px;
@@ -28,6 +30,55 @@ const Wrapper = styled.div`
     .cursorPointer{
         cursor: pointer;
     }
+
+    .allBoxes{
+
+        #singleBox{
+            width:280px;
+            min-height: 80px;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 30% 1fr;
+            ${boxShadow()};
+
+            #left{
+                grid-column:1;
+                display: flex;
+                align-items: center;
+                margin: 0 auto;
+
+                img {
+                    width: 60px;
+                }
+            }
+
+            #right{
+                grid-column: 2;
+                position:relative;
+
+                .title{
+                    margin-top: 10px;
+                    font-size: ${fontSize[14]};
+
+                    ::first-letter {
+                    text-transform: uppercase;
+                    }
+
+                }
+
+                .bottomInfo{
+                    color:${Colors.lightgrayOriginal};
+                    font-size: ${fontSize[12]};
+                    position: absolute;
+                    bottom: 0;
+                    left: 90;
+                }
+            }
+        }
+    }
+
+
+
 `;
 
 const Top = styled.div`
@@ -35,6 +86,7 @@ const Top = styled.div`
     display: grid;
     grid-template-columns: 50% 50%;
     row-gap: 10px;
+    margin-bottom: 10px;
 `;
 
 const LeftTop = styled.div`
@@ -136,7 +188,8 @@ const RightDown = styled.div`
 `;
 
 const InputFilter = styled.div`
-    background: ${Colors.white};
+    border: 1px solid ${Colors.lightgrayOriginal};
+    border-radius: 5%;
     padding:7px;
     display: flex;
     align-items: center;
@@ -163,6 +216,15 @@ const Followed = styled.div`
     color:${Colors.purple};
     column-gap: 15px;
 `;
+
+const Content = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+`
+
+
 export const Entities: FC = () => {
 
     //#region dropDownMenu
@@ -173,7 +235,7 @@ export const Entities: FC = () => {
     };
     //#endregion
 
-    const { usersList, usersComment } = useSelector<IState, IUsersReducer>(state => ({
+    const { usersList, usersPhoto, usersPost } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }))
 
@@ -181,7 +243,8 @@ export const Entities: FC = () => {
 
     useEffect(() => {
         dispatch<GetUsers>(getUsers());
-        dispatch<GetComments>(getComments());
+        dispatch<GetPhotos>(getPhotos());
+        dispatch<GetPosts>(getPosts());
     }, [dispatch]);
 
     const [currentPage, setCurrentPage] = useState<number>(0);
@@ -265,6 +328,24 @@ export const Entities: FC = () => {
                     </Followed>
                 </RightDown>
             </Top>
+
+            <Content>
+            {usersPost.slice(0,30).map((x:any) => {
+                    return(
+                        <div className="allBoxes">
+                            <div id="singleBox">
+                                <div id="left">
+                                    <img src={usersPhoto[x.userId]?.url} alt="Single entitie img"/>
+                                </div>
+                                <div id="right">
+                                    <p className="title">{x?.title}</p>
+                                    <p className="bottomInfo">Caracas 1050, Distrito Capital, Venezuela</p>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })}
+            </Content>
         </Wrapper>
     );
 };
