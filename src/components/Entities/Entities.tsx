@@ -81,6 +81,7 @@ const Wrapper = styled.div`
 
 
     .wider{
+        width:100%;
         position: absolute;
         background: ${Colors.white};
         left: 0px;
@@ -237,7 +238,6 @@ const Content = styled.div`
     flex-wrap: wrap;
     column-gap: 20px;
     row-gap: 20px;
-
     }
 `
 
