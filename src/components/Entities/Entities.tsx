@@ -332,6 +332,7 @@ export const Entities: FC = () => {
             <Content>
             {usersPost.slice(0,30).map((x:any) => {
                     return(
+                        ((x.title).toLowerCase().includes(inputText.toLowerCase())) &&
                         <div className="allBoxes">
                             <div id="singleBox">
                                 <div id="left">
