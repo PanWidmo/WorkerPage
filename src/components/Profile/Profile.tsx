@@ -385,23 +385,19 @@ export const Profile: FC = () => {
     const editValuesProfile = () => {
         const v1 = document.getElementById('edit1')!.contentEditable;
         const v2 = document.getElementById('edit2')!.contentEditable;
-        const v3 = document.getElementById('address')!.contentEditable;
-        const v4 = document.getElementById('username')!.contentEditable;
-        const v5 = document.getElementById('email')!.contentEditable;
-        const v6 = document.getElementById('phone')!.contentEditable;
-        const v7 = document.getElementById('phone')!.contentEditable;
-        const v8 = document.getElementById('phone')!.contentEditable;
-        const v9 = document.getElementById('phone')!.contentEditable;
-        const v10 = document.getElementById('phone')!.contentEditable;
-        const v11 = document.getElementById('phone')!.contentEditable;
-        const v12 = document.getElementById('phone')!.contentEditable;
-        const v13 = document.getElementById('phone')!.contentEditable;
+        // const v3 = document.getElementById('address')!.contentEditable;
+        // const v4 = document.getElementById('username')!.contentEditable;
+        // const v5 = document.getElementById('email')!.contentEditable;
+        // const v6 = document.getElementById('phone')!.contentEditable;
+        // const v7 = document.getElementById('phone')!.contentEditable;
+        // const v8 = document.getElementById('phone')!.contentEditable;
+        // const v9 = document.getElementById('phone')!.contentEditable;
+        // const v10 = document.getElementById('phone')!.contentEditable;
+        // const v11 = document.getElementById('phone')!.contentEditable;
+        // const v12 = document.getElementById('phone')!.contentEditable;
+        // const v13 = document.getElementById('phone')!.contentEditable;
 
         if(v1 === 'inherit' || v1 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' ){
-            || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false'
-            || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false'
-            || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false'
-            || v2 === 'inherit' || v2 === 'false'
             const t1 = document.getElementById('edit1')
             t1!.contentEditable = 'true';
             t1!.classList.add('userProfileContentEditAfter');
