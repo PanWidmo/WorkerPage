@@ -5,6 +5,7 @@ import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import useDropdown from 'react-dropdown-hook';
 import {AllExpandedMenu} from './AllExpandedMenu';
+import copy from 'copy-to-clipboard';
 import {boxShadow} from '../../styledHelpers/Components';
 
 //#region import data from api
@@ -311,6 +312,12 @@ export const Entities: FC = () => {
         console.log(x);
     }
 
+    const copyUrl  = () =>{
+        copy('http://localhost:3000/entities');
+        alert("Address copied to clipboard successfully!");
+
+    }
+
     return (
         <Wrapper>
             <div id="fullPage">
@@ -356,7 +363,7 @@ export const Entities: FC = () => {
                     <div id="resizeDiv" className="menuInline cursorPointer" onClick={widerView}>
                     <img className="iconsSizes" src={src1} alt="Resize icon"/>
                     </div>
-                    <div id="shareDiv" className="menuInline cursorPointer">
+                    <div id="shareDiv" className="menuInline cursorPointer" onClick={copyUrl}>
                         <img className="iconsSizes" src="./media/icons/share.png" alt="Share icon"/>
                         <p>Share</p>
                     </div>
