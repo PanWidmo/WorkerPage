@@ -1,5 +1,5 @@
 import {FC, useEffect, ChangeEvent, useState} from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
@@ -19,10 +19,12 @@ type GetPosts = ReturnType<typeof getPosts>
 //#endregion
 
 const Wrapper = styled.div`
+
     width:940px;
+    background: ${Colors.white};
     margin:10px 40px 0 0;
     padding:10px;
-    background: ${Colors.white};
+
 
     .iconsSizes{
         width:15px;
@@ -77,6 +79,12 @@ const Wrapper = styled.div`
     }
 
 
+    .wider{
+        position: absolute;
+        background: ${Colors.white};
+        left: 0px;
+        top: 0px;
+    }
 
 
 `;
@@ -235,6 +243,13 @@ const Content = styled.div`
 
 export const Entities: FC = () => {
 
+    const srcImg = [
+        "./media/icons/resize.png",
+        "./media/icons/resize2.png"
+    ]
+
+    const [src1, setSrc1] = useState(srcImg[0]);
+
     //#region dropDownMenu
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
 
@@ -243,7 +258,7 @@ export const Entities: FC = () => {
     };
     //#endregion
 
-    const { usersList, usersPhoto, usersPost } = useSelector<IState, IUsersReducer>(state => ({
+    const { usersPhoto, usersPost } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }))
 
@@ -254,13 +269,6 @@ export const Entities: FC = () => {
         dispatch<GetPhotos>(getPhotos());
         dispatch<GetPosts>(getPosts());
     }, [dispatch]);
-
-    const [currentPage, setCurrentPage] = useState<number>(0);
-    const handlePageClick = (data:any) => {
-        const selected = data.selected;
-        setCurrentPage(selected);
-
-    }
 
     //#region search function
 
@@ -295,8 +303,17 @@ export const Entities: FC = () => {
 
     }
 
+    const widerView = () => {
+        const x = document.getElementById('fullPage');
+        x!.classList.add('wider');
+        setSrc1 (srcImg[1]);
+
+        console.log(x);
+    }
+
     return (
         <Wrapper>
+            <div id="fullPage">
             <Top>
                 <LeftTop>
                     <h1>Entities</h1>
@@ -336,8 +353,8 @@ export const Entities: FC = () => {
                         <img className="iconsSizes" src="./media/icons/filters.png" alt="Filters icon"/>
                         <p>Filters</p>
                     </div>
-                    <div id="resizeDiv" className="menuInline cursorPointer">
-                    <img className="iconsSizes" src="./media/icons/resize.png" alt="Resize icon"/>
+                    <div id="resizeDiv" className="menuInline cursorPointer" onClick={widerView}>
+                    <img className="iconsSizes" src={src1} alt="Resize icon"/>
                     </div>
                     <div id="shareDiv" className="menuInline cursorPointer">
                         <img className="iconsSizes" src="./media/icons/share.png" alt="Share icon"/>
@@ -378,6 +395,7 @@ export const Entities: FC = () => {
                     })}
                 </div>
             </Content>
+            </div>
         </Wrapper>
     );
 };
