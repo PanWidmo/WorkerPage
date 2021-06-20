@@ -21,6 +21,13 @@ const Wrapper = styled.div`
     width:940px;
     margin:10px 40px 0 0;
 
+    .iconsSizes{
+        width:15px;
+    }
+
+    .cursorPointer{
+        cursor: pointer;
+    }
 `;
 
 const Top = styled.div`
@@ -53,11 +60,19 @@ const RightTop = styled.div`
     align-items: center;
     margin-left: auto;
     column-gap: 20px;
+    border:1px solid ${Colors.lightgrayOriginal};
+    padding:7px;
+
+    #mosaic{
+        border-right: 1px solid ${Colors.lightgrayOriginal};
+        padding-right: 10px;
+    }
 
     .rightButtonsTop{
         display:flex;
         align-items: center;
         column-gap: 10px;
+        cursor: pointer;
     }
 
     img{
@@ -71,17 +86,24 @@ const LeftDown = styled.div`
     grid-row: 2;
     display:flex;
     align-items: center;
-    column-gap: 10px;
-
-    .iconsSizes{
-        width:15px;
-    }
+    column-gap: 15px;
 
     .menuInline{
     display:flex;
     align-items: center;
-    column-gap: 7px;
+    column-gap: 5px;
+    }
 
+    #sortDiv{
+        border-left:2px solid ${Colors.lightgrayOriginal};
+        padding-left: 10px;
+    }
+
+    #resizeDiv{
+        border-left:2px solid ${Colors.lightgrayOriginal};
+        border-right:2px solid ${Colors.lightgrayOriginal};
+        padding-left: 10px;
+        padding-right: 10px;
     }
 `;
 
@@ -93,6 +115,9 @@ const MenuWrapper = styled.div`
     user-select: none; /* no background on double click */
     font-weight: bold;
     color:${Colors.purple};
+    background: ${Colors.lightgrayOriginal};
+    padding:10px;
+    border-radius: 8%;
 
     #circle {
         width:15px;
@@ -113,9 +138,9 @@ const RightDown = styled.div`
 const InputFilter = styled.div`
     background: ${Colors.white};
     padding:7px;
-    margin-right: 40px;
     display: flex;
     align-items: center;
+    margin-right: 20px;
 
     input{
         border:none;
@@ -129,6 +154,15 @@ const InputFilter = styled.div`
     }
 `;
 
+const Followed = styled.div`
+    display: flex;
+    align-items: center;
+    padding:5px;
+    border: solid 2px ${Colors.purple};
+    border-radius: 5%;
+    color:${Colors.purple};
+    column-gap: 15px;
+`;
 export const Entities: FC = () => {
 
     //#region dropDownMenu
@@ -172,7 +206,7 @@ export const Entities: FC = () => {
             <Top>
                 <LeftTop>
                     <h1>Entities</h1>
-                    <img src="./media/icons/settingsIcon.png" alt="Settings icon" />
+                    <img className="cursorPointer" src="./media/icons/settingsIcon.png" alt="Settings icon" />
                 </LeftTop>
 
                 <RightTop>
@@ -198,19 +232,21 @@ export const Entities: FC = () => {
                         }
                     </MenuWrapper>
                     <div id="rightBorder">
-                        <img className="iconsSizes" src="./media/icons/threeDots.png" alt="Three Dots icon"/>
+                        <img className="iconsSizes cursorPointer" src="./media/icons/threeDots.png" alt="Three Dots icon"/>
                     </div>
-                    <div className="menuInline">
+                    <div id="sortDiv" className="menuInline cursorPointer">
                         <img className="iconsSizes" src="./media/icons/arrowsUpDown.png" alt="Arrows icon"/>
                         <p>Sort</p>
                     </div>
-                    <div>
+                    <div id="filtersDiv" className="menuInline cursorPointer">
+                        <img className="iconsSizes" src="./media/icons/filters.png" alt="Filters icon"/>
                         <p>Filters</p>
                     </div>
-                    <div>
-                        <p>/</p>
+                    <div id="resizeDiv" className="menuInline cursorPointer">
+                    <img className="iconsSizes" src="./media/icons/resize.png" alt="Resize icon"/>
                     </div>
-                    <div>
+                    <div id="shareDiv" className="menuInline cursorPointer">
+                        <img className="iconsSizes" src="./media/icons/share.png" alt="Share icon"/>
                         <p>Share</p>
                     </div>
 
@@ -222,7 +258,11 @@ export const Entities: FC = () => {
                         <img src="./media/icons/search.png" id="search" alt=""/>
                     </InputFilter>
 
-                    <h1>Followed</h1>
+                    <Followed>
+                        <img className="iconsSizes" src="./media/icons/signal.png" alt="Signal icon"/>
+                        <p>Followed</p>
+                        <img src="./media/icons/arrow-down.png" alt="Arrown down icon"/>
+                    </Followed>
                 </RightDown>
             </Top>
         </Wrapper>
