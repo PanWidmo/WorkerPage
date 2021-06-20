@@ -21,6 +21,7 @@ type GetPosts = ReturnType<typeof getPosts>
 const Wrapper = styled.div`
     width:940px;
     margin:10px 40px 0 0;
+    padding:10px;
     background: ${Colors.white};
 
     .iconsSizes{
@@ -31,51 +32,50 @@ const Wrapper = styled.div`
         cursor: pointer;
     }
 
-    .allBoxes{
 
-        #singleBox{
-            width:280px;
-            min-height: 80px;
-            padding: 10px;
-            display: grid;
-            grid-template-columns: 30% 1fr;
-            ${boxShadow()};
+    #singleBox{
+        width:280px;
+        min-height: 80px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 30% 1fr;
+        ${boxShadow()};
 
-            #left{
-                grid-column:1;
-                display: flex;
-                align-items: center;
-                margin: 0 auto;
+        #left{
+            grid-column:1;
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
 
-                img {
-                    width: 60px;
+            img {
+                width: 60px;
+            }
+        }
+
+        #right{
+            grid-column: 2;
+            position:relative;
+
+            .title{
+                margin-top: 10px;
+                font-size: ${fontSize[14]};
+
+                ::first-letter {
+                text-transform: uppercase;
                 }
+
             }
 
-            #right{
-                grid-column: 2;
-                position:relative;
-
-                .title{
-                    margin-top: 10px;
-                    font-size: ${fontSize[14]};
-
-                    ::first-letter {
-                    text-transform: uppercase;
-                    }
-
-                }
-
-                .bottomInfo{
-                    color:${Colors.lightgrayOriginal};
-                    font-size: ${fontSize[12]};
-                    position: absolute;
-                    bottom: 0;
-                    left: 90;
-                }
+            .bottomInfo{
+                color:${Colors.lightgrayOriginal};
+                font-size: ${fontSize[12]};
+                position: absolute;
+                bottom: 0;
+                left: 90;
             }
         }
     }
+
 
 
 
@@ -111,13 +111,17 @@ const RightTop = styled.div`
     display: flex;
     align-items: center;
     margin-left: auto;
-    column-gap: 20px;
     border:1px solid ${Colors.lightgrayOriginal};
-    padding:7px;
 
     #mosaic{
         border-right: 1px solid ${Colors.lightgrayOriginal};
         padding-right: 10px;
+        background: ${Colors.lightgray};
+        padding:5px;
+    }
+
+    #nonMosaic{
+        padding:5px;
     }
 
     .rightButtonsTop{
@@ -218,10 +222,14 @@ const Followed = styled.div`
 `;
 
 const Content = styled.div`
+
+    .contentClassContainer{
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
     row-gap: 20px;
+
+    }
 `
 
 
@@ -264,6 +272,29 @@ export const Entities: FC = () => {
     }
     //#endregion
 
+    const nonMosaicLook = () => {
+        const x = document.getElementById('contentContainer');
+        x?.classList.remove('contentClassContainer');
+
+        const y = document.getElementById('nonMosaic');
+        y!.style.background = "lightgray";
+
+        const z = document.getElementById('mosaic');
+        z!.style.background = "white";
+    }
+
+    const mosaicLook = () => {
+        const x = document.getElementById('contentContainer');
+        x?.classList.add('contentClassContainer');
+
+        const y = document.getElementById('nonMosaic');
+        y!.style.background = "white";
+
+        const z = document.getElementById('mosaic');
+        z!.style.background = "lightgray";
+
+    }
+
     return (
         <Wrapper>
             <Top>
@@ -273,12 +304,12 @@ export const Entities: FC = () => {
                 </LeftTop>
 
                 <RightTop>
-                    <div id="mosaic" className="rightButtonsTop">
+                    <div id="mosaic" className="rightButtonsTop" onClick={mosaicLook}>
                         <img src="./media/icons/mosaic.png" alt="Mosaic icon"/>
                         <p>Mosaic</p>
                     </div>
 
-                    <div id="nonMosaic" className="rightButtonsTop">
+                    <div id="nonMosaic" className="rightButtonsTop" onClick={nonMosaicLook}>
                         <img src="./media/icons/nonMosaic.png" alt="Non mosaic icon"/>
                     </div>
 
@@ -330,22 +361,22 @@ export const Entities: FC = () => {
             </Top>
 
             <Content>
-            {usersPost.slice(0,30).map((x:any) => {
-                    return(
-                        ((x.title).toLowerCase().includes(inputText.toLowerCase())) &&
-                        <div className="allBoxes">
-                            <div id="singleBox">
-                                <div id="left">
-                                    <img src={usersPhoto[x.userId]?.url} alt="Single entitie img"/>
+                <div id="contentContainer" className="contentClassContainer">
+                {usersPost.slice(0,30).map((x:any) => {
+                        return(
+                            ((x.title).toLowerCase().includes(inputText.toLowerCase())) &&
+                                <div id="singleBox">
+                                    <div id="left">
+                                        <img src={usersPhoto[x.userId]?.url} alt="Single entitie img"/>
+                                    </div>
+                                    <div id="right">
+                                        <p className="title">{x?.title}</p>
+                                        <p className="bottomInfo">Caracas 1050, Distrito Capital, Venezuela</p>
+                                    </div>
                                 </div>
-                                <div id="right">
-                                    <p className="title">{x?.title}</p>
-                                    <p className="bottomInfo">Caracas 1050, Distrito Capital, Venezuela</p>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                })}
+                        )
+                    })}
+                </div>
             </Content>
         </Wrapper>
     );
