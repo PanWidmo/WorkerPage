@@ -382,6 +382,76 @@ export const Profile: FC = () => {
             }
     }
 
+    const editValuesProfile = () => {
+        const v1 = document.getElementById('edit1')!.contentEditable;
+        const v2 = document.getElementById('edit2')!.contentEditable;
+        const v3 = document.getElementById('address')!.contentEditable;
+        const v4 = document.getElementById('username')!.contentEditable;
+        const v5 = document.getElementById('email')!.contentEditable;
+        const v6 = document.getElementById('phone')!.contentEditable;
+        const v7 = document.getElementById('phone')!.contentEditable;
+        const v8 = document.getElementById('phone')!.contentEditable;
+        const v9 = document.getElementById('phone')!.contentEditable;
+        const v10 = document.getElementById('phone')!.contentEditable;
+        const v11 = document.getElementById('phone')!.contentEditable;
+        const v12 = document.getElementById('phone')!.contentEditable;
+        const v13 = document.getElementById('phone')!.contentEditable;
+
+        if(v1 === 'inherit' || v1 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' ){
+            || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false'
+            || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false'
+            || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false'
+            || v2 === 'inherit' || v2 === 'false'
+            const t1 = document.getElementById('edit1')
+            t1!.contentEditable = 'true';
+            t1!.classList.add('userProfileContentEditAfter');
+            const t2 = document.getElementById('edit2')
+            t2!.contentEditable = 'true';
+            t2!.classList.add('userProfileContentEditAfter');
+            const t3 = document.getElementById('edit3')
+            t3!.contentEditable = 'true';
+            t3!.classList.add('userProfileContentEditAfter');
+            const t4 = document.getElementById('edit4')
+            t4!.contentEditable = 'true';
+            t4!.classList.add('userProfileContentEditAfter');
+            const t5 = document.getElementById('edit5')
+            t5!.contentEditable = 'true';
+            t5!.classList.add('userProfileContentEditAfter');
+            const t6 = document.getElementById('edit6')
+            t6!.contentEditable = 'true';
+            t6!.classList.add('userProfileContentEditAfter');
+
+            setSrc1 (srcImg[1]);
+            console.log("na true");
+            }
+
+            else{
+                const t1 = document.getElementById('edit1')
+                t1!.contentEditable = 'false';
+                t1!.classList.remove('userProfileContentEditAfter');
+                const t2 = document.getElementById('edit2')
+                t2!.contentEditable = 'false';
+                t2!.classList.remove('userProfileContentEditAfter');
+                const t3 = document.getElementById('edit3')
+                t3!.contentEditable = 'false';
+                t3!.classList.remove('userProfileContentEditAfter');
+                const t4 = document.getElementById('edit4')
+                t4!.contentEditable = 'false';
+                t4!.classList.remove('userProfileContentEditAfter');
+                const t5 = document.getElementById('edit5')
+                t5!.contentEditable = 'false';
+                t5!.classList.remove('userProfileContentEditAfter');
+                const t6 = document.getElementById('edit6')
+                t6!.contentEditable = 'false';
+                t6!.classList.remove('userProfileContentEditAfter');
+
+                setSrc1 (srcImg[0]);
+
+                console.log("na false");
+            }
+
+    }
+
     const { usersList, usersPhoto } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }))
@@ -447,29 +517,29 @@ export const Profile: FC = () => {
             <Expertise>
                 <div id="topWithPencil" className="pencilHover">
                     <h1 id="expertiseTitle">Expertise</h1>
-                    <p id="expertisePencil"><img id="editExpertise" src="./media/icons/pencil.png" alt="Pen icon"/></p>
+                    <p id="expertisePencil"><img id="editExpertise" className="pencilHover" onClick={editValuesProfile} src={src1} alt="Pen icon"/></p>
                     </div>
 
                 <div className="boxDiv" id="expertise">
-                    <p>Mergers and acquisition</p>
-                    <p>Mergers and acquisition</p>
+                    <p id="edit1">Mergers and acquisition</p>
+                    <p id="edit2">Mergers and acquisition</p>
                 </div>
 
                 <h1>Specialties</h1>
                 <div className="boxDiv" id="specialties">
-                    <p>Cross border operation</p>
-                    <p>Transaction over 500M$/$</p>
+                    <p id="edit3">Cross border operation</p>
+                    <p id="edit4">Transaction over 500M$/$</p>
                 </div>
 
                 <h1>Admission to practice law</h1>
                 <div className="boxDiv" id="admission">
-                    <p>Paris bar association</p>
-                    <p>Tunisian bar association</p>
+                    <p id="edit5">Paris bar association</p>
+                    <p id="edit6">Tunisian bar association</p>
                 </div>
 
                 <h1>Counties</h1>
                 <div className="boxDiv" id="counties">
-                    <p>Tunisia</p>
+                    <p id="edit7">Tunisia</p>
                 </div>
             </Expertise>
             <PanelInformation>
@@ -477,12 +547,12 @@ export const Profile: FC = () => {
 
                 <div className="infoDiv">
                     <h2>Hourly fee</h2>
-                    <p>610$/hour (Negociated)</p>
+                    <p id="edit8">610$/hour (Negociated)</p>
                 </div>
 
                 <div className="infoDiv">
                     <h2>Terms &amp; conditions</h2>
-                    <p>Monthly 10k$ retainer - see with {usersList[1]?.name}</p>
+                    <p id="edit9">Monthly 10k$ retainer - see with {usersList[1]?.name}</p>
 
                     <div id="attachment">
                         <img src="./media/icons/ecosystem.png" alt="Attachment img"/>
@@ -493,7 +563,7 @@ export const Profile: FC = () => {
                 <h1>Services &amp; projects</h1>
 
                 <div className="infoDiv">
-                    <p>Corporate M&amp;A and international acquistions</p>
+                    <p id="edit10">Corporate M&amp;A and international acquistions</p>
                 </div>
 
                 <h1>Internal correspondants</h1>
@@ -501,19 +571,19 @@ export const Profile: FC = () => {
                 <div className="infoDiv">
                     <div className="internalSingle">
                         <img id="foto" src={usersPhoto[0]?.url} alt="User portrair"/>
-                        <div className="name"> Firstname Lastname</div>
+                        <div id="edit11" className="name"> Firstname Lastname</div>
                         <div className="message">
                             <img src="./media/icons/ecosystem.png" alt="Message icon"/>
                             Message
                             </div>
-                        <div className="profile">
+                        <div id="edit12" className="profile">
                             <img src="./media/icons/ecosystem.png" alt="Message icon"/>
                             Profile
                             </div>
                     </div>
                     <div className="internalSingle">
                         <img id="foto" src={usersPhoto[0]?.url} alt="User portrair"/>
-                        <div className="name"> Firstname Lastname</div>
+                        <div id="edit13" className="name"> Firstname Lastname</div>
                         <div className="message">
                             <img src="./media/icons/ecosystem.png" alt="Message icon"/>
                             Message
