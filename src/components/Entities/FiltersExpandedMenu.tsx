@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     margin-top:170px;
     min-width:500px;
     padding:8px;
-    border:2px solid red;
+    border:1px solid ${Colors.black};
     z-index: 1;
 
     #topP{
