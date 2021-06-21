@@ -154,10 +154,14 @@ export const ExpandedMenu: FC = () => {
                     </Link>
                     }
                     {'Publications'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/mock">
                     <li className="singleRow"><img src="./media/icons/publications.png" className="icons" alt="fotosy"/>Publications</li>
+                    </Link>
                     }
                     {'People'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/mock">
                     <li className="singleRow"><img src="./media/icons/people.png" className="icons" alt="fotosy"/>People</li>
+                    </Link>
                     }
                     {'Entities'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/entities">
@@ -165,25 +169,37 @@ export const ExpandedMenu: FC = () => {
                     </Link>
                     }
                     {'Administration'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/mock">
                     <li className="singleRow"><img src="./media/icons/administration.png" className="icons" alt="fotosy"/>Administration</li>
+                    </Link>
                     }
 
                     <Link to="/workspaces">
                     <li className="category">Workspaces</li>
                     {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/mock">
                     <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Client contract</li>
+                    </Link>
                     }
                     {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/mock">
                     <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Supplier contract</li>
+                    </Link>
                     }
                     {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/mock">
                     <li className="singleRow"><img src="./media/icons/entities.png" className="icons" alt="fotosy"/>Corporate</li>
+                    </Link>
                     }
                     {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/mock">
                     <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Group Norms</li>
+                    </Link>
                     }
                     {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
+                    <Link to="/mock">
                     <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Real estate contracts</li>
+                    </Link>
                     }
                     </Link>
                     </ul>
@@ -195,14 +211,15 @@ export const ExpandedMenu: FC = () => {
                         <li id="see" ><Link to="/profile">See profile</Link></li>
 
                     </Account>
-                    <li><img src="./media/icons/privacy.png" className="icons" alt="fotosy"/>Privacy</li>
-                    <li><img src="./media/icons/settings.png" className="icons" alt="fotosy"/>Settings</li>
+                    <Link to="/mock"><li><img src="./media/icons/privacy.png" className="icons" alt="fotosy"/>Privacy</li></Link>
+                    <Link to="/mock"><li><img src="./media/icons/settings.png" className="icons" alt="fotosy"/>Settings</li></Link>
             </ul>
-
+            <Link to="/mock">
             <Logout>
                 <img src="./media/icons/logout.png" alt="Logout img"/>
                 <span>Logout</span>
             </Logout>
+            </Link>
         </Wrapper>
     );
 };
