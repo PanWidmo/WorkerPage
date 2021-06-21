@@ -206,7 +206,7 @@ const RightDown = styled.div`
 const InputFilter = styled.div`
     border: 1px solid ${Colors.lightgrayOriginal};
     border-radius: 5%;
-    padding:7px;
+    padding:5px;
     display: flex;
     align-items: center;
     margin-right: 20px;
@@ -225,6 +225,7 @@ const InputFilter = styled.div`
 
 const Followed = styled.div`
     display: flex;
+    cursor: pointer;
     align-items: center;
     padding:5px;
     border: solid 2px ${Colors.purple};
@@ -252,6 +253,7 @@ export const Entities: FC = () => {
     ]
 
     const [src1, setSrc1] = useState(srcImg[0]);
+    const [size, SetSize] = useState(true);
 
     //#region dropDownMenu
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
@@ -319,16 +321,18 @@ export const Entities: FC = () => {
     const widerView = () => {
         const x = document.getElementById('fullPage');
 
-        // if() {
+        if(size) {
             x!.classList.add('wider');
             setSrc1 (srcImg[1]);
             console.log('more')
-        // }
-        // else{
-        //     x!.classList.remove('wider');
-        //     setSrc1 (srcImg[0]);
-        //     console.log('less');
-        // }
+            SetSize(false);
+        }
+        else{
+            x!.classList.remove('wider');
+            setSrc1 (srcImg[0]);
+            console.log('less');
+            SetSize(true);
+        }
     }
 
     const copyUrl  = () => {
@@ -397,7 +401,7 @@ export const Entities: FC = () => {
                 <RightDown>
                     <InputFilter>
                         <input type="text" value={inputText} onChange={inputHandler} placeholder="Search..."/>
-                        <img src="./media/icons/search.png" id="search" alt=""/>
+                        <img src="./media/icons/search.png" id="search" alt="Search icon"/>
                     </InputFilter>
                     <Followed ref={wrapperRef2} onClick={menuHandler2}>
                         <img className="iconsSizes" src="./media/icons/signal.png" alt="Signal icon"/>
