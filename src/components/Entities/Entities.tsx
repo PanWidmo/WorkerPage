@@ -306,10 +306,17 @@ export const Entities: FC = () => {
 
     const widerView = () => {
         const x = document.getElementById('fullPage');
-        x!.classList.add('wider');
-        setSrc1 (srcImg[1]);
 
-        console.log(x);
+        // if() {
+            x!.classList.add('wider');
+            setSrc1 (srcImg[1]);
+            console.log('more')
+        // }
+        // else{
+        //     x!.classList.remove('wider');
+        //     setSrc1 (srcImg[0]);
+        //     console.log('less');
+        // }
     }
 
     const copyUrl  = () =>{
