@@ -40,6 +40,7 @@ const LeftSide = styled.div`
     span{
         font-size: ${fontSize[16]};
         margin-right:80px;
+        padding-left:20px;
     }
     #arrowDown{
        margin-bottom:2px;
@@ -110,7 +111,7 @@ const CustomImg = styled.img`
     cursor:pointer;
 
     #house{
-        margin: 0 16px 0 16px;
+        padding:20px;
 
     }
 `;
@@ -126,10 +127,10 @@ export const TopBar: FC = ()  => {
     return (
         <Wrapper2>
             <InnerWrapper>
-                <LogoImg src="./media/logo.png" alt=""/>
+                <LogoImg src="./media/imgs/logo.png" alt=""/>
                 <Menuwrapper ref={wrapperRef}>
                     <LeftSide onClick={menuHandler}>
-                        <CustomImg id="house" src="./media/icons/house2.png"/>
+                        <CustomImg src="./media/icons/house2.png"/>
                         <span>Home</span>
                         <CustomImg id="arrowDown" src="./media/icons/arrow-down.png" alt=""/>
                     </LeftSide>
