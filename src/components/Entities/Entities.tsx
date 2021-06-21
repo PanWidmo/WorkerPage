@@ -5,6 +5,8 @@ import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import useDropdown from 'react-dropdown-hook';
 import {AllExpandedMenu} from './AllExpandedMenu';
+import {FollowedExpandedMenu} from './FollowedExpandedMenu';
+import {FiltersExpandedMenu} from './FiltersExpandedMenu';
 import copy from 'copy-to-clipboard';
 import {boxShadow} from '../../styledHelpers/Components';
 
@@ -253,9 +255,19 @@ export const Entities: FC = () => {
 
     //#region dropDownMenu
     const [wrapperRef, dropdownOpen, toggleDropdown] = useDropdown();
+    const [wrapperRef2, dropdownOpen2, toggleDropdown2] = useDropdown();
+    const [wrapperRef3, dropdownOpen3, toggleDropdown3] = useDropdown();
 
     const menuHandler = () => {
         toggleDropdown();
+    };
+
+    const menuHandler2 = () => {
+        toggleDropdown2();
+    };
+
+    const menuHandler3 = () => {
+        toggleDropdown3();
     };
     //#endregion
 
@@ -319,7 +331,7 @@ export const Entities: FC = () => {
         // }
     }
 
-    const copyUrl  = () =>{
+    const copyUrl  = () => {
         copy('http://localhost:3000/entities');
         alert("Address copied to clipboard successfully!");
 
@@ -327,8 +339,8 @@ export const Entities: FC = () => {
 
     return (
         <Wrapper>
-            <div id="fullPage">
-            <Top>
+            <div id="fullPage" >
+            <Top id="top">
                 <LeftTop>
                     <h1>Entities</h1>
                     <img className="cursorPointer" src="./media/icons/settingsIcon.png" alt="Settings icon" />
@@ -363,9 +375,14 @@ export const Entities: FC = () => {
                         <img className="iconsSizes" src="./media/icons/arrowsUpDown.png" alt="Arrows icon"/>
                         <p>Sort</p>
                     </div>
-                    <div id="filtersDiv" className="menuInline cursorPointer">
+                    <div id="filtersDiv" className="menuInline cursorPointer" ref={wrapperRef3} onClick={menuHandler3}>
                         <img className="iconsSizes" src="./media/icons/filters.png" alt="Filters icon"/>
                         <p>Filters</p>
+
+                        {dropdownOpen3 &&
+                            <FiltersExpandedMenu/>
+                        }
+
                     </div>
                     <div id="resizeDiv" className="menuInline cursorPointer" onClick={widerView}>
                     <img className="iconsSizes" src={src1} alt="Resize icon"/>
@@ -382,11 +399,14 @@ export const Entities: FC = () => {
                         <input type="text" value={inputText} onChange={inputHandler} placeholder="Search..."/>
                         <img src="./media/icons/search.png" id="search" alt=""/>
                     </InputFilter>
-
-                    <Followed>
+                    <Followed ref={wrapperRef2} onClick={menuHandler2}>
                         <img className="iconsSizes" src="./media/icons/signal.png" alt="Signal icon"/>
                         <p>Followed</p>
                         <img src="./media/icons/arrow-down.png" alt="Arrown down icon"/>
+
+                            {dropdownOpen2 &&
+                            <FollowedExpandedMenu/>
+                        }
                     </Followed>
                 </RightDown>
             </Top>

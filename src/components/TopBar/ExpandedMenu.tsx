@@ -23,6 +23,7 @@ const Wrapper = styled.div`
     box-shadow: 1px 2px 10px ${Colors.boxShadow};
     width:250px;
     display:grid;
+    z-index: 1;
     a{
         text-decoration:none;
         color:${Colors.black};
