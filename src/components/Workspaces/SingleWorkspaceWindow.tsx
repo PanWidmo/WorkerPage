@@ -4,13 +4,20 @@ import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {boxShadow} from '../../styledHelpers/Components';
 // import {Wrapper} from '../../styledHelpers/Components';
+import { Link } from 'react-router-dom';
 
 const InnerWrapper = styled.div`
+    display:flex;
+
+    .links{
+        text-decoration:none;
+        color:${Colors.black};
+    }
 `;
 
 const Box = styled.div`
     margin:20px 20px 20px 0;
-    box-shadow: 1px 2px 10px ${Colors.boxShadow};
+    background-color: ${Colors.white};
     ${boxShadow()};
 `;
 
@@ -27,7 +34,7 @@ const Icon = styled.div`
     background:${Colors.white};
     margin-top:-30px;
     margin-left:7px;
-    box-shadow: 1px 2px 10px ${Colors.boxShadow};
+    ${boxShadow()};
     }
     p{
         font-size:${fontSize[18]};
@@ -61,6 +68,7 @@ const AndUsers = styled.div`
 export const SingleWorkspaceWindow: FC = () => {
     return (
         <InnerWrapper>
+                <Link to="/client_contract" className="links">
                 <Box>
                     <CustomImage src="./media/imgs/write2.jpg"/>
                         <Icon>
@@ -76,6 +84,62 @@ export const SingleWorkspaceWindow: FC = () => {
                             <p>Last update 2 day ago</p>
                         </AndUsers>
                 </Box>
+                </Link>
+
+                <Link to="/supplier_contract" className="links">
+                <Box>
+                    <CustomImage src="./media/imgs/write2.jpg"/>
+                        <Icon>
+                            <img src="./media/imgs/write.png" alt="Writing img"/>
+                            <p>Supplier contract</p>
+                        </Icon>
+                        <AndUsers>
+                            <img src="./media/imgs/write.png" alt="Writing img cloud"/>
+                            Contract
+                            <span>&#9679;</span>
+                            <img src="./media/icons/people.png" alt="People icon"/>
+                            25 users
+                            <p>Last update 2 day ago</p>
+                        </AndUsers>
+                </Box>
+                </Link>
+
+                <Link to="/corporate" className="links">
+                <Box>
+                    <CustomImage src="./media/imgs/write2.jpg"/>
+                        <Icon>
+                            <img src="./media/icons/entities2.png" alt="Writing img"/>
+                            <p>Corporate </p>
+                        </Icon>
+                        <AndUsers>
+                            <img src="./media/icons/entities2.png" alt="Writing img cloud"/>
+                            Corporate
+                            <span>&#9679;</span>
+                            <img src="./media/icons/people.png" alt="People icon"/>
+                            25 users
+                            <p>Last update 2 day ago</p>
+                        </AndUsers>
+                </Box>
+                </Link>
+
+                <Link to="/group_norms" className="links">
+                <Box>
+                    <CustomImage src="./media/imgs/write2.jpg"/>
+                        <Icon>
+                            <img src="./media/icons/book.png" alt="Writing img"/>
+                            <p>Group norms</p>
+                        </Icon>
+                        <AndUsers>
+                            <img src="./media/icons/book.png" alt="Writing img cloud"/>
+                            Norms
+                            <span>&#9679;</span>
+                            <img src="./media/icons/people.png" alt="People icon"/>
+                            25 users
+                            <p>Last update 2 day ago</p>
+                        </AndUsers>
+                </Box>
+                </Link>
+
         </InnerWrapper>
     );
 };

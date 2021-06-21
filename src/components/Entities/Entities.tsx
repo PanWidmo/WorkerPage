@@ -324,13 +324,11 @@ export const Entities: FC = () => {
         if(size) {
             x!.classList.add('wider');
             setSrc1 (srcImg[1]);
-            console.log('more')
             SetSize(false);
         }
         else{
             x!.classList.remove('wider');
             setSrc1 (srcImg[0]);
-            console.log('less');
             SetSize(true);
         }
     }
