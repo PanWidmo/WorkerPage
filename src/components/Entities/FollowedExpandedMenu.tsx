@@ -11,6 +11,7 @@ const Wrapper = styled.div`
     margin-top:130px;
     width:120px;
     border:2px solid red;
+    z-index: 1;
 `;
 
 
