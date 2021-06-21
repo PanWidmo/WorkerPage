@@ -319,17 +319,8 @@ const AmountOfFees = styled.div`
 export const Profile: FC = () => {
 
     const editValuesUser = () => {
-        const nameValue = document.getElementById('nameProfile')!.contentEditable;
-        const nameValue2 = document.getElementById('companyName')!.contentEditable;
-        const nameValue3 = document.getElementById('address')!.contentEditable;
-        const nameValue4 = document.getElementById('username')!.contentEditable;
-        const nameValue5 = document.getElementById('email')!.contentEditable;
-        const nameValue6 = document.getElementById('phone')!.contentEditable;
 
-        if(nameValue === 'inherit' || nameValue === 'false' || nameValue2 === 'inherit' || nameValue2 === 'false'
-        || nameValue3 === 'inherit' || nameValue3 === 'false'|| nameValue4 === 'inherit' || nameValue4 === 'false'
-        || nameValue5 === 'inherit' || nameValue5 === 'false' || nameValue6 === 'inherit' || nameValue6 === 'false'
-        ){
+        if(status){
             const t1 = document.getElementById('nameProfile')
             t1!.contentEditable = 'true';
             t1!.classList.add('userProfileContentEditAfter');
@@ -350,10 +341,7 @@ export const Profile: FC = () => {
             t6!.classList.add('userProfileContentEditAfter');
 
             setSrc1 (srcImg[1]);
-
-
-
-            console.log("na true");
+            SetStatus(false);
             }
 
             else{
@@ -377,27 +365,15 @@ export const Profile: FC = () => {
                 t6!.classList.remove('userProfileContentEditAfter');
 
                 setSrc1 (srcImg[0]);
+                SetStatus(true);
 
                 console.log("na false");
             }
     }
 
     const editValuesProfile = () => {
-        const v1 = document.getElementById('edit1')!.contentEditable;
-        const v2 = document.getElementById('edit2')!.contentEditable;
-        // const v3 = document.getElementById('address')!.contentEditable;
-        // const v4 = document.getElementById('username')!.contentEditable;
-        // const v5 = document.getElementById('email')!.contentEditable;
-        // const v6 = document.getElementById('phone')!.contentEditable;
-        // const v7 = document.getElementById('phone')!.contentEditable;
-        // const v8 = document.getElementById('phone')!.contentEditable;
-        // const v9 = document.getElementById('phone')!.contentEditable;
-        // const v10 = document.getElementById('phone')!.contentEditable;
-        // const v11 = document.getElementById('phone')!.contentEditable;
-        // const v12 = document.getElementById('phone')!.contentEditable;
-        // const v13 = document.getElementById('phone')!.contentEditable;
 
-        if(v1 === 'inherit' || v1 === 'false' || v2 === 'inherit' || v2 === 'false' || v2 === 'inherit' || v2 === 'false' ){
+        if(status){
             const t1 = document.getElementById('edit1')
             t1!.contentEditable = 'true';
             t1!.classList.add('userProfileContentEditAfter');
@@ -417,8 +393,8 @@ export const Profile: FC = () => {
             t6!.contentEditable = 'true';
             t6!.classList.add('userProfileContentEditAfter');
 
-            setSrc1 (srcImg[1]);
-            console.log("na true");
+            setSrc2 (srcImg[1]);
+            SetStatus(false);
             }
 
             else{
@@ -441,7 +417,8 @@ export const Profile: FC = () => {
                 t6!.contentEditable = 'false';
                 t6!.classList.remove('userProfileContentEditAfter');
 
-                setSrc1 (srcImg[0]);
+                setSrc2 (srcImg[0]);
+                SetStatus(true);
 
                 console.log("na false");
             }
@@ -462,6 +439,8 @@ export const Profile: FC = () => {
     ]
 
     const [src1, setSrc1] = useState(srcImg[0]);
+    const [src2, setSrc2] = useState(srcImg[0]);
+    const [status, SetStatus] = useState(true);
 
     //#endregion
 
@@ -513,7 +492,7 @@ export const Profile: FC = () => {
             <Expertise>
                 <div id="topWithPencil" className="pencilHover">
                     <h1 id="expertiseTitle">Expertise</h1>
-                    <p id="expertisePencil"><img id="editExpertise" className="pencilHover" onClick={editValuesProfile} src={src1} alt="Pen icon"/></p>
+                    <p id="expertisePencil"><img id="editExpertise" className="pencilHover" onClick={editValuesProfile} src={src2} alt="Pen icon"/></p>
                     </div>
 
                 <div className="boxDiv" id="expertise">
