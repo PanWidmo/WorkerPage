@@ -14,8 +14,11 @@ const Top = styled.div`
 
 `;
 
+interface props{
+    type: string;
+}
 
-export const WorkspacesMain: FC = () => {
+export const WorkspacesMain: FC <props> = (props) => {
     return (
         <Wrapper>
             <Top>

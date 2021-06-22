@@ -47,8 +47,17 @@ const MainPage: FC = () => {
                                 <Route path="/profile" exact>
                                     <Profile/>
                                 </Route>
-                                <Route path="/workspaces" exact>
-                                    <WorkspacesMain/>
+                                <Route path="client_contract" exact>
+                                <WorkspacesMain type="0"/>
+                                </Route>
+                                <Route path="/supplier_contract" exact>
+                                    <WorkspacesMain type="1"/>
+                                </Route>
+                                <Route path="/corporate" exact>
+                                    <WorkspacesMain type="2"/>
+                                </Route>
+                                <Route path="/group_norms" exact>
+                                    <WorkspacesMain type="3"/>
                                 </Route>
                                 <Route path="/mock" exact>
                                     <Mock/>
