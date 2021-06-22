@@ -16,7 +16,8 @@ const Top = styled.div`
     border-radius: 10px;
 
     .bgPhoto{
-        background-image: '/public/media/imgs/logo.png';
+        height:160px;
+        background-image: url('https://img.peerspace.com/image/upload/c_crop,g_custom/g_auto,c_fill,q_auto,f_auto,fl_progressive:steep,dpr_2,w_1024,h_450/f3onhwuont2spjn8xkkm');
         background-position: center;
         background-size: cover;
     }
@@ -63,10 +64,20 @@ const Top = styled.div`
 
 const Middle = styled.div`
     margin-top: 20px;
-    display: flex;
-    column-gap: 10px;
     background:${Colors.lightgrayOriginal};
     padding:20px;
+
+    #title{
+        margin-bottom: 10px;
+        color:${Colors.lightgray};
+        font-weight: bold;
+    }
+
+    .boxesContainer{
+        display: flex;
+        column-gap: 10px;
+
+}
 
 `;
 
@@ -74,9 +85,20 @@ const Box = styled.div`
     width:310px;
     border:1px solid purple;
     background:${Colors.white};
+    padding:10px;
 
     .imgInBoxes{
         width:30px;
+    }
+
+    h1{
+        margin-top:20px;
+        font-size: ${fontSize[20]};
+    }
+
+    p{
+        margin:10px 0;
+        font-size: ${fontSize[14]};
     }
 
 `;
@@ -89,7 +111,6 @@ export const WorkspacesMain: FC <props> = (props) => {
         <Wrapper>
             <Top>
                 <div className="bgPhoto">
-                    asd
                 </div>
                 <div className="bottomTopInfo">
                     <div className="leftImg">
@@ -103,22 +124,24 @@ export const WorkspacesMain: FC <props> = (props) => {
                 </div>
             </Top>
             <Middle>
-                {/* <p>Start working on corporate matters</p> */}
-                <Box>
-                    <img className="imgInBoxes" src="./media/icons/entities.png" alt="Entities icon"/>
-                    <h1>Explore your entities</h1>
-                    <p>Take a few minutes to look at the most important elements and specifcities of your entities.</p>
-                </Box>
-                <Box>
-                    <img className="imgInBoxes" src="./media/imgs/structure.png" alt="Entities icon"/>
-                    <h1>Structure the ownership</h1>
-                    <p>Get a clear view of the owership by looking at the relations.</p>
-                </Box>
-                <Box>
-                    <img className="imgInBoxes" src="./media/imgs/calendar.png" alt="Entities icon"/>
-                    <h1>Define the calendar</h1>
-                    <p>Prepare future events by creating detailer plans around the life.</p>
-                </Box>
+                <p id="title">Start working on corporate matters</p>
+                <div className="boxesContainer">
+                    <Box>
+                        <img className="imgInBoxes" src="./media/icons/entities.png" alt="Entities icon"/>
+                        <h1>Explore your entities</h1>
+                        <p>Take a few minutes to look at the most important elements and specifcities of your entities.</p>
+                    </Box>
+                    <Box>
+                        <img className="imgInBoxes" src="./media/imgs/structure.png" alt="Entities icon"/>
+                        <h1>Structure the ownership</h1>
+                        <p>Get a clear view of the owership by looking at the relations.</p>
+                    </Box>
+                    <Box>
+                        <img className="imgInBoxes" src="./media/imgs/calendar.png" alt="Entities icon"/>
+                        <h1>Define the calendar</h1>
+                        <p>Prepare future events by creating detailer plans around the life.</p>
+                    </Box>
+                </div>
             </Middle>
 
         </Wrapper>
