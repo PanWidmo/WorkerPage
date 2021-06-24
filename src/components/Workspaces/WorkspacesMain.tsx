@@ -15,6 +15,7 @@ const Top = styled.div`
     background:${Colors.white};
     border-radius: 10px;
 
+
     .bgPhoto{
         height:160px;
         background-image: url('https://img.peerspace.com/image/upload/c_crop,g_custom/g_auto,c_fill,q_auto,f_auto,fl_progressive:steep,dpr_2,w_1024,h_450/f3onhwuont2spjn8xkkm');
