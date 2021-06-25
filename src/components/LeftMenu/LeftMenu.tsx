@@ -29,18 +29,22 @@ const InnerWrapper = styled.div`
     text-align: center;
     background: ${Colors.white};
     ${boxShadow()};
+    a{
+        text-decoration:none;
+        color: ${Colors.black};
+    }
 
 `;
 
 const PersonInfo=styled.div`
+
+    a{
+        color:${Colors.purple};
+    }
+
     display:grid;
     grid-template-columns: 1fr;
     align-items:center;
-
-    a{
-        text-decoration:none;
-        color:${Colors.purple};
-    }
 
     #foto{
     padding-top:14px;
@@ -127,11 +131,11 @@ export const LeftMenu: FC = () => {
                 </PersonInfo>
                 <PersonDetails>
                     <img className="leftImgs" src="./media/icons/people.png" alt="Network icon"/>
-                    <span className="middle">Your network</span>
+                    <span className="middle"><Link to="/mock">Your network</Link></span>
                     <img className="rightImgs" src="./media/icons/user-plus.png" alt="User with plus icon"/>
 
                     <img className="leftImgs" src="./media/icons/publications.png" alt="Publications icon"/>
-                    <span className="middle">Your Publications</span>
+                    <span className="middle"><Link to="/mock">Your Publications</Link></span>
                     <img className="rightImgs" src="./media/icons/plus.png" alt="Plus icon"/>
                 </PersonDetails>
             </InnerWrapper>
