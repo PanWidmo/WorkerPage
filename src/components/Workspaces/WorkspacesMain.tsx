@@ -34,6 +34,12 @@ const data = [
         photo: 'https://u.profitroom.pl/2018-hotelepark-pl/thumb/1420x910/uploads/Poznan/201810221055490.HP_Poznan_11.jpg',
         name: 'Group norms',
         content: "Group norms loorem loorem",
+    },
+    {
+        id: 5,
+        photo: 'https://i.pinimg.com/originals/8d/c0/6e/8dc06e02a176fbb2366d50d7f14ddce2.jpg',
+        name: 'Real estate contracts',
+        content: "Real estate contracts loorem loorem",
     }
 ]
 

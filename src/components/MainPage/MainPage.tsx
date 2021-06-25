@@ -59,6 +59,9 @@ const MainPage: FC = () => {
                                 <Route path="/group_norms" exact>
                                     <WorkspacesMain type="3"/>
                                 </Route>
+                                <Route path="/real_estate_contracts" exact>
+                                    <WorkspacesMain type="4"/>
+                                </Route>
                                 <Route path="/mock" exact>
                                     <Mock/>
                                 </Route>
