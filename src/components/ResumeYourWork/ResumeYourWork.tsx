@@ -20,8 +20,7 @@ type GetComments = ReturnType<typeof getComments>
 
 //#region styles
 const InnerWrapper = styled.div`
-    margin-top:30px;
-    padding-top:10px;
+    margin-top:10px;
     max-width:940px;
 
 
@@ -85,7 +84,7 @@ const TopSide = styled.div`
 
     .title{
         font-size: ${fontSize[20]};
-        margin-right: 35%;
+        margin-right: 38%;
     }
 
 `;
