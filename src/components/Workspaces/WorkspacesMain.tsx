@@ -1,10 +1,43 @@
 import {FC} from 'react';
+import * as React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import { fontSize } from '../../styledHelpers/FontSizes';
 import { ResumeYourWork } from '../ResumeYourWork/ResumeYourWork';
 
+interface props{
+    type: string;
+}
+
+const data = [
+    {
+        id: 1,
+        photo: 'https://img.peerspace.com/image/upload/c_crop,g_custom/g_auto,c_fill,q_auto,f_auto,fl_progressive:steep,dpr_2,w_1024,h_450/f3onhwuont2spjn8xkkm',
+        name: 'Client contract',
+        content: "Client contract looorem loorem",
+    },
+    {
+        id: 2,
+        photo: 'https://www.anvic.co.uk/wp-content/uploads/2017/02/Conference-Room-Etiquettes-750x458.jpg',
+        name: 'Supplier contract',
+        content: "Supplier contract loorem loorem",
+    },
+    {
+        id: 3,
+        photo: 'https://images.squarespace-cdn.com/content/v1/54b25717e4b04905168fc72f/1440844638197-S7JKW96OLSPVJJ7U3GAB/ke17ZwdGBToddI8pDm48kCOvtajsz7kV0bc_h_la9b97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdCBw5tE12EyfPHFBQ-ircTtkfwaJZCdu04tPxr7xjr2gjqHEQp9SyAh6JNHwp5JUA/ccs-uc-200-wmt.jpg?format=2500w',
+        name: 'Corporate',
+        content: "Corporate loorem loorem",
+    },
+    {
+        id: 4,
+        photo: 'https://u.profitroom.pl/2018-hotelepark-pl/thumb/1420x910/uploads/Poznan/201810221055490.HP_Poznan_11.jpg',
+        name: 'Group norms',
+        content: "Group norms loorem loorem",
+    }
+]
+
+export const WorkspacesMain: FC <props> = (props) => {
 
 const Wrapper = styled.div`
     width:940px;
@@ -17,8 +50,8 @@ const Top = styled.div`
 
 
     .bgPhoto{
-        height:160px;
-        background-image: url('https://img.peerspace.com/image/upload/c_crop,g_custom/g_auto,c_fill,q_auto,f_auto,fl_progressive:steep,dpr_2,w_1024,h_450/f3onhwuont2spjn8xkkm');
+        height:200px;
+        background-image: url(${data[parseInt(props.type)].photo});
         background-position: center;
         background-size: cover;
     }
@@ -103,11 +136,8 @@ const Box = styled.div`
     }
 
 `;
-interface props{
-    type: string;
-}
 
-export const WorkspacesMain: FC <props> = (props) => {
+
     return (
         <Wrapper>
             <Top>
@@ -119,8 +149,8 @@ export const WorkspacesMain: FC <props> = (props) => {
                     </div>
                     <div className="rightContent">
                         <img src="./media/icons/settingsIcon.png" className="settingsIcon" alt="Settings Icon"/>
-                        <h1>Supplier Contract</h1>
-                        <p>Workspace puprose workspace puprose workspace puprose workspace puprose workspace puprose workspace puprose workspace puprose</p>
+                        <h1>{data[parseInt(props.type)].name}</h1>
+                        <p>{data[parseInt(props.type)].content}</p>
                     </div>
                 </div>
             </Top>
@@ -144,6 +174,9 @@ export const WorkspacesMain: FC <props> = (props) => {
                     </Box>
                 </div>
             </Middle>
+            <ResumeYourWork>
+
+            </ResumeYourWork>
 
         </Wrapper>
     );
