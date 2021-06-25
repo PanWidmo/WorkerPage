@@ -58,6 +58,7 @@ const Top = styled.div`
 
     .bottomTopInfo{
         display: grid;
+        padding-bottom:15px;
         grid-template-columns: 12% 1fr;
     }
 
