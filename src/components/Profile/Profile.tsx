@@ -441,21 +441,21 @@ export const Profile: FC = () => {
                 <span id="topBtn">
                     <div className="buttonTop" id="message">
                         <Link to="/mock">
-                            <img src="./media/icons/people.png" alt="Message img"/>
+                            <img src="./media/icons/msg.png" alt="Message img"/>
                             <span className="text">Message</span>
                         </Link>
                     </div>
 
                     <div className="buttonTop" id="request">
                         <Link to="/mock">
-                            <img src="./media/icons/ecosystem.png" alt="Message img"/>
+                            <img src="./media/imgs/write.png" alt="Message img"/>
                             <span className="text">Create a request</span>
                         </Link>
                     </div>
 
                     <div className="buttonTop" id="cluster">
                         <Link to="/mock">
-                            <img src="./media/icons/network.png" alt="Message img"/>
+                            <img src="./media/icons/case.png" alt="Message img"/>
                             <span className="text">Add to a cluster</span>
                         </Link>
                     </div>
@@ -542,11 +542,11 @@ export const Profile: FC = () => {
                         <img id="foto" src={usersPhoto[0]?.url} alt="User portrair"/>
                         <div id="restProfile11" className="name"> Firstname Lastname</div>
                         <div className="message">
-                            <img src="./media/icons/ecosystem.png" alt="Message icon"/>
+                            <img src="./media/icons/msg.png" alt="Message icon"/>
                             <p id="restProfile12">Message</p>
                             </div>
                         <div id="edit12" className="profile">
-                            <img src="./media/icons/ecosystem.png" alt="Message icon"/>
+                            <img src="./media/icons/administration.png" alt="Message icon"/>
                             <p id="restProfile13">Profile</p>
                             </div>
                     </div>
@@ -554,11 +554,11 @@ export const Profile: FC = () => {
                         <img id="foto" src={usersPhoto[0]?.url} alt="User portrair"/>
                         <div id="restProfile14" className="name"> Firstname Lastname</div>
                         <div className="message">
-                            <img src="./media/icons/ecosystem.png" alt="Message icon"/>
+                            <img src="./media/icons/msg.png" alt="Message icon"/>
                             <p id="restProfile15">Message</p>
                             </div>
                         <div className="profile">
-                            <img src="./media/icons/ecosystem.png" alt="Message icon"/>
+                            <img src="./media/icons/administration.png" alt="Message icon"/>
                             <p id="restProfile16">Profile</p>
                             </div>
                     </div>

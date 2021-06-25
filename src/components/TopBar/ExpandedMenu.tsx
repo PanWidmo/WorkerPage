@@ -178,27 +178,27 @@ export const ExpandedMenu: FC = () => {
                     <li className="category">Workspaces</li>
                     {'Client contract'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/client_contract">
-                    <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Client contract</li>
+                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="fotosy"/>Client contract</li>
                     </Link>
                     }
                     {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/supplier_contract">
-                    <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Supplier contract</li>
+                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="fotosy"/>Supplier contract</li>
                     </Link>
                     }
                     {'Corporate'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/corporate">
-                    <li className="singleRow"><img src="./media/icons/entities.png" className="icons" alt="fotosy"/>Corporate</li>
+                    <li className="singleRow"><img src="./media/icons/entities2.png" className="icons" alt="fotosy"/>Corporate</li>
                     </Link>
                     }
                     {'Group Norms'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/group_norms">
-                    <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Group Norms</li>
+                    <li className="singleRow"><img src="./media/icons/book.png" className="icons" alt="fotosy"/>Group Norms</li>
                     </Link>
                     }
                     {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase()) &&
                     <Link to="/real_estate_contracts">
-                    <li className="singleRow"><img src="./media/icons/ecosystem.png" className="icons" alt="fotosy"/>Real estate contracts</li>
+                    <li className="singleRow"><img src="./media/imgs/write.png" className="icons" alt="fotosy"/>Real estate contracts</li>
                     </Link>
                     }
                     </Link>
