@@ -90,6 +90,7 @@ const Wrapper = styled.div`
 
 const TopButtons = styled.div`
     display: flex;
+    align-items: center;
     float:right;
 
     span {
