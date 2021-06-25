@@ -329,24 +329,22 @@ export const Profile: FC = () => {
 
     const closeNav = () => {
 
-        if(status1){
+        if(statusBtnClose){
             document.getElementById('topBtn')?.remove();
 
             setCloseImg1(srcClosingBtn[1]);
-            SetStatus1(false);
+            setStatusBtnClose(false);
         }
         else{
-
             setCloseImg1(srcClosingBtn[0]);
-            SetStatus1(true);
-
+            setStatusBtnClose(true);
         }
 
     }
 
     const editValuesUser = () => {
 
-        if(status){
+        if(statusFieldsEditing){
             const t1 = document.getElementById('nameProfile');
             t1!.contentEditable = 'true';
             t1!.classList.add('userProfileContentEditAfter');
@@ -366,8 +364,8 @@ export const Profile: FC = () => {
             t6!.contentEditable = 'true';
             t6!.classList.add('userProfileContentEditAfter');
 
-            setSrc1 (srcImg[1]);
-            SetStatus(false);
+            setEditPencilTopProfile (srcImg[1]);
+            setStatusFieldsEditing(false);
             }
 
             else{
@@ -390,8 +388,8 @@ export const Profile: FC = () => {
                 t6!.contentEditable = 'false';
                 t6!.classList.remove('userProfileContentEditAfter');
 
-                setSrc1 (srcImg[0]);
-                SetStatus(true);
+                setEditPencilTopProfile (srcImg[0]);
+                setStatusFieldsEditing(true);
 
                 console.log("na false");
             }
@@ -399,7 +397,7 @@ export const Profile: FC = () => {
 
     const editValuesProfile = () => {
 
-        if(status){
+        if(statusFieldsEditing){
             const t1 = document.getElementById('edit1')
             t1!.contentEditable = 'true';
             t1!.classList.add('userProfileContentEditAfter');
@@ -419,8 +417,8 @@ export const Profile: FC = () => {
             t6!.contentEditable = 'true';
             t6!.classList.add('userProfileContentEditAfter');
 
-            setSrc2 (srcImg[1]);
-            SetStatus(false);
+            setEditPencilRestProfile (srcImg[1]);
+            setStatusFieldsEditing(false);
             }
 
             else{
@@ -443,8 +441,8 @@ export const Profile: FC = () => {
                 t6!.contentEditable = 'false';
                 t6!.classList.remove('userProfileContentEditAfter');
 
-                setSrc2 (srcImg[0]);
-                SetStatus(true);
+                setEditPencilRestProfile (srcImg[0]);
+                setStatusFieldsEditing(true);
 
                 console.log("na false");
             }
@@ -471,11 +469,12 @@ export const Profile: FC = () => {
         "V"
     ]
 
-    const [src1, setSrc1] = useState(srcImg[0]);
-    const [src2, setSrc2] = useState(srcImg[0]);
+    const [editPencilTopProfile, setEditPencilTopProfile] = useState(srcImg[0]);
+    const [editPencilRestProfile, setEditPencilRestProfile] = useState(srcImg[0]);
     const [closeImg1, setCloseImg1] = useState(srcClosingBtn[0]);
-    const [status, SetStatus] = useState(true);
-    const [status1, SetStatus1] = useState(true);
+
+    const [statusFieldsEditing, setStatusFieldsEditing] = useState(true);
+    const [statusBtnClose, setStatusBtnClose] = useState(true);
 
     //#endregion
 
@@ -486,7 +485,7 @@ export const Profile: FC = () => {
 
     return (
         <Wrapper>
-            <TopButtons>
+            <TopButtons id="top">
                 <span id="topBtn">
                     <div className="buttonTop" id="message">
                         <Link to="/mock">
@@ -526,7 +525,7 @@ export const Profile: FC = () => {
                     <p id="companyName" className="userProfileContentEdit">{usersList[0]?.company.name}</p>
                     <p id="address" className="userProfileContentEdit">{usersList[0]?.address.city}</p>
                     <p id="username" className="userProfileContentEdit">{usersList[0]?.username}</p>
-                    <p id="pencilId"><img id="editProfile" className="pencilHover" onClick={editValuesUser} src={src1} alt="Pen icon"/></p>
+                    <p id="pencilId"><img id="editProfile" className="pencilHover" onClick={editValuesUser} src={editPencilTopProfile} alt="Pen icon"/></p>
                     <p id="email" className="userProfileContentEdit">{usersList[0]?.email}</p>
                     <p id="phone" className="userProfileContentEdit">{usersList[0]?.phone}</p>
                 </div>
@@ -535,7 +534,7 @@ export const Profile: FC = () => {
             <Expertise>
                 <div id="topWithPencil" className="pencilHover">
                     <h1 id="expertiseTitle">Expertise</h1>
-                    <p id="expertisePencil"><img id="editExpertise" className="pencilHover" onClick={editValuesProfile} src={src2} alt="Pen icon"/></p>
+                    <p id="expertisePencil"><img id="editExpertise" className="pencilHover" onClick={editValuesProfile} src={editPencilRestProfile} alt="Pen icon"/></p>
                     </div>
 
                 <div className="boxDiv" id="expertise">
