@@ -135,22 +135,22 @@ const UserProfileTop = styled.div`
         grid-template-rows: 25% 25% 25% 25%;
         line-height: 26px;
 
-        #name{
+        #userProfile0{
             grid-column: 1;
             grid-row: 1;
         }
 
-        #companyName{
+        #userProfile1{
             grid-column: 1;
             grid-row: 2;
         }
 
-        #address{
+        #userProfile2{
             grid-column: 1;
             grid-row: 3;
         }
 
-        #username{
+        #userProfile3{
             grid-column: 1;
             grid-row: 4;
         }
@@ -161,12 +161,12 @@ const UserProfileTop = styled.div`
             text-align:right;
         }
 
-        #email{
+        #userProfile4{
             grid-column: 2;
             grid-row: 3;
         }
 
-        #phone{
+        #userProfile5{
             grid-column: 2;
             grid-row: 4;
         }
@@ -284,9 +284,8 @@ const Proposals = styled.div`
 
     #moreProposals{
         margin-top:20px;
-        margin-right:20px;
-        padding-bottom: 20px;
-        text-align: right;
+        margin-left:84%;
+        padding-bottom: 15px;
         color:${Colors.lightgrayOriginal}
     }
 
@@ -344,108 +343,57 @@ export const Profile: FC = () => {
 
     const editValuesUser = () => {
 
+        let x = 6;
+
         if(statusFieldsEditing){
-            const t1 = document.getElementById('nameProfile');
-            t1!.contentEditable = 'true';
-            t1!.classList.add('userProfileContentEditAfter');
-            const t2 = document.getElementById('companyName')
-            t2!.contentEditable = 'true';
-            t2!.classList.add('userProfileContentEditAfter');
-            const t3 = document.getElementById('address')
-            t3!.contentEditable = 'true';
-            t3!.classList.add('userProfileContentEditAfter');
-            const t4 = document.getElementById('username')
-            t4!.contentEditable = 'true';
-            t4!.classList.add('userProfileContentEditAfter');
-            const t5 = document.getElementById('email')
-            t5!.contentEditable = 'true';
-            t5!.classList.add('userProfileContentEditAfter');
-            const t6 = document.getElementById('phone')
-            t6!.contentEditable = 'true';
-            t6!.classList.add('userProfileContentEditAfter');
+
+            for(let i = 0; i < x;i++){
+                const t = document.getElementById('userProfile'+i);
+                t!.contentEditable = 'true';
+                t!.classList.add('userProfileContentEditAfter');
+            }
 
             setEditPencilTopProfile (srcImg[1]);
             setStatusFieldsEditing(false);
+        }
+
+        else{
+
+            for(let i = 0; i < x;i++){
+            const t = document.getElementById('userProfile'+i);
+            t!.contentEditable = 'false';
+            t!.classList.remove('userProfileContentEditAfter');
             }
 
-            else{
-                const t1 = document.getElementById('nameProfile')
-                t1!.contentEditable = 'false';
-                t1!.classList.remove('userProfileContentEditAfter');
-                const t2 = document.getElementById('companyName')
-                t2!.contentEditable = 'false';
-                t2!.classList.remove('userProfileContentEditAfter');
-                const t3 = document.getElementById('address')
-                t3!.contentEditable = 'false';
-                t3!.classList.remove('userProfileContentEditAfter');
-                const t4 = document.getElementById('username')
-                t4!.contentEditable = 'false';
-                t4!.classList.remove('userProfileContentEditAfter');
-                const t5 = document.getElementById('email')
-                t5!.contentEditable = 'false';
-                t5!.classList.remove('userProfileContentEditAfter');
-                const t6 = document.getElementById('phone')
-                t6!.contentEditable = 'false';
-                t6!.classList.remove('userProfileContentEditAfter');
-
-                setEditPencilTopProfile (srcImg[0]);
-                setStatusFieldsEditing(true);
-
-                console.log("na false");
-            }
+            setEditPencilTopProfile (srcImg[0]);
+            setStatusFieldsEditing(true);
+        }
     }
 
     const editValuesProfile = () => {
 
+        let x = 73;
+
         if(statusFieldsEditing){
-            const t1 = document.getElementById('edit1')
-            t1!.contentEditable = 'true';
-            t1!.classList.add('userProfileContentEditAfter');
-            const t2 = document.getElementById('edit2')
-            t2!.contentEditable = 'true';
-            t2!.classList.add('userProfileContentEditAfter');
-            const t3 = document.getElementById('edit3')
-            t3!.contentEditable = 'true';
-            t3!.classList.add('userProfileContentEditAfter');
-            const t4 = document.getElementById('edit4')
-            t4!.contentEditable = 'true';
-            t4!.classList.add('userProfileContentEditAfter');
-            const t5 = document.getElementById('edit5')
-            t5!.contentEditable = 'true';
-            t5!.classList.add('userProfileContentEditAfter');
-            const t6 = document.getElementById('edit6')
-            t6!.contentEditable = 'true';
-            t6!.classList.add('userProfileContentEditAfter');
+
+            for(let i = 0; i < x;i++){
+                const t = document.getElementById('restProfile'+i);
+                t!.contentEditable = 'true';
+                t!.classList.add('userProfileContentEditAfter');
+            }
 
             setEditPencilRestProfile (srcImg[1]);
             setStatusFieldsEditing(false);
+        }
+
+        else{
+
+            for(let i = 0; i < x;i++){
+            const t = document.getElementById('restProfile'+i);
+            t!.contentEditable = 'false';
+            t!.classList.remove('userProfileContentEditAfter');
             }
-
-            else{
-                const t1 = document.getElementById('edit1')
-                t1!.contentEditable = 'false';
-                t1!.classList.remove('userProfileContentEditAfter');
-                const t2 = document.getElementById('edit2')
-                t2!.contentEditable = 'false';
-                t2!.classList.remove('userProfileContentEditAfter');
-                const t3 = document.getElementById('edit3')
-                t3!.contentEditable = 'false';
-                t3!.classList.remove('userProfileContentEditAfter');
-                const t4 = document.getElementById('edit4')
-                t4!.contentEditable = 'false';
-                t4!.classList.remove('userProfileContentEditAfter');
-                const t5 = document.getElementById('edit5')
-                t5!.contentEditable = 'false';
-                t5!.classList.remove('userProfileContentEditAfter');
-                const t6 = document.getElementById('edit6')
-                t6!.contentEditable = 'false';
-                t6!.classList.remove('userProfileContentEditAfter');
-
-                setEditPencilRestProfile (srcImg[0]);
-                setStatusFieldsEditing(true);
-
-                console.log("na false");
-            }
+        }
 
     }
 
@@ -521,13 +469,13 @@ export const Profile: FC = () => {
                 </div>
 
                 <div className="right">
-                    <p id="nameProfile" className="userProfileContentEdit">{usersList[0]?.name}</p>
-                    <p id="companyName" className="userProfileContentEdit">{usersList[0]?.company.name}</p>
-                    <p id="address" className="userProfileContentEdit">{usersList[0]?.address.city}</p>
-                    <p id="username" className="userProfileContentEdit">{usersList[0]?.username}</p>
+                    <p id="userProfile0" className="userProfileContentEdit">{usersList[0]?.name}</p>
+                    <p id="userProfile1" className="userProfileContentEdit">{usersList[0]?.company.name}</p>
+                    <p id="userProfile2" className="userProfileContentEdit">{usersList[0]?.address.city}</p>
+                    <p id="userProfile3" className="userProfileContentEdit">{usersList[0]?.username}</p>
                     <p id="pencilId"><img id="editProfile" className="pencilHover" onClick={editValuesUser} src={editPencilTopProfile} alt="Pen icon"/></p>
-                    <p id="email" className="userProfileContentEdit">{usersList[0]?.email}</p>
-                    <p id="phone" className="userProfileContentEdit">{usersList[0]?.phone}</p>
+                    <p id="userProfile4" className="userProfileContentEdit">{usersList[0]?.email}</p>
+                    <p id="userProfile5" className="userProfileContentEdit">{usersList[0]?.phone}</p>
                 </div>
 
             </UserProfileTop>
@@ -538,25 +486,25 @@ export const Profile: FC = () => {
                     </div>
 
                 <div className="boxDiv" id="expertise">
-                    <p id="edit1">Mergers and acquisition</p>
-                    <p id="edit2">Mergers and acquisition</p>
+                    <p id="restProfile0">Mergers and acquisition</p>
+                    <p id="restProfile1">Mergers and acquisition</p>
                 </div>
 
                 <h1>Specialties</h1>
                 <div className="boxDiv" id="specialties">
-                    <p id="edit3">Cross border operation</p>
-                    <p id="edit4">Transaction over 500M$/$</p>
+                    <p id="restProfile2">Cross border operation</p>
+                    <p id="restProfile3">Transaction over 500M$/$</p>
                 </div>
 
                 <h1>Admission to practice law</h1>
                 <div className="boxDiv" id="admission">
-                    <p id="edit5">Paris bar association</p>
-                    <p id="edit6">Tunisian bar association</p>
+                    <p id="restProfile4">Paris bar association</p>
+                    <p id="restProfile5">Tunisian bar association</p>
                 </div>
 
                 <h1>Counties</h1>
                 <div className="boxDiv" id="counties">
-                    <p id="edit7">Tunisia</p>
+                    <p id="restProfile6">Tunisia</p>
                 </div>
             </Expertise>
             <PanelInformation>
@@ -564,23 +512,23 @@ export const Profile: FC = () => {
 
                 <div className="infoDiv">
                     <h2>Hourly fee</h2>
-                    <p id="edit8">610$/hour (Negociated)</p>
+                    <p id="restProfile7">610$/hour (Negociated)</p>
                 </div>
 
                 <div className="infoDiv">
                     <h2>Terms &amp; conditions</h2>
-                    <p id="edit9">Monthly 10k$ retainer - see with {usersList[1]?.name}</p>
+                    <p id="restProfile8">Monthly 10k$ retainer - see with {usersList[1]?.name}</p>
 
                     <div id="attachment">
                         <img src="./media/icons/ecosystem.png" alt="Attachment img"/>
-                        attachment.jpg
+                        <p id="restProfile9">attachment.jpg</p>
                     </div>
                 </div>
 
                 <h1>Services &amp; projects</h1>
 
                 <div className="infoDiv">
-                    <p id="edit10">Corporate M&amp;A and international acquistions</p>
+                    <p id="restProfile10">Corporate M&amp;A and international acquistions</p>
                 </div>
 
                 <h1>Internal correspondants</h1>
@@ -588,26 +536,26 @@ export const Profile: FC = () => {
                 <div className="infoDiv">
                     <div className="internalSingle">
                         <img id="foto" src={usersPhoto[0]?.url} alt="User portrair"/>
-                        <div id="edit11" className="name"> Firstname Lastname</div>
+                        <div id="restProfile11" className="name"> Firstname Lastname</div>
                         <div className="message">
                             <img src="./media/icons/ecosystem.png" alt="Message icon"/>
-                            Message
+                            <p id="restProfile12">Message</p>
                             </div>
                         <div id="edit12" className="profile">
                             <img src="./media/icons/ecosystem.png" alt="Message icon"/>
-                            Profile
+                            <p id="restProfile13">Profile</p>
                             </div>
                     </div>
                     <div className="internalSingle">
                         <img id="foto" src={usersPhoto[0]?.url} alt="User portrair"/>
-                        <div id="edit13" className="name"> Firstname Lastname</div>
+                        <div id="restProfile14" className="name"> Firstname Lastname</div>
                         <div className="message">
                             <img src="./media/icons/ecosystem.png" alt="Message icon"/>
-                            Message
+                            <p id="restProfile15">Message</p>
                             </div>
                         <div className="profile">
                             <img src="./media/icons/ecosystem.png" alt="Message icon"/>
-                            Profile
+                            <p id="restProfile16">Profile</p>
                             </div>
                     </div>
                 </div>
@@ -643,83 +591,83 @@ export const Profile: FC = () => {
 
                 <div className="table">
                     <div id="name">
-                        <p>Operation Ti...</p>
+                        <p id="restProfile17">Operation Ti...</p>
                     </div>
 
                     <div id="entity">
-                        <p>Renault Co ...</p>
+                        <p id="restProfile18">Renault Co ...</p>
                     </div>
 
                     <div id="location">
-                        <p>France</p>
+                        <p id="restProfile19">France</p>
                     </div>
 
                     <div id="expertise">
-                        <p>#Tax</p>
+                        <p id="restProfile20">#Tax</p>
                     </div>
 
                     <div id="date">
-                        <p>20/01/2018</p>
+                        <p id="restProfile21">20/01/2018</p>
                     </div>
 
                     <div id="firm">
-                        <p>Racine</p>
+                        <p id="restProfile22">Racine</p>
                     </div>
                 </div>
 
                 <div className="table">
                     <div id="name">
-                        <p>Op. Prometh...</p>
+                        <p id="restProfile23">Op. Prometh...</p>
                     </div>
 
                     <div id="entity">
-                        <p>Renault HQ</p>
+                        <p id="restProfile24">Renault HQ</p>
                     </div>
 
                     <div id="location">
-                        <p>USA</p>
+                        <p id="restProfile25">USA</p>
                     </div>
 
                     <div id="expertise">
-                        <p>#M&amp;A</p>
+                        <p id="restProfile26">#M&amp;A</p>
                     </div>
 
                     <div id="date">
-                        <p>18/02/2019</p>
+                        <p id="restProfile27">18/02/2019</p>
                     </div>
 
                     <div id="firm">
-                        <p>Clifford chance</p>
+                        <p id="restProfile28">Clifford chance</p>
                     </div>
                 </div>
 
                 <div className="table">
                     <div id="name">
-                        <p>Op. Latandre</p>
+                        <p id="restProfile29">Op. Latandre</p>
                     </div>
 
                     <div id="entity">
-                        <p>Renault Br ...</p>
+                        <p id="restProfile30">Renault Br ...</p>
                     </div>
 
                     <div id="location">
-                        <p>Italia</p>
+                        <p id="restProfile31">Italia</p>
                     </div>
 
                     <div id="expertise">
-                        <p>#Social</p>
+                        <p id="restProfile32">#Social</p>
                     </div>
 
                     <div id="date">
-                        <p>18/02/2019</p>
+                        <p id="restProfile33">18/02/2019</p>
                     </div>
 
                     <div id="firm">
-                        <p>SVZ</p>
+                        <p id="restProfile34">SVZ</p>
                     </div>
                 </div>
 
-                <p id="moreProposals">See more proposals</p>
+                <p><Link to="/mock" id="moreProposals">See more proposals</Link></p>
 
             </Proposals>
 
@@ -755,83 +703,83 @@ export const Profile: FC = () => {
 
                 <div className="table">
                     <div id="name">
-                        <p>Operation Ti...</p>
+                        <p id="restProfile35">Operation Ti...</p>
                     </div>
 
                     <div id="entity">
-                        <p>Renault Co ...</p>
+                        <p id="restProfile36">Renault Co ...</p>
                     </div>
 
                     <div id="location">
-                        <p>France</p>
+                        <p id="restProfile37">France</p>
                     </div>
 
                     <div id="expertise">
-                        <p>#Tax</p>
+                        <p id="restProfile38">#Tax</p>
                     </div>
 
                     <div id="date">
-                        <p>20/01/2018</p>
+                        <p id="restProfile39">20/01/2018</p>
                     </div>
 
                     <div id="firm">
-                        <p>Racine</p>
+                        <p id="restProfile40">Racine</p>
                     </div>
                 </div>
 
                 <div className="table">
                     <div id="name">
-                        <p>Op. Prometh...</p>
+                        <p id="restProfile41">Op. Prometh...</p>
                     </div>
 
                     <div id="entity">
-                        <p>Renault HQ</p>
+                        <p id="restProfile42">Renault HQ</p>
                     </div>
 
                     <div id="location">
-                        <p>USA</p>
+                        <p id="restProfile43">USA</p>
                     </div>
 
                     <div id="expertise">
-                        <p>#M&amp;A</p>
+                        <p id="restProfile44">#M&amp;A</p>
                     </div>
 
                     <div id="date">
-                        <p>18/02/2019</p>
+                        <p id="restProfile45">18/02/2019</p>
                     </div>
 
                     <div id="firm">
-                        <p>Clifford chance</p>
+                        <p id="restProfile46">Clifford chance</p>
                     </div>
                 </div>
 
                 <div className="table">
                     <div id="name">
-                        <p>Op. Latandre</p>
+                        <p id="restProfile47">Op. Latandre</p>
                     </div>
 
                     <div id="entity">
-                        <p>Renault Br ...</p>
+                        <p id="restProfile48">Renault Br ...</p>
                     </div>
 
                     <div id="location">
-                        <p>Italia</p>
+                        <p id="restProfile49">Italia</p>
                     </div>
 
                     <div id="expertise">
-                        <p>#Social</p>
+                        <p id="restProfile50">#Social</p>
                     </div>
 
                     <div id="date">
-                        <p>18/02/2019</p>
+                        <p id="restProfile51">18/02/2019</p>
                     </div>
 
                     <div id="firm">
-                        <p>SVZ</p>
+                        <p id="restProfile52">SVZ</p>
                     </div>
                 </div>
 
-                <h1 id="moreReviews">See more Reviews</h1>
+                <h1 id="moreReviews"> <Link to="/mock">See more Reviews</Link></h1>
 
 
             </InternalReviews>
@@ -840,7 +788,7 @@ export const Profile: FC = () => {
 
                 <div className="tableFees" id="titleRow">
                     <div id="year">
-                        <p>Year</p>
+                        <p >Year</p>
                     </div>
 
                     <div id="costCenter">
@@ -858,91 +806,91 @@ export const Profile: FC = () => {
 
                 <div className="tableFees">
                     <div id="year">
-                        <p>2019</p>
+                        <p id="restProfile53">2019</p>
                     </div>
 
                     <div id="costCenter">
-                        <p>CS 153</p>
+                        <p id="restProfile54">CS 153</p>
                     </div>
 
                     <div id="totalAmount">
-                        <p>3 500$</p>
+                        <p id="restProfile55">3 500$</p>
                     </div>
 
                     <div id="lawFirm">
-                        <p>Clifford chance</p>
+                        <p id="restProfile56">Clifford chance</p>
                     </div>
                 </div>
 
                 <div className="tableFees">
                     <div id="year">
-                        <p>2018</p>
+                        <p id="restProfile57">2018</p>
                     </div>
 
                     <div id="costCenter">
-                        <p>CS 153</p>
+                        <p id="restProfile58">CS 153</p>
                     </div>
 
                     <div id="totalAmount">
-                        <p>9 500$</p>
+                        <p id="restProfile59">9 500$</p>
                     </div>
 
                     <div id="lawFirm">
-                        <p>Linklaters</p>
+                        <p id="restProfile60">Linklaters</p>
                     </div>
                 </div>
 
                 <div className="tableFees">
                     <div id="year">
-                        <p>2017</p>
+                        <p id="restProfile61">2017</p>
                     </div>
 
                     <div id="costCenter">
-                        <p>CS 47</p>
+                        <p id="restProfile62">CS 47</p>
                     </div>
 
                     <div id="totalAmount">
-                        <p>10 500$</p>
+                        <p id="restProfile63">10 500$</p>
                     </div>
 
                     <div id="lawFirm">
-                        <p>Linklaters</p>
+                        <p id="restProfile64">Linklaters</p>
                     </div>
                 </div>
 
                 <div className="tableFees">
                     <div id="year">
-                        <p></p>
+                        <p id="restProfile65"></p>
                     </div>
 
                     <div id="costCenter">
-                        <p>CS 153</p>
+                        <p id="restProfile66">CS 153</p>
                     </div>
 
                     <div id="totalAmount">
-                        <p>18 500$</p>
+                        <p id="restProfile67">18 500$</p>
                     </div>
 
                     <div id="lawFirm">
-                        <p>Linklaters</p>
+                        <p id="restProfile68">Linklaters</p>
                     </div>
                 </div>
 
                 <div className="tableFees">
                     <div id="year">
-                        <p></p>
+                        <p id="restProfile69"></p>
                     </div>
 
                     <div id="costCenter">
-                        <p>CS 32</p>
+                        <p id="restProfile70">CS 32</p>
                     </div>
 
                     <div id="totalAmount">
-                        <p>15 500$</p>
+                        <p id="restProfile71">15 500$</p>
                     </div>
 
                     <div id="lawFirm">
-                        <p>Linklaters</p>
+                        <p id="restProfile72">Linklaters</p>
                     </div>
                 </div>
 
