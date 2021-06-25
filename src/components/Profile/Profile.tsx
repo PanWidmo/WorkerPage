@@ -393,6 +393,9 @@ export const Profile: FC = () => {
             t!.contentEditable = 'false';
             t!.classList.remove('userProfileContentEditAfter');
             }
+
+            setEditPencilRestProfile (srcImg[0]);
+            setStatusFieldsEditing(true);
         }
 
     }
