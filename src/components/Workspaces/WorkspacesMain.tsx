@@ -16,30 +16,35 @@ const data = [
         photo: 'https://img.peerspace.com/image/upload/c_crop,g_custom/g_auto,c_fill,q_auto,f_auto,fl_progressive:steep,dpr_2,w_1024,h_450/f3onhwuont2spjn8xkkm',
         name: 'Client contract',
         content: "Client contract looorem loorem",
+        icon: "./media/imgs/write.png"
     },
     {
         id: 2,
         photo: 'https://www.anvic.co.uk/wp-content/uploads/2017/02/Conference-Room-Etiquettes-750x458.jpg',
         name: 'Supplier contract',
         content: "Supplier contract loorem loorem",
+        icon: "./media/imgs/write.png"
     },
     {
         id: 3,
         photo: 'https://images.squarespace-cdn.com/content/v1/54b25717e4b04905168fc72f/1440844638197-S7JKW96OLSPVJJ7U3GAB/ke17ZwdGBToddI8pDm48kCOvtajsz7kV0bc_h_la9b97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdCBw5tE12EyfPHFBQ-ircTtkfwaJZCdu04tPxr7xjr2gjqHEQp9SyAh6JNHwp5JUA/ccs-uc-200-wmt.jpg?format=2500w',
         name: 'Corporate',
         content: "Corporate loorem loorem",
+        icon: "./media/icons/entities2.png"
     },
     {
         id: 4,
         photo: 'https://u.profitroom.pl/2018-hotelepark-pl/thumb/1420x910/uploads/Poznan/201810221055490.HP_Poznan_11.jpg',
         name: 'Group norms',
         content: "Group norms loorem loorem",
+        icon: "./media/icons/book.png"
     },
     {
         id: 5,
         photo: 'https://i.pinimg.com/originals/8d/c0/6e/8dc06e02a176fbb2366d50d7f14ddce2.jpg',
         name: 'Real estate contracts',
         content: "Real estate contracts loorem loorem",
+        icon: "./media/imgs/write.png"
     }
 ]
 
@@ -152,7 +157,7 @@ const Box = styled.div`
                 </div>
                 <div className="bottomTopInfo">
                     <div className="leftImg">
-                        <img src="./media/icons/entities.png" alt="Right icon img"/>
+                        <img src={data[parseInt(props.type)].icon} alt="Right icon img"/>
                     </div>
                     <div className="rightContent">
                         <img src="./media/icons/settingsIcon.png" className="settingsIcon" alt="Settings Icon"/>
