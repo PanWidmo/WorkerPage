@@ -1,6 +1,6 @@
 import {FC,useEffect, useState} from 'react';
-// import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 // import {fontSize} from '../../styledHelpers/FontSizes';
 import {Colors} from '../../styledHelpers/Colors';
 // import { withFormik, Form, Field } from 'formik';
@@ -22,6 +22,11 @@ const Wrapper = styled.div`
     padding-top:10px;
     padding-bottom: 60px;
     background: ${Colors.white};
+
+    a{
+        text-decoration:none;
+        color: ${Colors.black};
+    }
 
     h1{
         margin:20px 0;
@@ -318,6 +323,11 @@ const AmountOfFees = styled.div`
 //#endregion
 export const Profile: FC = () => {
 
+    const closeNav = () => {
+        document.getElementById('topBtn')?.remove();
+
+    }
+
     const editValuesUser = () => {
 
         if(status){
@@ -425,6 +435,8 @@ export const Profile: FC = () => {
 
     }
 
+
+
     const { usersList, usersPhoto } = useSelector<IState, IUsersReducer>(state => ({
         ...state.users
     }))
@@ -451,24 +463,30 @@ export const Profile: FC = () => {
 
     return (
         <Wrapper>
-            <TopButtons>
+            <TopButtons id="topBtn">
                     <div className="buttonTop" id="message">
-                        <img src="./media/icons/people.png" alt="Message img"/>
-                        <span className="text">Message</span>
+                        <Link to="/mock">
+                            <img src="./media/icons/people.png" alt="Message img"/>
+                            <span className="text">Message</span>
+                        </Link>
                     </div>
 
                     <div className="buttonTop" id="request">
-                        <img src="./media/icons/ecosystem.png" alt="Message img"/>
-                        <span className="text">Create a request</span>
+                        <Link to="/mock">
+                            <img src="./media/icons/ecosystem.png" alt="Message img"/>
+                            <span className="text">Create a request</span>
+                        </Link>
                     </div>
 
                     <div className="buttonTop" id="cluster">
-                        <img src="./media/icons/network.png" alt="Message img"/>
-                        <span className="text">Add to a cluster</span>
+                        <Link to="/mock">
+                            <img src="./media/icons/network.png" alt="Message img"/>
+                            <span className="text">Add to a cluster</span>
+                        </Link>
                     </div>
 
                     <div className="buttonTop">
-                        X
+                        <p onClick={closeNav}>X</p>
                     </div>
 
             </TopButtons>
