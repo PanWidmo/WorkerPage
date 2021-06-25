@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
 import {boxShadow} from '../../styledHelpers/Components';
-// import {Wrapper} from '../../styledHelpers/Components';
 import { Link } from 'react-router-dom';
 
 const InnerWrapper = styled.div`
@@ -37,8 +36,8 @@ const Icon = styled.div`
     ${boxShadow()};
     }
     p{
-        font-size:${fontSize[18]};
-        margin-left:90px;
+        font-size:${fontSize[16]};
+        margin-left:84px;
         margin-top:-40px;
     }
 `;
@@ -128,6 +127,24 @@ export const SingleWorkspaceWindow: FC = () => {
                         <Icon>
                             <img src="./media/icons/book.png" alt="Writing img"/>
                             <p>Group norms</p>
+                        </Icon>
+                        <AndUsers>
+                            <img src="./media/icons/book.png" alt="Writing img cloud"/>
+                            Norms
+                            <span>&#9679;</span>
+                            <img src="./media/icons/people.png" alt="People icon"/>
+                            25 users
+                            <p>Last update 2 day ago</p>
+                        </AndUsers>
+                </Box>
+                </Link>
+
+                <Link to="/real_estate_contracts" className="links">
+                <Box>
+                    <CustomImage src="./media/imgs/write2.jpg"/>
+                        <Icon>
+                            <img src="./media/icons/book.png" alt="Writing img"/>
+                            <p>Real estate contracts</p>
                         </Icon>
                         <AndUsers>
                             <img src="./media/icons/book.png" alt="Writing img cloud"/>
