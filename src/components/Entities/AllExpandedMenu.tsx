@@ -7,11 +7,14 @@ import {Colors} from '../../styledHelpers/Colors';
 //#region styles
 const Wrapper = styled.div`
     position: absolute;
-    background: ${Colors.lightgray};
-    margin-top:130px;
-    width:120px;
-    border:2px solid red;
+    background: ${Colors.black};
+    margin-top:135px;
+    width:85px;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    padding: 10px;
 `;
 
 
@@ -23,13 +26,9 @@ export const AllExpandedMenu: FC = () => {
 
     return (
         <Wrapper>
-            <ul>
-                    <li className="category">Platform</li>
-                    <li className="category">Workspaces</li>
-                    <li className="category">Account</li>
-                    <li><img src="./media/icons/privacy.png" className="icons" alt="Privacy icon"/>Privacy</li>
-                    <li><img src="./media/icons/settings.png" className="icons" alt="Settings icon"/>Settings</li>
-            </ul>
+                <input type="button" id="all" value="Followed" />
+                <input type="button" id="all" value="All" />
+                <input type="button" id="mine" value ="Mine" />
         </Wrapper>
     );
 };
