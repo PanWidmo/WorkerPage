@@ -24,6 +24,7 @@ const InnerWrapper = styled.div`
     display:grid;
     grid-template-columns:300px 1fr;
     align-items:center;
+    background-color: ${Colors.white};
     ${boxShadow()};
 `;
 
@@ -40,6 +41,12 @@ const LeftSide = styled.div`
         font-size:${fontSize[18]};
         padding-top:220px;
         margin:0 0 25px 20px;
+
+        a{
+            text-decoration: none;
+            color: ${Colors.white};
+        }
+
         p{
             ::first-letter {
                 text-transform: uppercase;
@@ -114,7 +121,7 @@ export const Publications: FC = () => {
                 {usersPost.slice(0,1).map((x:any) => {
                     return(
                         <div id="divBottom">
-                            <p>{x?.title}</p>
+                            <p><Link to="/mock">{x?.title}</Link></p>
 
                             <div id="personInfo">
                                 <span className="left">7 jan. 2020</span>

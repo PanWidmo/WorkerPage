@@ -2,7 +2,7 @@ import {FC, useEffect} from 'react';
 import styled from 'styled-components';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-
+import {Link} from 'react-router-dom';
 
 //#endregion import data from api
 import { IState } from '../../reducers';
@@ -29,6 +29,11 @@ const InnerWrapper = styled.div`
     display: grid;
     grid-template-columns: 80px 1fr;
     position: relative;
+
+    a{
+        text-decoration:none;
+        color: ${Colors.black};
+    }
 
     .leftImg{
         max-width:80px;
@@ -98,9 +103,9 @@ export const LatestPublications: FC = () => {
             {usersPost.slice(0,3).map((x:any) =>{
                 return(
                     <InnerWrapper>
-                        <img className="leftImg" src={usersPhoto[x.userId]?.url} alt="Post img"/>
+                        <Link to="/mock"><img className="leftImg" src={usersPhoto[x.userId]?.url} alt="Post img"/></Link>
                         <div className="rightSide">
-                            <h1>{x?.title}</h1>
+                            <h1><Link to="/mock">{x?.title}</Link></h1>
                             <div className="bottom">
                                 <span className="date">7 jan. 2020</span>
                                 <img className="portrairImg" src={usersPhoto[x.userId]?.url} alt="Portrair img"/>
