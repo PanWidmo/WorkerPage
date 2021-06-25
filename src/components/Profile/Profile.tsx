@@ -26,6 +26,7 @@ const Wrapper = styled.div`
     a{
         text-decoration:none;
         color: ${Colors.black};
+        display: flex;
     }
 
     h1{
@@ -91,10 +92,13 @@ const TopButtons = styled.div`
     display: flex;
     float:right;
 
-    .buttonTop{
+    span {
         display: flex;
         align-items: center;
         margin-right: auto;
+    }
+
+    .buttonTop{
         cursor: pointer;
         margin:0 14px;
 
@@ -324,14 +328,26 @@ const AmountOfFees = styled.div`
 export const Profile: FC = () => {
 
     const closeNav = () => {
-        document.getElementById('topBtn')?.remove();
+
+        if(status1){
+            document.getElementById('topBtn')?.remove();
+
+            setCloseImg1(srcClosingBtn[1]);
+            SetStatus1(false);
+        }
+        else{
+
+            setCloseImg1(srcClosingBtn[0]);
+            SetStatus1(true);
+
+        }
 
     }
 
     const editValuesUser = () => {
 
         if(status){
-            const t1 = document.getElementById('nameProfile')
+            const t1 = document.getElementById('nameProfile');
             t1!.contentEditable = 'true';
             t1!.classList.add('userProfileContentEditAfter');
             const t2 = document.getElementById('companyName')
@@ -450,9 +466,16 @@ export const Profile: FC = () => {
         "./media/icons/save.png"
     ]
 
+    const srcClosingBtn = [
+        "X",
+        "V"
+    ]
+
     const [src1, setSrc1] = useState(srcImg[0]);
     const [src2, setSrc2] = useState(srcImg[0]);
+    const [closeImg1, setCloseImg1] = useState(srcClosingBtn[0]);
     const [status, SetStatus] = useState(true);
+    const [status1, SetStatus1] = useState(true);
 
     //#endregion
 
@@ -463,7 +486,8 @@ export const Profile: FC = () => {
 
     return (
         <Wrapper>
-            <TopButtons id="topBtn">
+            <TopButtons>
+                <span id="topBtn">
                     <div className="buttonTop" id="message">
                         <Link to="/mock">
                             <img src="./media/icons/people.png" alt="Message img"/>
@@ -484,9 +508,10 @@ export const Profile: FC = () => {
                             <span className="text">Add to a cluster</span>
                         </Link>
                     </div>
+                    </span>
 
                     <div className="buttonTop">
-                        <p onClick={closeNav}>X</p>
+                        <p onClick={closeNav}>{closeImg1}</p>
                     </div>
 
             </TopButtons>
