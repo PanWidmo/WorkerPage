@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import ReactPaginate from 'react-paginate';
 import {Colors} from '../../styledHelpers/Colors';
 import {fontSize} from '../../styledHelpers/FontSizes';
-// import {Wrapper} from '../../styledHelpers/Components';
 import useDropdown from 'react-dropdown-hook';
 import {FollowedExpandedMenu} from './FollowedExpandedMenu';
 import {boxShadow} from '../../styledHelpers/Components';
@@ -118,6 +117,9 @@ const MenuWrapper = styled.div`
     font-weight: bold;
     color:${Colors.purple};
 
+    #signalIcon{
+        width:20px;
+    }
 
 `;
 
@@ -177,13 +179,13 @@ export const ResumeYourWork: FC = () => {
 
                     <InputFilter>
                         <input type="text" value={inputText} onChange={inputHandler} placeholder="Filter by title..."/>
-                        <img src="./media/icons/search.png" id="search" alt=""/>
+                        <img src="./media/icons/search.png" id="search" alt="Search icon"/>
                     </InputFilter>
 
                     <MenuWrapper ref={wrapperRef} onClick={menuHandler}>
-                        <img src="./media/icons/people.png" alt=""/>
+                        <img id="signalIcon" src="./media/icons/signal.png" alt="Signal icon"/>
                         <span>Followed</span>
-                        <img src="./media/icons/arrow-down.png" alt=""/>
+                        <img src="./media/icons/arrow-down.png" alt="Arrow icon"/>
 
                         {dropdownOpen &&
                         <FollowedExpandedMenu/>
