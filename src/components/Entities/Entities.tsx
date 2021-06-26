@@ -339,6 +339,44 @@ export const Entities: FC = () => {
 
     }
 
+    const [sorting, setSorting] = useState<number>(1);
+
+    const compare = (a: any, b: any) => {
+        if(sorting === 2){
+            if(a.title < b.title){
+                return -1;
+            }
+            if(a.title > b.title){
+                return 1;
+            }
+            return 0;
+        }
+        else if(sorting === 3){
+            if(a.title < b.title){
+                return 1;
+            }
+            if(a.title > b.title){
+                return -1;
+            }
+            return 0;
+        }else{
+            return 0;
+        }
+
+    }
+
+    const changeSort = () =>{
+        if(sorting === 1){
+            setSorting(2)
+        }
+        if(sorting === 2){
+            setSorting(3)
+        }
+        if(sorting === 3){
+            setSorting(1)
+        }
+    }
+
     return (
         <Wrapper>
             <div id="fullPage" >
@@ -373,7 +411,7 @@ export const Entities: FC = () => {
                     <div id="rightBorder">
                         <img className="iconsSizes cursorPointer" src="./media/icons/threeDots.png" alt="Three Dots icon"/>
                     </div>
-                    <div id="sortDiv" className="menuInline cursorPointer">
+                    <div id="sortDiv" onClick={changeSort} className="menuInline cursorPointer">
                         <img className="iconsSizes" src="./media/icons/arrowsUpDown.png" alt="Arrows icon"/>
                         <p>Sort</p>
                     </div>
@@ -415,7 +453,7 @@ export const Entities: FC = () => {
 
             <Content>
                 <div id="contentContainer" className="contentClassContainer">
-                {usersPost.slice(0,30).map((x:any) => {
+                {usersPost.sort(compare).slice(0,30).map((x:any) => {
                         return(
                             ((x.title).toLowerCase().includes(inputText.toLowerCase())) &&
                                 <div id="singleBox">
