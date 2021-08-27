@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/PanWidmo/WorkerPage/static/js/main.8daf4334.chunk.js",
-    "main.js.map": "/PanWidmo/WorkerPage/static/js/main.8daf4334.chunk.js.map",
-    "runtime-main.js": "/PanWidmo/WorkerPage/static/js/runtime-main.555ae393.js",
-    "runtime-main.js.map": "/PanWidmo/WorkerPage/static/js/runtime-main.555ae393.js.map",
-    "static/js/2.8a71ab9a.chunk.js": "/PanWidmo/WorkerPage/static/js/2.8a71ab9a.chunk.js",
-    "static/js/2.8a71ab9a.chunk.js.map": "/PanWidmo/WorkerPage/static/js/2.8a71ab9a.chunk.js.map",
-    "index.html": "/PanWidmo/WorkerPage/index.html",
-    "static/js/2.8a71ab9a.chunk.js.LICENSE.txt": "/PanWidmo/WorkerPage/static/js/2.8a71ab9a.chunk.js.LICENSE.txt"
+    "main.js": "/WorkerPage/static/js/main.8daf4334.chunk.js",
+    "main.js.map": "/WorkerPage/static/js/main.8daf4334.chunk.js.map",
+    "runtime-main.js": "/WorkerPage/static/js/runtime-main.74584245.js",
+    "runtime-main.js.map": "/WorkerPage/static/js/runtime-main.74584245.js.map",
+    "static/js/2.f1688614.chunk.js": "/WorkerPage/static/js/2.f1688614.chunk.js",
+    "static/js/2.f1688614.chunk.js.map": "/WorkerPage/static/js/2.f1688614.chunk.js.map",
+    "index.html": "/WorkerPage/index.html",
+    "static/js/2.f1688614.chunk.js.LICENSE.txt": "/WorkerPage/static/js/2.f1688614.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.555ae393.js",
-    "static/js/2.8a71ab9a.chunk.js",
+    "static/js/runtime-main.74584245.js",
+    "static/js/2.f1688614.chunk.js",
     "static/js/main.8daf4334.chunk.js"
   ]
 }
